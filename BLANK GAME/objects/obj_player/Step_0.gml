@@ -18,15 +18,13 @@ if move_x != 0 and move_y != 0 {
 	move_y *= 0.7071
 }
 
-move_and_collide(move_x, move_y, [collision_tiles])
+if !instance_exists(obj_dialogue) then move_and_collide(move_x, move_y, [collision_tiles])
 
 //----------[DIALOUGE CONTROLS]----------
 
 if place_meeting(x,y,obj_interactable) and key_interact and !interacting{
-	interacting = true
+	//interacting = true
 }
-
-
 
 //----------[CHEATS]----------
 if keyboard_check(vk_escape) then interacting = false
