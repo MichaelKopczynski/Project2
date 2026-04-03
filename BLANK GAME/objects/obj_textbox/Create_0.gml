@@ -35,15 +35,3 @@ option_pad_h = padding
 option_pad_v = 12
 option_h_offset = 20
 option_h_select_offset = 20
-
-
-
-//messages = []
-//current_message = -1
-//current_char = 0
-//draw_message = ""
-
-//char_speed = 0.5
-//input_key = vk_space;
-//gui_h = display_get_gui_height()
-//gui_w = display_get_gui_width()

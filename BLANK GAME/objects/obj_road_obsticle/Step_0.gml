@@ -1,0 +1,1 @@
+if x < -256 then instance_destroy()
