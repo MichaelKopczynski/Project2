@@ -7,6 +7,8 @@ function scr_set_defaults_for_text(){
 
 /// @param text
 function scr_text(_text){
+	
+	scr_set_defaults_for_text()
 
 	text[page_number] = _text;
 	

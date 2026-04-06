@@ -11,7 +11,7 @@ function scr_gametext(_text_id){
 				scr_text("kisses irl")
 				break
 			case "sabrina1-nah":
-				scr_text("dies*")
+				scr_text("dies* and also im gonna type a ton to see a line break when theres like a ton of text or omething so surely there has been a line break so far in what ive written who knows maybe there could be two woah dont get crazy now michael")
 				break
 			
 			

@@ -11,7 +11,6 @@ if !setup{
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 	
-	//loop through pages (???) (i dont like "pages" should change to different name)
 	for(var p = 0; p < page_number; p++){
 		text_length[p] = string_length(text[p]);
 	}
