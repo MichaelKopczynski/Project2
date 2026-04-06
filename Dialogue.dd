@@ -1,9 +1,9 @@
 {
   "metadata": {
     "version": "1.0",
-    "created": "2026-04-06T10:45:06",
-    "modified": "2026-04-06T10:45:06",
-    "title": "Untitled Project",
+    "created": "2026-04-06T10:58:30",
+    "modified": "2026-04-06T10:58:30",
+    "title": "Dialogue",
     "author": "",
     "description": ""
   },
@@ -12,9 +12,9 @@
     "default_position": "bottom",
     "default_color": "#2E8B57",
     "canvas_state": {
-      "zoom": 1.0,
-      "center_x": 46,
-      "center_y": 229
+      "zoom": 0.8695652173913048,
+      "center_x": 75,
+      "center_y": 254
     }
   },
   "characters": {
@@ -22,20 +22,85 @@
       "name": "Gregory",
       "color": "#2e8b57",
       "position": "bottom"
+    },
+    "Rudica": {
+      "name": "Rudica",
+      "color": "#2e8b57",
+      "position": "bottom"
     }
   },
   "dialogues": [
     {
       "id": 0,
-      "character": "Gregory",
-      "text": "Test",
+      "character": "Rudica",
+      "text": "Yes, I know, beautiful aren\u2019t I?",
       "color": "#2e8b57",
       "position": "bottom",
-      "x": 0,
-      "y": 100,
-      "choices": [],
+      "choices": [
+        {
+          "text": "",
+          "target_id": 1
+        }
+      ],
+      "x": -40,
+      "y": -60,
       "parent_ids": [],
       "is_start": true,
+      "is_end": false
+    },
+    {
+      "id": 1,
+      "character": "Rudica",
+      "text": "You? Well, I suppose you might be passable if you had new clothes, different hair, nicer shoes, and a cuter face.",
+      "color": "#2e8b57",
+      "position": "bottom",
+      "choices": [
+        {
+          "text": "",
+          "target_id": 2
+        }
+      ],
+      "x": 240,
+      "y": -60,
+      "parent_ids": [
+        0
+      ],
+      "is_start": false,
+      "is_end": false
+    },
+    {
+      "id": 2,
+      "character": "Rudica",
+      "text": "Is one such as I truly expected to\u2026consort with the likes of you, a mere human?",
+      "color": "#2e8b57",
+      "position": "bottom",
+      "choices": [
+        {
+          "text": "",
+          "target_id": 3
+        }
+      ],
+      "x": 520,
+      "y": -60,
+      "parent_ids": [
+        1
+      ],
+      "is_start": false,
+      "is_end": false
+    },
+    {
+      "id": 3,
+      "character": "Rudica",
+      "text": "Tarry along now little one, I have more important matters to attend to.",
+      "color": "#2e8b57",
+      "position": "bottom",
+      "choices": [],
+      "x": 800,
+      "y": -60,
+      "parent_ids": [
+        2
+      ],
+      "is_start": false,
       "is_end": true
     }
   ]
