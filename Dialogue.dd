@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-04-06T10:45:06",
+    "modified": "2026-04-06T10:45:06",
+    "title": "Untitled Project",
+    "author": "",
+    "description": ""
+  },
+  "app_settings": {
+    "text_speed": 50,
+    "default_position": "bottom",
+    "default_color": "#2E8B57",
+    "canvas_state": {
+      "zoom": 1.0,
+      "center_x": 46,
+      "center_y": 229
+    }
+  },
+  "characters": {
+    "Gregory": {
+      "name": "Gregory",
+      "color": "#2e8b57",
+      "position": "bottom"
+    }
+  },
+  "dialogues": [
+    {
+      "id": 0,
+      "character": "Gregory",
+      "text": "Test",
+      "color": "#2e8b57",
+      "position": "bottom",
+      "x": 0,
+      "y": 100,
+      "choices": [],
+      "parent_ids": [],
+      "is_start": true,
+      "is_end": true
+    }
+  ]
+}
