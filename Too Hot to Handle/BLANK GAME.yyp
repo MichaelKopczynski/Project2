@@ -44,6 +44,7 @@
     {"id":{"name":"obj_sabrina","path":"objects/obj_sabrina/obj_sabrina.yy",},},
     {"id":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},},
     {"id":{"name":"rm_driving","path":"rooms/rm_driving/rm_driving.yy",},},
+    {"id":{"name":"rm_rhythm","path":"rooms/rm_rhythm/rm_rhythm.yy",},},
     {"id":{"name":"rm_studio","path":"rooms/rm_studio/rm_studio.yy",},},
     {"id":{"name":"scr_dialogue","path":"scripts/scr_dialogue/scr_dialogue.yy",},},
     {"id":{"name":"scr_gametext","path":"scripts/scr_gametext/scr_gametext.yy",},},
@@ -62,8 +63,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_driving","path":"rooms/rm_driving/rm_driving.yy",},},
     {"roomId":{"name":"rm_studio","path":"rooms/rm_studio/rm_studio.yy",},},
+    {"roomId":{"name":"rm_driving","path":"rooms/rm_driving/rm_driving.yy",},},
+    {"roomId":{"name":"rm_rhythm","path":"rooms/rm_rhythm/rm_rhythm.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
