@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_road_obsticle",
+  "%Name":"obj_arrow_shell",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_road_obsticle",
+  "name":"obj_arrow_shell",
   "overriddenProperties":[],
   "parent":{
-    "name":"Driving",
-    "path":"folders/Objects/Driving.yy",
+    "name":"Rhythm",
+    "path":"folders/Objects/Rhythm.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -25,11 +25,16 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"key_assignment","filters":[],"listItems":[],"multiselect":false,"name":"key_assignment","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":4,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_arrow_shell",
+    "path":"sprites/spr_arrow_shell/spr_arrow_shell.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

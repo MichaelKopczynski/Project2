@@ -9,8 +9,8 @@
   "name":"obj_car",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Driving",
+    "path":"folders/Objects/Driving.yy",
   },
   "parentObjectId":null,
   "persistent":false,
