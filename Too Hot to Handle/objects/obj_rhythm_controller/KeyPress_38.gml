@@ -1,1 +1,0 @@
-detect_arrow(arrow_up)

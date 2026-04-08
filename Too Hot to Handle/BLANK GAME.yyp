@@ -41,6 +41,7 @@
   "resources":[
     {"id":{"name":"Font1","path":"fonts/Font1/Font1.yy",},},
     {"id":{"name":"obj_arrow_shell","path":"objects/obj_arrow_shell/obj_arrow_shell.yy",},},
+    {"id":{"name":"obj_arrow_tail","path":"objects/obj_arrow_tail/obj_arrow_tail.yy",},},
     {"id":{"name":"obj_arrow","path":"objects/obj_arrow/obj_arrow.yy",},},
     {"id":{"name":"obj_car","path":"objects/obj_car/obj_car.yy",},},
     {"id":{"name":"obj_driving_spawner","path":"objects/obj_driving_spawner/obj_driving_spawner.yy",},},
@@ -60,6 +61,7 @@
     {"id":{"name":"scr_txtbx_fns","path":"scripts/scr_txtbx_fns/scr_txtbx_fns.yy",},},
     {"id":{"name":"spr_arrow_pressed","path":"sprites/spr_arrow_pressed/spr_arrow_pressed.yy",},},
     {"id":{"name":"spr_arrow_shell","path":"sprites/spr_arrow_shell/spr_arrow_shell.yy",},},
+    {"id":{"name":"spr_arrow_tail","path":"sprites/spr_arrow_tail/spr_arrow_tail.yy",},},
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
     {"id":{"name":"spr_car_temp","path":"sprites/spr_car_temp/spr_car_temp.yy",},},
