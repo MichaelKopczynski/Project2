@@ -3,7 +3,7 @@ var key_up = keyboard_check(vk_up) or keyboard_check(ord("W"))
 var key_down = keyboard_check(vk_down) or keyboard_check(ord("S"))
 var key_left = keyboard_check(vk_left) or keyboard_check(ord("A"))
 var key_right = keyboard_check(vk_right) or keyboard_check(ord("D"))
-var key_interact = keyboard_check(ord("E"))
+var key_interact = keyboard_check_pressed(ord("E"))
 
 
 
@@ -18,9 +18,12 @@ if move_x != 0 and move_y != 0 {
 	move_y *= 0.7071
 }
 
-if !instance_exists(obj_textbox) and !obj_mop.cleaning then move_and_collide(move_x, move_y, [collision_tiles])
+colliders = [collision_tiles, obj_counter]
+can_move = !instance_exists(obj_textbox) and !obj_mop.cleaning and !cooking
 
-//----------[DIALOUGE CONTROLS]----------
+if can_move then move_and_collide(move_x, move_y, colliders)
+
+//----------[INTERACTION CONTROLS]----------
 
 if place_meeting(x,y,obj_interactable) and key_interact and !interacting{
 	//interacting = true
@@ -28,6 +31,13 @@ if place_meeting(x,y,obj_interactable) and key_interact and !interacting{
 
 if place_meeting(x,y,obj_mop) and key_interact and !mopping {
 	mopping = true
+} else if distance_to_point(1792,896) < 64 and key_interact and mopping{
+	mopping = false
+	obj_mop.picked_up = false
+}
+
+if distance_to_object(obj_counter) < 64 and key_interact{
+	cooking = !cooking
 }
 
 

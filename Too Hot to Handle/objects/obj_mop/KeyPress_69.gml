@@ -7,7 +7,7 @@ if !picked_up{
 } else {
 	if place_meeting(x,y,obj_mess){
 		cleaning = true
-		alarm[0] = 240
+		alarm[0] = 180
 	}
 	
 }
