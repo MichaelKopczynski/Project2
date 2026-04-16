@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Chores",
-    "path":"folders/Sprites/Chores.yy",
+    "name":"Cleaning",
+    "path":"folders/Sprites/Chores/Cleaning.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

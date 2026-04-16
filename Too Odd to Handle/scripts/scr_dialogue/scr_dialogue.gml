@@ -23,6 +23,7 @@ function scr_dialogue(_text_id){
 				scr_option("Yeah", "sabrina1-yeah")
 				scr_option("Nah", "sabrina1-nah")
 			break;
+			
 				case "sabrina1-yeah":
 					SABINA
 					scr_text("kisses irl")

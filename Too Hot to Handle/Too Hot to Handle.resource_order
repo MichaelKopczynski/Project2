@@ -1,0 +1,14 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_chore_controller","order":1,"path":"objects/obj_chore_controller/obj_chore_controller.yy",},
+    {"name":"obj_counter","order":2,"path":"objects/obj_counter/obj_counter.yy",},
+    {"name":"obj_game_controller","order":1,"path":"objects/obj_game_controller/obj_game_controller.yy",},
+    {"name":"spr_bread","order":3,"path":"sprites/spr_bread/spr_bread.yy",},
+    {"name":"spr_counter_gui","order":2,"path":"sprites/spr_counter_gui/spr_counter_gui.yy",},
+    {"name":"spr_counter","order":1,"path":"sprites/spr_counter/spr_counter.yy",},
+    {"name":"spr_tomato","order":4,"path":"sprites/spr_tomato/spr_tomato.yy",},
+    {"name":"tmspr_milton_tmp","order":1,"path":"sprites/tmspr_milton_tmp/tmspr_milton_tmp.yy",},
+    {"name":"tm_milton","order":2,"path":"tilesets/tm_milton/tm_milton.yy",},
+  ],
+}

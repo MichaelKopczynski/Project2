@@ -24,16 +24,9 @@ if !instance_exists(obj_textbox) and !obj_mop.cleaning then move_and_collide(mov
 
 //----------[INTERACTION CONTROLS]----------
 
-if place_meeting(x,y,obj_interactable) and key_interact and !interacting{
-	//interacting = true
-}
 
-if place_meeting(x,y,obj_mop) and key_interact and !mopping {
-	mopping = true
-}
-
-if place_meeting(x,y,obj_counter) and key_interact and !cooking {
-	cooking = true
+if distance_to_object(obj_counter) < counter_interaction_distance and key_interact and !cooking {
+	room_goto(rm_chores_kitchen)
 }
 
 
