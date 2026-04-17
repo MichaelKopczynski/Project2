@@ -11,7 +11,7 @@ if nametag != "" {
 	nametag_x = tb_x + tb_width - sprite_get_width(nametag)
 	nametag_y = tb_y - sprite_get_height(nametag) - tb_padding
 } else {
-	show_message("Dialouge initiated without a nametag, was this on purpose?")
+	//show_debug_message("Dialouge initiated without a nametag, was this on purpose?")
 }
 
 

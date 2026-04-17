@@ -18,15 +18,19 @@ if move_x != 0 and move_y != 0 {
 	move_y *= 0.7071
 }
 
-colliders = [collision_tiles, obj_counter]
+colliders = [collision_tiles_chores, obj_counter, obj_computer_desk]
 
 if !instance_exists(obj_textbox) and !obj_mop.cleaning then move_and_collide(move_x, move_y, colliders)
 
 //----------[INTERACTION CONTROLS]----------
 
 
-if distance_to_object(obj_counter) < counter_interaction_distance and key_interact and !cooking {
+if distance_to_object(obj_counter) < counter_interaction_distance and key_interact {
 	room_goto(rm_chores_kitchen)
+}
+
+if distance_to_object(obj_computer_desk) < computer_interaction_distance and key_interact {
+	room_goto(rm_chores_computer)
 }
 
 

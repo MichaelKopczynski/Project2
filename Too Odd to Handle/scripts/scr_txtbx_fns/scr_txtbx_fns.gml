@@ -13,7 +13,6 @@ function scr_text(_text){
 	text[page_number] = _text;
 	
 	page_number++
-
 }
 
 /// @param option
@@ -23,6 +22,11 @@ function scr_option(_option, _link_id) {
 	option_link_id[option_count] = _link_id
 	
 	option_count++
+}
+
+/// @param link_id
+function scr_goto(_link_id) {
+	create_textbox(_link_id)
 }
 
 
