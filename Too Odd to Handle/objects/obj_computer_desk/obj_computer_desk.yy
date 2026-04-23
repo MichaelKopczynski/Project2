@@ -6,8 +6,8 @@
   "name":"obj_computer_desk",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Chores",
+    "path":"folders/Objects/Chores.yy",
   },
   "parentObjectId":null,
   "persistent":false,

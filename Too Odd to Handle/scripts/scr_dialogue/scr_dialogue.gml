@@ -51,7 +51,7 @@ function scr_dialogue(_text_id){
 			
 		case "md1-1-1":
 			MILTON
-			array_delete(global.md1_1_options, 0, 1)
+			//array_delete(global.md1_1_options, ((array_length(global.md1_1_options)-1+instance  + , 1)
 			scr_text("The handsmaid tale...")
 			for (i = 0; i < array_length(global.md1_1_options); i++){
 					scr_option(global.md1_1_options[i][0], global.md1_1_options[i][1])

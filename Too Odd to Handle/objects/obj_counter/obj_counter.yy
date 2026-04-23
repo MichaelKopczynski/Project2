@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_counter",
-    "path":"sprites/spr_counter/spr_counter.yy",
+    "name":"spr_kitchen",
+    "path":"sprites/spr_kitchen/spr_kitchen.yy",
   },
   "spriteMaskId":null,
   "visible":true,
