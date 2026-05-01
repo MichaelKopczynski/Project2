@@ -60,7 +60,10 @@ if keyboard_check_pressed(next_key){
 
 //-----[Drawing Portrait]-----
 if portrait != noone{
-	draw_sprite_ext(portrait, 0, portrait_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1)
+	if sprite_get_number(portrait) > 1 {
+		// TODO
+	}
+	draw_sprite_ext(portrait, -1, portrait_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1)
 }
 
 //-----[Drawing textbox]-----

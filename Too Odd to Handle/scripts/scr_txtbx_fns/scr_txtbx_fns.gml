@@ -45,8 +45,8 @@ function create_textbox(_text_id){
 
 /// @param Change in Milton's affection
 function milton_affection(_change) {
-	show_debug_message(_change)
 	global.milton_affection += _change
+	show_debug_message(global.milton_affection)
 }
 
 /// @param Change in Sabina's affection
