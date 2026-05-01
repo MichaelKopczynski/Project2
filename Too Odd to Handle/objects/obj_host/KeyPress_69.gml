@@ -20,3 +20,17 @@ if global.gamephase == GP.INTERMISSION1 {
 		create_textbox("hi1_k")
 	}
 }
+
+if global.gamephase == GP.INTERMISSION2 {
+	st = obj_game_controller.i2_spoken_to
+	
+	if !obj_player.holding_rose {
+		if array_length(st) < 3 {
+			create_textbox("hi2-nat")
+		} else {
+			create_textbox("hi2-give-rose")
+		}
+	} else {
+		create_textbox("hi2-w-rose")
+	}
+}

@@ -155,6 +155,7 @@
     {"id":{"name":"spr_popup","path":"sprites/spr_popup/spr_popup.yy",},},
     {"id":{"name":"spr_popup2","path":"sprites/spr_popup2/spr_popup2.yy",},},
     {"id":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},},
+    {"id":{"name":"spr_rose","path":"sprites/spr_rose/spr_rose.yy",},},
     {"id":{"name":"spr_sabina_angry","path":"sprites/spr_sabina_angry/spr_sabina_angry.yy",},},
     {"id":{"name":"spr_sabina_confused","path":"sprites/spr_sabina_confused/spr_sabina_confused.yy",},},
     {"id":{"name":"spr_sabina_happy","path":"sprites/spr_sabina_happy/spr_sabina_happy.yy",},},

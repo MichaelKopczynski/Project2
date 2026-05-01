@@ -26,7 +26,7 @@
 #macro KAFF kyle_affection
 
 
-#macro AFFECTION_MARGIN 2
+#macro AFFECTION_MARGIN global.affection_margin
 
 
 global.md1_1_options = [[1, "I love a good book! What are you currently reading?", "md1-1-1"],
@@ -443,6 +443,62 @@ function scr_dialogue(_text_id){
 					scr_text("It would do you well. Lets talk about something in a less passive agressive manner.")
 					scr_goto("md1-1-r")
 					break;
+					
+			case "md1-1-2-2": //how does that help with cooking
+			MILTON_BRUH
+			MAFF(-1)
+			scr_text("Hm. It does occasionally happen where one who does not have the creativity to imagine my capabilities comes along, but I took you to be a little more intelligent than the common rabble.")
+			scr_option("Hey! I am intelligent!", "md1-1-2-2-1")
+			break;
+			
+				case "md1-1-2-2-1":
+				MILTON_HMM
+				scr_text("If you are, I have not yet seen any examples of such intelligence. It’s a classic phenomenon...")
+				scr_text("Those who are not intelligent must proclaim they are, but those who truly are, such as I, never have the need to proclaim it, for it already is known by all.")
+				scr_option("Uh, didn’t you just “proclaim” your intelligence in that sentence?", "md1-1-2-2-1-1")
+				scr_option("I only said it because you said otherwise.", "md1-1-2-2-1-2")
+				break;
+				
+					case "md1-1-2-2-1-1":
+					MILTON_ANGRY
+					MAFF(-1)
+					scr_text("That was merely for example's sake. You do not want to engage in a battle of wits with one such as I. Never go in against a Wormilian when death is on the line.")
+					scr_option("You just-you did it again!!", "md1-1-2-2-1-1-1")
+					scr_option("I think it’s \"Sicilian\"...", "md1-1-2-2-1-1-2")
+					break;
+					
+						case "md1-1-2-2-1-1-1":
+						MILTON_BRUH
+						MAFF(-1)
+						scr_text("That was merely for warning’s sake. Sigh, it seems simpletons never learn...")
+						scr_goto("md1-1-r")
+						break;
+						
+						case "md1-1-2-2-1-1-2":
+						MILTON_HMM
+						scr_text("I don’t know what you’re talking about.")
+						scr_goto("md1-1-r")
+						break;
+					
+					case "md1-1-2-2-1-2": //said otherwise
+					MILTON
+					scr_text("That may be so, but would I not have not to have had said otherwise if it had not been so?")
+					scr_option("But if you had not had to have insulted me, I would have not had had to “proclaim” my intelligence.", "md1-1-2-2-1-2-1")
+					scr_option("What?", "md1-1-2-2-1-2-2")
+					scr_option("I don’t think that sentence is correct...", "md1-1-2-2-1-2-2")
+					break;
+						
+						case "md1-1-2-2-1-2-1":
+						MILTON
+						scr_text("Uh, that’s what I meant. Anyways, it would do you well to not contest me. It is a futile endeavor. I suggest we move on.")
+						scr_goto("md1-1-r")
+						break;
+						
+						case "md1-1-2-2-1-2-2":
+						MILTON
+						scr_text("Mmmm it would appear your itty bitty tiny baby brain could not untongue my twister. Contesting me in a battle of wits is a futile endeavor. I suggest moving on to another topic.")
+						scr_goto("md1-1-r")
+						break;
 			
 		case "md1-1-3": //big into feminism
 		MILTON
@@ -562,8 +618,7 @@ function scr_dialogue(_text_id){
 					case "md1-1-4-2-1-1":
 					MILTON_ANGRY
 					MAFF(-1)
-					scr_text("How deplorable. I fear your ignorance may have got the best of you...begone with thee!")
-					scr_text("Well since neither of us are allowed to leave yet...")
+					scr_text("How deplorable. I fear your ignorance may have got the best of you... begone uncultured swine!")
 					scr_goto("md1-1-r")
 					break;
 					
@@ -1097,7 +1152,7 @@ function scr_dialogue(_text_id){
 				scr_text("Everyone knows the judges are paid off anyways and I don't need no fake little gold man. He can't even show me the works! Men are so blah these days anyways.")
 				scr_option("Sabina... The Oscars have the little men, not the grammys...", "sd1-0-1-2-1-1")
 				scr_option("Wow Sabina, that's dedication, your album did so well too!", "sd1-0-1-2-1-2")
-				scr_option("I can show you all the works ;)", "sd1-0-1-2-3")
+				scr_option("I can show you all the works ;)", "sd1-0-1-2-1-3")
 				break;
 				
 					case "sd1-0-1-2-1-1":
@@ -1271,7 +1326,7 @@ function scr_dialogue(_text_id){
 					case "sd1-2-1-1-1":
 					SABINA
 					scr_text("Uhhh nerd alert??? I kinda like them nerdy though...")
-					scr_goto("sd1-3-p")
+					scr_goto("sd1-3")
 					break;
 					
 					
@@ -1293,14 +1348,14 @@ function scr_dialogue(_text_id){
 					SABINA_HAPPY
 					SAFF(1)
 					scr_text("oOo feisty...delicious...")
-					scr_goto("sd1-3-p")
+					scr_goto("sd1-3")
 					break;
 					
 					case "sd1-2-1-2-1-2":
 					SABINA_HMM
 					SAFF(-1)
 					scr_text("Knew it...no game...")
-					scr_goto("sd1-3-n")
+					scr_goto("sd1-3")
 					break;
 			
 			
@@ -1322,20 +1377,20 @@ function scr_dialogue(_text_id){
 					SABINA_ANGRY
 					SAFF(-1)
 					scr_text("Ugh, I don't know! I'm just a girl! Tabloid much??")
-					scr_option("uhhh", "sd1-3-n")
+					scr_option("uhhh", "sd1-3")
 					break;
 					
 					case "sd1-2-2-1-2":
 					SABINA
 					scr_text("Haha yeah me too, I think it was longer ago!! He was totally like 49 or something...")
 					scr_option("uhhh how old were you?", "sd1-2-2-1-2-1")
-					scr_option("Yeah...", "sd1-3-u")
+					scr_option("Yeah...", "sd1-3")
 					break;
 					
 						case "sd1-2-2-1-2-1":
 						SABINA_UPSET
 						scr_text("It's rude to ask a lady her age!")
-						scr_goto("sd1-3-n")
+						scr_goto("sd1-3")
 						break;
 						
 				case "sd1-2-2-2": //awesome!!
@@ -1349,48 +1404,48 @@ function scr_dialogue(_text_id){
 					case "sd1-2-2-2-1":
 					SABINA
 					scr_text("Haha Not more than me I hope!")
-					scr_goto("sd1-3-p")
+					scr_goto("sd1-3")
 					break;
 					
 					case "sd1-2-2-2-2":
 					SABINA_HMM
 					scr_text("Uhhh yeah! That president!")
-					scr_goto("sd1-3-n")
+					scr_goto("sd1-3")
 					break;
 					
-		case "sd1-3-p":
+		case "sd1-3":
 		SABINA
-		scr_text("Seems like we're running out of time. I had such a nice time with you!! At the beginning I said I always finish things quick, buuuuut I just loved talking to you so much I never want it to end!!!")
-		switch obj_date1_controller.s_final_m{
-			case 0:
-			scr_text("You're just such a treat to talk to!!! SUCH a treat... And that wax seal thing is cool! Kinda!")
+		if  global.sabina_affection > global.affection_margin {
+			scr_text("Seems like we're running out of time. I had such a nice time with you!! At the beginning I said I always finish things quick, buuuuut I just loved talking to you so much I never want it to end!!!")
+			switch obj_date1_controller.s_final_m{
+				case 0:
+				scr_text("You're just such a treat to talk to!!! SUCH a treat... And that wax seal thing is cool! Kinda!")
+				break;
+				case 1:
+				scr_text("You're just such a treat to talk to!!! SUCH a treat... And you like Peas Peas Peas! I love that song!!")
+				break;
+				case 2:
+				scr_text("You're just such a treat to talk to!!! SUCH a treat... And I'm soooo glad we share a HATRED for that Bolivia...she's SOOO trying to steal my thunder!!!")
+				break;
+				case 3:
+				scr_text("You're just such a treat to talk to!!! SUCH a treat... And the fact that you're so into hunting! I'm soooo into the fact that you care so much about a fresh kill!")
+				break;
+				case 4:
+				scr_text("You're just such a treat to talk to!!! SUCH a treat... And the whole IPA thing is soooo impressive...I'd just loooove to have your ability to drink like that...!")
+				break;
+			}
+			scr_text("Have fun on your other date!! I'll miss you!!")
+			scr_goto("kd1-0")
 			break;
-			case 1:
-			scr_text("You're just such a treat to talk to!!! SUCH a treat... And you like Peas Peas Peas! I love that song!!")
+		} else if global.sabina_affection < -global.affection_margin {
+			scr_text("Seems like we're running out of time. I'd say it was fun...but like honestly I did not feel the vibe... Oh well! Bye now!")
+			scr_goto("kd1-0")
 			break;
-			case 2:
-			scr_text("You're just such a treat to talk to!!! SUCH a treat... And I'm soooo glad we share a HATRED for that Bolivia...she's SOOO trying to steal my thunder!!!")
-			break;
-			case 3:
-			scr_text("You're just such a treat to talk to!!! SUCH a treat... And the fact that you're so into hunting! I'm soooo into the fact that you care so much about a fresh kill!")
-			break;
-			case 4:
-			scr_text("You're just such a treat to talk to!!! SUCH a treat... And the whole IPA thing is soooo impressive...I'd just loooove to have your ability to drink like that...!")
+		} else {
+			scr_text("Seems like we're running out of time. So I guess that's all! Sayonara, adiós, you're not bilingual, but you should know; Goodbyeeeeee")
+			scr_goto("kd1-0")
 			break;
 		}
-		scr_text("Have fun on your other date!! I'll miss you!!")
-		scr_goto("kd1-0")
-		break;
-		
-		case "sd1-3-u":
-		SABINA
-		scr_text("Seems like we're running out of time. So I guess that's all! Sayonara, adiós, you're not bilingual, but you should know; Goodbyeeeeee")
-		break;
-		
-		case "sd1-3-n":
-		SABINA
-		scr_text("Seems like we're running out of time. I'd say it was fun...but like honestly I did not feel the vibe... Oh well! Bye now!")
-		break;
 			
 			
 			
@@ -1780,24 +1835,181 @@ function scr_dialogue(_text_id){
 		case "kd1-1-p":
 		KYLE
 		scr_text("Ah, seems like we're outta time. Now at first I wasn't too sure bout you, glad to see you legit fam. Guess I can be wrong after all.. Nah, Sike! A playa' never wrong about good huzz. But FR it would be mad dope to see you again l8r, but I think you'll be back for thirds anyways.")
+		scr_goto("d1-leave")
+		break;
+		
+		case "d1-leave":
+		global.gamephase = GP.INTERMISSION2
+		room_goto(rm_studio)
+		scr_goto("hi2")
 		break;
 		
 		case "kd1-1-u":
 		KYLE
 		scr_text("Ah, seems like we're outta time. Tbh not sure if i'm really vibing with the energy you're emitting. If you ever wanna jump the bone or ride the dragon hmu.")
+		scr_goto("d1-leave")
 		break;
 		
 		case "kd1-1-n":
 		KYLE
 		scr_text("Ah, seems like we're outta time. I was hoping you would be legit, but nah. You just some normie tryin' seem cool. Don't hate the playa' for callin it as it is. Maybe if you were as devoted as I am you would be gettin some play' in this piece.")
+		scr_goto("d1-leave")
+		break;
 			
+//######################################################################[INTERMISSION 2]#########################################################
 			
-//######################################################################[DATE 2]#########################################################
-			
-			
-	
-	
+	case "hi2":
+	HOST
+	scr_text("And that’s the first date done! About the cast - did you like them? Did you hate them? Can’t you just IMAGINE how wonderful life might be with one of those beautiful monstrosities?")
+	scr_text("For the fans - voting for your favorite cast member is now available! As for you, " + global.name + " Let’s take a look at how you did with each of them!")
+	scr_text("This is the only time this information will be revealed to you - it’s the LOVE CHART! Take note of who likes you, who doesn’t really care about you, and who hates your guts!")
+	scr_option("Show me!", "hi2-1")
+	break;
 		
+	case "hi2-1":
+	obj_game_controller.showing_affection = true
+	scr_text("Take a look...")
+	scr_option("Continue", "hi2-2")
+	break;
+		
+	case "hi2-2":
+	obj_game_controller.showing_affection = false
+	HOST
+	scr_text("For the next date, you will give a rose to a cast member of your choice to “ask” them out to a romantic dinner! Don’t worry about rejection, they don’t have a choice!")
+	scr_text("Take this time to gauge interests. Once you’ve talked to everyone you want to talk to, come back to me to get a rose!")
+	break;
+		
+	case "hi2-nat":
+	HOST
+	scr_text("It looks like there are still some cast members you haven’t talked to yet! Would you still like a rose?")
+	scr_option("Yes", "hi2-give-rose")
+	scr_option("No", "hi2-nat-2")
+	break;
+		
+		case "hi2-give-rose":
+		HOST
+		scr_text("Got your sights set on someone? GOOD! Just give them this rose and enjoy your second date!")
+		obj_player.holding_rose = true
+		break;
+			
+		case "hi2-nat-2":
+		HOST
+		scr_text("Get back out there then!")
+		break;
+		
+	case "hi2-w-rose":
+	HOST
+	scr_text("M-me? You’d choose silly old me for a romantic dinner?")
+	scr_text("Haha no. Good luck with the others though!")
+	break;
+	
+	case "mi2-p":
+	MILTON
+	if !array_contains(obj_game_controller.i2_spoken_to, 1) {
+		array_push(obj_game_controller.i2_spoken_to, 1)
+	}
+	scr_text("Ah, greetings. While I hope you had a good time on the rest of your rendezvous, I also hope that none were as...enthralling as mine. It would be my utmost pleasure should you ask me on a second date.")
+	scr_text("Just imagine...no time constraint, just mine singular yet beautiful eye looking at dioptic and beautiful eyes across a candlelit tabletop.")
+	break;
+	
+	case "mi2-u":
+	MILTON_HMM
+	if !array_contains(obj_game_controller.i2_spoken_to, 1) {
+		array_push(obj_game_controller.i2_spoken_to, 1)
+	}
+	scr_text("Greetings. Did the rest of your rendezvous this evening go well? I understand if you feel the need to choose someone else, but I promise I would not be disinclined to go on a second date with you, should you ask...")
+	break;
+	
+	case "mi2-n":
+	MILTON_BRUH
+	if !array_contains(obj_game_controller.i2_spoken_to, 1) {
+		array_push(obj_game_controller.i2_spoken_to, 1)
+	}
+	scr_text("Honestly, it surprises me that you’re speaking to me right now. For both our sakes, I do think it would be best if you would choose someone else. I don’t know if I could stand such intellectual boredom once again.")
+	break;
+	
+	case "mi2-rose":
+	scr_text("Give Milton the rose?")
+	scr_option("Yes", "mi2-rose-y")
+	scr_option("No", "")
+	break;
+		
+		case "mi2-rose-y":
+		obj_player.holding_rose = false
+		//TODO
+		break;
+	
+	case "si2-p":
+	SABINA
+	if !array_contains(obj_game_controller.i2_spoken_to, 2) {
+		array_push(obj_game_controller.i2_spoken_to, 2)
+	}
+	scr_text("Hiiii!!! I had suuuch a good time on our date!! I have my fingers crossed that you’ll choose me for dinner tonight...if not I’ll be very angry. But I’m sure you’ll make the right choice! You were such a cutie pie for me, and I am ravenous...")
+	break;
+	
+	case "si2-u":
+	SABINA_HMM
+	if !array_contains(obj_game_controller.i2_spoken_to, 2) {
+		array_push(obj_game_controller.i2_spoken_to, 2)
+	}
+	scr_text("Heyyyy so were you thinking you were gonna choose me for dinner tonight? I wasn’t getting a crazzzyyyy vibe from you but like I could definitely go for some food!!")
+	break;
+	
+	case "si2-n":
+	SABINA_ANGRY
+	if !array_contains(obj_game_controller.i2_spoken_to, 2) {
+		array_push(obj_game_controller.i2_spoken_to, 2)
+	}
+	scr_text("Ugh, you STINKY BOLIVIA LOVER!!! Don’t even THINK of asking me to dinner!!! UGH. The first potential suit I’ve had in 2 months and you just HAD to be insufferable!!")
+	break;
+	
+	case "si2-rose":
+	scr_text("Give Sabina the rose?")
+	scr_option("Yes", "si2-rose-y")
+	scr_option("No", "")
+	break;
+	
+		case "si2-rose-y":
+		obj_player.holding_rose = false
+		//TODO
+		break;
+	
+	case "ki2-p":
+	KYLE_SMUG
+	if !array_contains(obj_game_controller.i2_spoken_to, 3) {
+		array_push(obj_game_controller.i2_spoken_to, 3)
+	}
+	scr_text("Hopin' you make the irresponsible move n pick me... Living for the danger, thats how I dig em.")
+	break;
+	
+	case "ki2-u":
+	KYLE
+	if !array_contains(obj_game_controller.i2_spoken_to, 3) {
+		array_push(obj_game_controller.i2_spoken_to, 3)
+	}
+	scr_text("Thinking of me for the rose? could a beta handle THEE alpha? Guess we'll have to see.")
+	break;
+	
+	case "ki2-n":
+	KYLE_UPSET
+	if !array_contains(obj_game_controller.i2_spoken_to, 3) {
+		array_push(obj_game_controller.i2_spoken_to, 3)
+	}
+	scr_text("Ayo what you even talking in this direction for. Your SMV is actually in the trenches fam...")
+	break;
+	
+	case "ki2-rose":
+	scr_text("Give Kyle the rose?")
+	scr_option("Yes", "ki2-rose-y")
+	scr_option("No", "")
+	break;
+	
+		case "ki2-rose-y":
+		obj_player.holding_rose = false
+		//TODO
+		break;
+	
+	
 	}
 	
 }
