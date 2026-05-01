@@ -4,10 +4,14 @@
 #macro MILTON_ANGRY scr_speaker(spr_nametag_milton,spr_milton_angry)
 #macro MILTON_HMM scr_speaker(spr_nametag_milton,spr_milton_hmm)
 #macro MILTON_BRUH scr_speaker(spr_nametag_milton,spr_milton_bruh)
-
 #macro MILTON_WIGGLE scr_speaker(spr_nametag_milton, spr_milton_wiggle)
 
 #macro SABINA scr_speaker(spr_nametag_sabina, spr_sabina_neutral)
+#macro SABINA_HAPPY scr_speaker(spr_nametag_sabina, spr_sabina_happy)
+#macro SABINA_ANGRY scr_speaker(spr_nametag_sabina, spr_sabina_angry)
+#macro SABINA_HMM scr_speaker(spr_nametag_sabina, spr_sabina_confused)
+#macro SABINA_UPSET scr_speaker(spr_nametag_sabina, spr_sabina_upset)
+#macro SABINA_MEAT scr_speaker(spr_nametag_sabina, spr_sabina_with_meat)
 
 #macro KYLE scr_speaker(spr_nametag_kyle, spr_kyle_neutral)
 #macro HOST scr_speaker(spr_nametag_host, spr_host_neutral)
@@ -176,9 +180,9 @@ function scr_dialogue(_text_id){
 				}
 			}
 			break;
-			
-			//----WHAT ARE YOU READING?----
-			case "md1-1-1":
+			//-----------------------------------------
+				
+			case "md1-1-1": //What are you reading??
 			MILTON
 			for (i = 0; i < array_length(global.md1_1_options); i++){
 				if global.md1_1_options[i][0] == 1 { array_delete(global.md1_1_options, i, 1)}
@@ -568,15 +572,815 @@ function scr_dialogue(_text_id){
 				scr_goto("md1-1-r")
 				break;
 					
+					
+		//###################################[ SABINA DATE 1 ]########################################################
+	
+	
+		case "sd1-0":
+			SABINA
+			scr_text("Omg heyyyyy cutie! I’m sooo glad we get some alone time...I just don’t know why they felt the need to call it a speed date. I mean, I allllways finish things quick ;)")
+			scr_option("Sabina Carpeter? Didn’t you go missing? What are you doing in St. Louiville?", "sd1-0-1")
+			break;
+			
+		case "sd1-0-1":
+		SABINA
+		scr_text("I told you those rumours were total salami you silly...sometimes a girl just needs to escape the city!!! Anywayyyys, what brought you to this neck of the woods? Did you hear I’d be here? Oh that rhymed! I should write that down...")
+		scr_option("My friends bullied me into breaking in and now im trapped here :(", "sd1-0-1-1")
+		scr_option("Wait but they found your home broken into? It’s been 2 months since anyone has seen you?", "sd1-0-1-2")
+		break;
+		
+			case "sd1-0-1-1":
+			SABINA_HMM
+			SAFF(1)
+			scr_text("Awwwwww...That’s so cute in a kinda pathetic way. Tell me, which of my songs is your fav?")
+			scr_option("Ummmm... I don’t listen to pop music much", "sd1-0-1-1-1")
+			scr_option("Ummmm... I like Bolivia Rodriguez more...", "sd1-0-1-1-2")
+			scr_option("\"Peas Peas Peas\"!", "sd1-0-1-1-3")
+			scr_option("\"Nonsense\"", "sd1-0-1-1-4")
+			break;
+			
+				case "sd1-0-1-1-1":
+				SABINA_ANGRY
+				SAFF(-1)
+				scr_text("Oh, so you’re one of those people...I bet you’re a blast at parties…")
+				scr_option("I just like other music more…", "sd1-0-1-1-1-1")
+				scr_option("I don’t get invited to many parties…", "sd1-0-1-1-1-2")
+				break;
 				
+					case "sd1-0-1-1-1-1":
+					SABINA_HMM
+					scr_text("Tell me you have no Taste without telling me you have no Taste??")
+					scr_option("I actually have great taste, pop music is just boring.", "sd1-0-1-1-1-1-1")
+					scr_option("I still love pop music! I just have been in a classical mood lately…", "sd1-0-1-1-1-1-2")
+					break;
+					
+						case "sd1-0-1-1-1-1-1":
+						SABINA_UPSET
+						SAFF(-1)
+						scr_text("Wow! You must have less humanity than I do!")
+						scr_goto("sd1-1-p")
+						break;
+						
+						case "sd1-0-1-1-1-1-2":
+						SABINA
+						scr_text("Oh that’s totally fair. I remember listening to DeBussy when I was younger...Such delicious uhhh piano! Such quick fingers...")
+						scr_goto("sd1-1-u")
+						break;
+						
+					case "sd1-0-1-1-1-2": //to many parties
+					SABINA_HMM
+					scr_text("Booooooorrrrinngggggggg...what do you even do in your free time???")
+					scr_option("Create custom wax seals.", "sd1-0-1-1-1-2-1")
+					scr_option("Reading", "sd1-0-1-1-1-2-2")
+					scr_option("Volunteering at an animal shelter", "sd1-0-1-1-1-2-3")
+					break;
+					
+						case "sd1-0-1-1-1-2-1":
+						SABINA
+						SAFF(1)
+						scr_text("Oh how I revel in the memory of me and the girlies sending letters off during the plaug….. Demic…. The plaugedemic. Uhm anyways lets change the subject!")
+						obj_date1_controller.s_final_m = 0
+						scr_goto("sd1-1-p")
+						break;
+						
+						case "sd1-0-1-1-1-2-2":
+						SABINA_HMM
+						scr_text("Hmm. I've never tried that.")
+						scr_goto("sd1-1-u")
+						break;
+						
+						case "sd1-0-1-1-1-2-3":
+						SABINA
+						scr_text("I hear they’re super overpopulated. Why don’t we just like... eat them... Just kidding! Haha it’s just a joke! Whats that look for??")
+						scr_option("That wasn’t very funny", "sd1-0-1-1-1-2-3-1")
+						scr_option("You’re just so... eccentric!", "sd1-0-1-1-1-2-3-2")
+						break;
+						
+							case "sd1-0-1-1-1-2-3-1":
+							SABINA_UPSET
+							SAFF(-1)
+							scr_text("Ugh... everyone’s a critic.")
+							scr_goto("sd1-1-n")
+							break;
+							
+							case "sd1-0-1-1-1-2-3-2":
+							SABINA_HAPPY
+							SAFF(1)
+							scr_text("Well yes, I do love being centric!")
+							scr_goto("sd1-1-p")
+							break;
+							
+			case "sd1-0-1-1-2": // ...I like bolivia more
+			SABINA_UPSET
+			SAFF(-2)
+			scr_text("Oh! Well that’s certainly a choice.")
+			scr_option("Do you have something against Bolivia?","sd1-0-1-1-2-1")
+			scr_option("But you’re totally the prettiest pop girl!!","sd1-0-1-1-2-2")
+			break;
+			
+				case "sd1-0-1-1-2-1":
+				SABINA
+				scr_text("Oh well... you could say that.")
+				scr_option("Context?","sd1-0-1-1-2-1-1")
+				scr_option("At least she’s no homewrecker...","sd1-0-1-1-2-1-2")
+				break;
+				
+					case "sd1-0-1-1-2-1-1":
+					SABINA_HMM
+					scr_text("Let’s just say she has a way to get under my skin...")
+					scr_option("Context????", "sd1-context")
+					break;
+			
+						case "sd1-context":
+						SABINA_ANGRY
+						scr_text("Well obviously Driver’s License!! Do you live under a rock?")
+						scr_option("Omg I remember that drama!! I thought it was squashed at this point though?", "sd1-context-1")
+						scr_option("Driver’s License? The song?", "sd1-context-2")
+						break;
+						
+							case "sd1-context-1":
+							SABINA_UPSET
+							scr_text("No way José! She was totally singing about my Joshie!!")
+							scr_option("Oh totally. You’re definitely right about her.", "sd1-context-1-1")
+							scr_option("I don’t know...she said pretty recently that she thought you guys were chill...", "sd1-context-1-2")
+							break;
+							
+								case "sd1-context-1-1":
+								SABINA_HAPPY
+								SAFF(3)
+								scr_text("Ugh thank youuuu! Not everyone is so understanding!")
+								scr_goto("sd1-1-p")
+								break;
+								
+								case "sd1-context-1-2":
+								SABINA_ANGRY
+								scr_text("She sai- how dare she! After what she put me through?! Ugh ugh UGH! I WILL KILL HER. I WILL- ahem, I will make sure to talk to her about that sometime privately!")
+								scr_option("Woah what was that about?", "sd1-context-1-2-1")
+								scr_option("Go girl!! Get her!!", "sd1-context-1-2-2")
+								break;
+								
+									case "sd1-context-1-2-1":
+									SABINA_HMM
+									SAFF(-1)
+									scr_text("What? A girl can’t have some pent up anger??? Ugh.")
+									scr_goto("sd1-1-n")
+									break;
+									
+									case "sd1-context-1-2-2":
+									SABINA
+									SAFF(1)
+									scr_text("Haha don’t worry! I was just feeling a little angry! I would NEVER hurt anyone!! Unconsensually that is... ;)")
+									scr_goto("sd1-1-p")
+									break;
+									
+							case "sd1-context-2": //drivers liscence??
+							SABINA_UPSET
+							scr_text("Yeah! She was totally singing about my Joshie! I just had to put her in her place with Skin. I love that song! It means even more to me now than it did when I wrote it!")
+							scr_option("How so?", "sd1-context-2-1")
+							scr_option("\"Put her in her place\" is a bit much...", "sd1-context-2-2")
+							scr_option("She totally was!! What a two faced snake!!", "sd1-context-2-3")
+							break;
+							
+								case "sd1-context-2-1":
+								SABINA
+								scr_text("I’m just really into skincare, its my new thing. #moisturized queen")
+								scr_goto("sd1-1-p")
+								break;
+								
+								case "sd1-context-2-2":
+								SABINA_UPSET
+								SAFF(-1)
+								scr_text("Ugh. I thought you would understand. Whatever.")
+								scr_goto("sd1-1-n")
+								break;
+								
+								case "sd1-context-2-3":
+								SABINA_HAPPY
+								SAFF(2)
+								scr_text("YEAH!!! SHE IS A TWO FACED SNAKE!!! Unlike you, you’re amazing...")
+								scr_goto("sd1-1-p")
+								break;
+								
+					case "sd1-0-1-1-2-1-2": //atleast no homewrecker...
+					SABINA_ANGRY
+					SAFF(-1)
+					scr_text("Ugh! Didn’t I tell you those rumors were total salami?! Unbelievable...")
+					scr_goto("sd1-1-n")
+					break;
+					
+				case "sd1-0-1-1-2-2": //prettiest pop girl
+				SABINA_HAPPY
+				SAFF(2)
+				scr_text("Hehehe I can see my skincare routine is werking!! Y’know what they say your body is a temple, and the skins the biggest organ! I make sure to water mine daily!!")
+				scr_option("Water yours daily??","sd1-0-1-1-2-2-1")
+				scr_option("It is TOTALLY working girl! Your skin is literally GORG rn!!","sd1-0-1-1-2-2-2")
+				break;
+				
+					case "sd1-0-1-1-2-2-1":
+					SABINA
+					scr_text("Uh duh!!! You don’t water yours??")
+					scr_option("No...", "sd1-0-1-1-2-2-1-1")
+					scr_option("You mean like showering?", "sd1-0-1-1-2-2-1-2")
+					break;
+					
+						case "sd1-0-1-1-2-2-1-1":
+						SABINA_HMM
+						SAFF(-1)
+						scr_text("Pfft weird. I can totally tell by the way. It’s kinda gross...")
+						scr_goto("sd1-1-n")
+						break;
+						
+						case "sd1-0-1-1-2-2-1-2":
+						SABINA_HMM
+						scr_text("Uh of course!! What else could I have possibly meant...")
+						scr_option("Yeaaahhhhhh...", "sd1-0-1-1-2-2-1-2-1")
+						scr_option("That’s just a weird way to say it", "sd1-0-1-1-2-2-1-2-2")
+						break;
+						
+							case "sd1-0-1-1-2-2-1-2-1":
+							SABINA
+							scr_text("Haha... Well, speaking of skin-")
+							scr_goto("sd1-1-p")
+							break;
+							
+							case "sd1-0-1-1-2-2-1-2-2":
+							SABINA
+							scr_text("I’m an ARTIST silly!! It’s my job to come up with weird things to say!")
+							scr_goto("sd1-1-p")
+							break;
+					
+					case "sd1-0-1-1-2-2-2": //skin is gorg
+					SABINA
+					SAFF(1)
+					scr_text("THANK YOU!!!! I’ve been working SO hard to keep it all moist! It’s a never ending job! The water just flows right off...silly skin!!!")
+					scr_goto("sd1-1-p")
+					break;
+					
+			case "sd1-0-1-1-3": // peas peas peas
+			SABINA_HAPPY
+			SAFF(1)
+			scr_text("I knew I had good judgement, I knew you’d have good taste!")
+			obj_date1_controller.s_final_m = 1
+			scr_option("Is that how the lyrics go????", "sd1-0-1-1-2-1")
+			scr_option("Thanks! I like to think I do as well!", "sd1-0-1-1-2-2")
+			break;
+			
+				case "sd1-0-1-1-3-1":
+				SABINA_HMM
+				scr_text("Uhmmmm sure! Which song did you think it was?")
+				scr_option("Uhhh Peas Peas Peas...", "sd1-0-1-1-2-1-1")
+				scr_option("You don’t know which one it’s from?", "sd1-0-1-1-2-1-2")
+				break;
+				
+					case "sd1-0-1-1-3-1-1":
+					SABINA
+					scr_text("Haha you’re right! I was just testing you silly...")
+					scr_option("Really?", "sd1-0-1-1-2-1-1-1")
+					scr_option("You’re so silllyyyy", "sd1-silly")
+					break;
+					
+						case "sd1-0-1-1-3-1-1-1":
+						SABINA_HMM
+						SAFF(-1)
+						scr_text("Duhhh! It’s not that deep!!!!!!")
+						scr_goto("sd1-1-u")
+						break;
+						
+						case "sd1-silly":
+						SABINA_HAPPY
+						SAFF(1)
+						scr_text("Hehe I'm glad you think so!")
+						scr_goto("sd1-1-p")
+					
+					case "sd1-0-1-1-3-1-2": //you dont know?
+					SABINA
+					scr_text("Of course I do! I just wanted to see if you knew!!")
+					scr_option("So which one was it from?", "sd1-0-1-1-3-1-2-1")
+					scr_option("You’re so silllyyyy", "sd1-silly")
+					break;
+					
+						case "sd1-0-1-1-3-1-2-1":
+						SABINA_ANGRY
+						SAFF(-2)
+						scr_text("As if I wouldn’t know my own song...I’m the Sabina Carpeter, obviously I know my songs.")
+						scr_goto("sd1-1-n")
+				
+				case "sd1-0-1-1-3-2": //i think i do as well!
+				SABINA
+				scr_text("Well you have my stamp of approval! Thank goodness you’re not one of those Bolivia Rodriguez stans...")
+				scr_option("Do you have something against Bolivia?", "sd1-0-1-1-2-2-1")
+				scr_option("Actually...", "sd1-0-1-1-2-2-2")
+				break;
+				
+					case "sd1-0-1-1-3-2-1":
+					SABINA_UPSET
+					scr_text("Oh well... you could say that.")
+					scr_option("Context???", "sd1-context")
+					scr_option("Me too girl...", "sd1-0-1-1-2-2-1-2")
+					break;
+						
+						case "sd1-0-1-1-3-2-1-2":
+						SABINA_HAPPY
+						SAFF(2)
+						scr_text("OMG REALLY!!! She’s SUCH a SKANK isn’t she??")
+						scr_option("Oh for sure...", "sd1-0-1-1-2-2-1-2-1")
+						scr_option("Uhhh that’s a little much...", "sd1-0-1-1-2-2-1-2-2")
+						break;
+						
+							case "sd1-0-1-1-3-2-1-2-1":
+							SABINA
+							SAFF(1)
+							scr_text("Ugh it’s SOO nice to have an ally. Most people just don’t understand...")
+							scr_goto("sd1-1-p")
+							break;
+							
+							case "sd1-0-1-1-3-2-1-2-2":
+							SABINA_UPSET
+							SAFF(-2)
+							scr_text("Ugh I knew you wouldn't understand. No one ever does.")
+							scr_goto("sd1-1-n")
+							break;
+					
+					case "sd1-0-1-1-3-2-2": //actually...
+					SABINA_UPSET
+					SAFF(-1)
+					scr_text("Ugh! I should have known...just because you like my music doesn’t give you a Bolivia Pass!!")
+					scr_option("What’s wrong with Bolivia?", "sd1-0-1-1-2-2-1-1")
+					scr_option("I just like her music!", "sd1-0-1-1-2-2-1-2")
+					break;
+					
+						case "sd1-0-1-1-3-2-2-1":
+						SABINA_ANGRY
+						scr_text("She TOTALLY wants my man...she’s just a jealous two faced SNAKE who makes worse music than me...")
+						scr_option("It sounds like you’re the jealous one...", "sd1-0-1-1-2-2-1-1-1")
+						scr_option("You know what? She is. You’re right.", "sd1-0-1-1-2-2-1-1-2")
+						break;
+						
+							case "sd1-0-1-1-3-2-2-1-1":
+							SABINA_ANGRY
+							SAFF(-2)
+							scr_text("OF COURSE YOU WOULD THINK THAT. DISGUSTING BOLIVIA FAN.")
+							scr_goto("sd1-1-n")
+							break;
+							
+							case "sd1-0-1-1-3-2-2-1-2":
+							SABINA
+							SAFF(1)
+							scr_text("I knew you’d come around!! She just SUCKS doesn’t she?? I hate that SKANK. Uhmmm… ..anyways..")
+							scr_goto("sd1-1-p")
+							break;
+						
+						case "sd1-0-1-1-3-2-2-2": //just like her music
+						SABINA_UPSET
+						scr_text("So lameeeee...I thought you seemed cool...you’re NOT getting that Jorno pose later anymore.")
+						scr_goto("sd1-1-n")
+						break;
+					
+			case "sd1-0-1-1-4": // Nonsense
+			SABINA_UPSET
+			SAFF(-1)
+			scr_text("Hey! My songs make perfect sense! I thought I would like you, but you’re just a meanie.")
+			scr_option("Huh? I mean your song called \"Nonsense\"", "sd1-0-1-1-4-1")
+			scr_option("Sense is a strong word for your music.", "sd1-0-1-1-4-2")
+			break;
+			
+				case "sd1-0-1-1-4-1":
+				SABINA
+				scr_text("Oh... Of course! haha. Just joking around!")
+				scr_option("I love the adlibs at the end, how do they go again?", "sd1-0-1-1-4-1-1")
+				scr_option("Are you? Don’t tell me you forgot about that classic!", "sd1-0-1-1-4-1-2")
+				break;
+				
+					case "sd1-0-1-1-4-1-1":
+					SABINA_HMM
+					scr_text("Hahaha... uhhhh... I save those for the post show ;)")
+					scr_goto("sd1-1-u")
+					break;
+					
+					case "sd1-0-1-1-4-1-2":
+					SABINA
+					SAFF(1)
+					scr_text("Are you? Don’t tell me you forgot about that classic!")
+					scr_goto("sd1-1-p")
+					break;
+				
+				case "sd1-0-1-1-4-2": //sense is a strong word
+				SABINA_ANGRY
+				SAFF(-1)
+				scr_text("Hey! My music is very deep! You’ve clearly never listened to a song before!")
+				scr_option("All you sing about is boys! What about girl power?", "sd1-0-1-1-4-2-1")
+				scr_option("Most of your songs are just innuendos!", "sd1-0-1-1-4-2-2")
+				break;
+				
+					case "sd1-0-1-1-4-2-1":
+					SABINA_HMM
+					scr_text("I totally don’t only sing about boys!!! I’m like the number 1 girl power supporter!!")
+					scr_option("What about your newest album cover then?", "sd1-0-1-1-4-2-1-1")
+					scr_option("If I counted all your songs without boys in them, I wouldn’t even use 2 hands...", "sd1-0-1-1-4-2-1-2")
+					break;
+					
+						case "sd1-0-1-1-4-2-1-1":
+						SABINA
+						scr_text("Well that was just art silly! What exactly was in it?")
+						scr_option("You don’t know what was in your own album cover?", "sd1-0-1-1-4-2-1-1-1")
+						break;
+						
+							case "sd1-0-1-1-4-2-1-1-1":
+							SABINA_HMM
+							scr_text("Of course I do! I just meant what was in it that made you think I didn’t care about girl power??")
+							scr_option("Your hair is getting held like it’s a leash and you’re on all fours...", "sd1-0-1-1-4-2-1-1-1-1")
+							scr_option("Welllll I guess it could technically be girl power if it’s a commentary thing", "sd1-0-1-1-4-2-1-1-1-2")
+							break;
+						
+								case "sd1-0-1-1-4-2-1-1-1-1":
+								SABINA_ANGRY
+								SAFF(-1)
+								scr_text("The irony obviously flew over your head.")
+								scr_goto("sd1-1-n")
+								break;
+							
+								case "sd1-0-1-1-4-2-1-1-1-2":
+								SABINA
+								SAFF(1)
+								scr_text("Haha exactly!!! That’s exactly what I was going for!! You’re sooooo smart....you’re soooo....sooo...anyways")
+								scr_goto("sd1-1-p")
+								break;
+							
+						case "sd1-0-1-1-4-2-1-2": //2 hands
+						SABINA_UPSET
+						SAFF(-1)
+						scr_text("Hey! That...might be true! BUT if you counted my songs with no GIRLS in them you wouldn’t have to use any hands!! HA!")
+						scr_option("Hmmmm maybe that’s true...", "sd1-0-1-1-4-2-1-2-1")
+						scr_option("I don’t know...", "sd1-0-1-1-4-2-1-2-2")
+						break;
+						
+							case "sd1-0-1-1-4-2-1-2-1":
+							SABINA_HAPPY
+							SAFF(1)
+							scr_text("It totally is! Like I said, GIRL POWER!!!")
+							scr_goto("sd1-1-p")
+							break;
+							
+							case "sd1-0-1-1-4-2-1-2-2":
+							SABINA_HMM
+							SAFF(-1)
+							scr_text("Ugh...you really think you know my songs better than I do??? Pretentious much....")
+							scr_goto("sd1-1-n")
+							break;
+					
+					case "sd1-0-1-1-4-2-2": //just innuendos
+					SABINA
+					scr_text("Well I for one love innuendos...they make my music so much deeper don’t they?")
+					scr_option("Not really...", "sd1-0-1-1-4-2-2-1")
+					scr_option("They totally do...", "sd1-0-1-1-4-2-2-2")
+					break;
+					
+						case "sd1-0-1-1-4-2-2-1":
+						SABINA_UPSET
+						SAFF(-1)
+						scr_text("They do! Not that you’d notice... cause that went right over your head...")
+						scr_option("What went over my head?", "sd1-0-1-1-4-2-2-1-1")
+						scr_option("No, I just don’t think they’re deep.", "sd1-0-1-1-4-2-2-1-2")
+						break;
+						
+							case "sd1-0-1-1-4-2-2-1-1":
+							SABINA_HMM
+							scr_text("Wow you might be dumber than I am! At least you're pretty...")
+							scr_goto("sd1-1-p")
+							break;
+							
+							case "sd1-0-1-1-4-2-2-1-2":
+							SABINA_ANGRY
+							SAFF(-1)
+							scr_text("So you just have no taste...")
+							scr_goto("sd1-1-n")
+							break;
+					
+						case "sd1-0-1-1-4-2-2-2": //totally do
+						SABINA
+						scr_text("Just how I like my music...deeeeeppp ;)")
+						scr_option("What’s that supposed to mean?", "sd1-0-1-1-4-2-2-2-1")
+						scr_option("Sounds like we’re a match made in heaven...", "sd1-0-1-1-4-2-2-2-2")
+						break;
+						
+							case "sd1-0-1-1-4-2-2-2-1":
+							SABINA_HMM
+							scr_text("Oh nothing...")
+							scr_goto("sd1-1-p")
+							break;
+							
+							case "sd1-0-1-1-4-2-2-2-2":
+							SABINA_HAPPY
+							SAFF(2)
+							scr_text("Oh wonderful...you’ll definitely be receiving that Jorno pose later...")
+							scr_goto("sd1-1-p")
+							break;
+							
+			case "sd1-0-1-2": //home broken into???
+			SABINA_ANGRY
+			SAFF(-1)
+			scr_text("Talk about nosy! This date’s starting to feel more like a tabloid interview. Ugh.")
+			scr_option("But Sabina you missed the Grammys!", "sd1-0-1-2-1")
+			break;
+			
+				case "sd1-0-1-2-1":
+				SABINA
+				scr_text("Everyone knows the judges are paid off anyways and I don't need no fake little gold man. He can’t even show me the works! Men are so blah these days anyways.")
+				scr_option("Sabina... The Oscars have the little men, not the grammys...", "sd1-0-1-2-1-1")
+				scr_option("Wow Sabina, that's dedication, your album did so well too!", "sd1-0-1-2-1-2")
+				scr_option("I can show you all the works ;)", "sd1-0-1-2-3")
+				break;
+				
+					case "sd1-0-1-2-1-1":
+					SABINA_HMM
+					scr_text("Uhh I don’t think so! Why would some guy named Oscar be giving out little men??")
+					scr_goto("sd1-1-u")
+					break;
+					
+					case "sd1-0-1-2-1-2": //dedication album did well
+					SABINA
+					scr_text("Yeah! It was superrr difficult to write… coming up with that many words in a row can be a real challenge.")
+					scr_option("Is it true the albums based off of Berry Keogham??", "sd1-0-1-2-2-1")
+					scr_option("I get it, childman did get a lot of backlash.", "sd1-0-1-2-2-2")
+					break;
+					
+						case "sd1-0-1-2-1-2-1":
+						SABINA_HMM
+						scr_text("No not at all! It all came right from my stomach. The stomach's the closest organ to the heart! Or however the saying goes~~")
+						scr_goto("sd1-1-u")
+						break;
+						
+						case "sd1-0-1-2-1-2-2":
+						SABINA_UPSET
+						scr_text("Totally not fair at all! How was I supposed to know you can’t call someone slow anymore! I think that stupid Bolivia Rodriguez was behind it")
+						scr_text("The tabloids just love to talk about us. According to the tabloids she wants to make amends, but she just makes me want to take a musket out back!")
+						scr_option("Don’t forgive her! That was your award to win!" , "sd1-0-1-2-2-2-1")
+						scr_option("You shouldn't focus so much on her! She’ll just bring you down!" , "sd1-0-1-2-2-2-2")
+						break;
+						
+							case "sd1-0-1-2-1-2-2-1":
+							SABINA_HAPPY
+							SAFF(2)
+							scr_text("Wowie! You really seem to get me. Normally I tell people about how much I hate Bolivia Rodriguez and they just don’t get it. Her skin's just so perfect! It’s not fair, but I'm glad you see how she really is ;).")
+							obj_date1_controller.s_final_m = 2
+							scr_goto("sd1-1-p")
+							break;
+							
+							case "sd1-0-1-2-1-2-2-2":
+							SABINA_HMM
+							scr_text("I see you’ve never had a sworn enemy! The tabloids have revealed to me all her dirty lies. I can’t fight fire with water! Fire can only be fought with fire!")
+							scr_goto("sd1-1-u")
+							break;
+					
+					case "sd1-0-1-2-1-3": //can show you the works
+					SABINA
+					SAFF(1)
+					scr_text("Mi-wow you're a feisty one! I’ve dealt with a few of your kind before though, don’t take me as some untaught simpleton! Tell me why I should trust you to show me the works~")
+					scr_option("I'm competent!", "sd1-0-1-2-3-1")
+					scr_option("I can assemble any Ikea chair... blindfolded", "sd1-0-1-2-3-2")
+					scr_option("I can mountain dew it for ya", "sd1-0-1-2-3-3")
+					break;
+					
+						case "sd1-0-1-2-1-3-1":
+						SABINA_HMM
+						SAFF(-1)
+						scr_text("Uh... Didn’t you get locked in here?")
+						scr_goto("sd1-1-n")
+						break;
+						
+						case "sd1-0-1-2-1-3-2":
+						SABINA_HAPPY
+						SAFF(1)
+						scr_text("Now we're talking! Might need to take you out to the woods to test this one.")
+						scr_goto("sd1-1-p")
+						break;
+						
+						case "sd1-0-1-2-1-3-3":
+						SABINA
+						scr_text("Ah, yes, a peaceful dewy morning on a mountaintop, what a serene scene.")
+						scr_goto("sd1-1-u")
+						break;	
+						
+						
+		case "sd1-1-p":
+		SABINA
+		scr_text("Your skin is GLOWING by the way. Like I wish I could steal it, you’re gorgeous! If you could take me out on a dream date, what would it be?")
+		scr_option("Sunset on a lake as I strum my guitar along with the birds chirping.", "sd1-1-sunset")
+		scr_option("There's nothing as romantic as hunting! I'd take you to the woods to hunt some wild game.", "sd1-1-hunt")
+		scr_option("Bowling.", "sd1-1-bowling")
+		break;
+		
+		case "sd1-1-u":
+		SABINA
+		scr_text("Sooo if we could get out of here right nowwww where would you want to take me?")
+		scr_option("Sunset on a lake as I strum my guitar along with the birds chirping.", "sd1-1-sunset")
+		scr_option("There's nothing as romantic as hunting! I'd take you to the woods to hunt some wild game.", "sd1-1-hunt")
+		scr_option("Bowling.", "sd1-1-bowling")
+		break;
+		
+		case "sd1-1-n":
+		SABINA
+		scr_text("I hope you're better in bed than in conversation (eyeroll). I guess not everyone is a sonneteer, but if you could take me out anywhere right now where would you take me?")
+		scr_option("Sunset on a lake as I strum my guitar along with the birds chirping.", "sd1-1-sunset")
+		scr_option("There's nothing as romantic as hunting! I'd take you to the woods to hunt some wild game.", "sd1-1-hunt")
+		scr_option("Bowling.", "sd1-1-bowling")
+		break;
+			
+			case "sd1-1-sunset":
+			SABINA_HMM
+			scr_text("Okay Hallmark. That sounds nice I suppose.")
+			scr_goto("sd1-2-u")
+			break;
+			
+			case "sd1-1-hunt":
+			SABINA_HAPPY
+			SAFF(2)
+			scr_text("Oh " + global.name + "!! You really know your way to a girl's heart! It’s indescribable just how delectable a fresh kill is!")
+			obj_date1_controller.s_final_m = 3
+			scr_option("The meat is just so much fresher! I’m glad you understand.", "sd1-1-hunt-1")
+			scr_option("Haha... yeah... are you ok?", "sd1-1-hunt-2")
+			break;
+			
+				case "sd1-1-hunt-1":
+				SABINA
+				SAFF(1)
+				scr_text("Omigosh yessss I just LIVE for that first bite!")
+				scr_goto("sd1-2-p")
+				break;
+				
+				case "sd1-1-hunt-2":
+				SABINA_HMM
+				scr_text("Oh of course! I was just reminiscing about my favorite meals...")
+				scr_goto("sd1-2-u")
+				break;
 				
 			
+			case "sd1-1-bowling":
+			SABINA_HMM
+			SAFF(-1)
+			scr_text("Maybe it’s a good thing we’re stuck in here after all...")
+			scr_goto("sd1-2-n")
+			break;
+			
+		
+		case "sd1-2-p":
+		SABINA
+		scr_text("You obviously know how to have a good time, is there anything else you like doing??")
+		scr_option("You're talking to the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
+		scr_option("The party scene is soo dead. Do you even get invited to many?", "sd1-2-2")
+		break;
+		
+		case "sd1-2-u":
+		SABINA
+		scr_text("Soooo do you like doing anything else?")
+		scr_option("You're talking to the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
+		scr_option("The party scene is soo dead. Do you even get invited to many?", "sd1-2-2")
+		break;
+		
+		case "sd1-2-n":
+		SABINA
+		scr_text("Boring much...do you ever go to events or anything?")
+		scr_option("You're talking to the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
+		scr_option("The party scene is soo dead. Do you even get invited to many?", "sd1-2-2")
+		break;
+		
+			case "sd1-2-1":
+			SABINA_HMM
+			scr_text("Wow a drunken stranger wandering lost in the woods...maybe you WERE made for me!")
+			obj_date1_controller.s_final_m = 4
+			scr_option("Haha, I see why you have so many love songs...", "sd1-2-1-1")
+			scr_option("Hmm, I see why you have so many breakup songs...", "sd1-2-1-2")
+			break;
+			
+				case "sd1-2-1-1":
+				SABINA
+				SAFF(1)
+				scr_text("I’m just a lover girlllll!!! It’s in my DNA! Do you have anything interesting in your DNA?")
+				scr_option("Uh, just polynucleotide chains!", "sd1-2-1-1-1")
+				break;
+				
+					case "sd1-2-1-1-1":
+					SABINA
+					scr_text("Uhhh nerd alert??? I kinda like them nerdy though…")
+					scr_goto("sd1-3-p")
+					break;
+					
+					
+			case "sd1-2-1-2": //breakup songs
+			SABINA_UPSET
+			SAFF(-1)
+			scr_text("Not much of a thrill seeker I see...maybe that’s why you don’t get any...")
+			scr_option("Hey! I get plenty!", "sd1-2-1-2-1")
+			break;
+			
+				case "sd1-2-1-2-1":
+				SABINA
+				scr_text("Hmmm... why don’t you prove it?")
+				scr_option("Why don’t you earn it?", "sd1-2-1-2-1-1")
+				scr_option("Well, uhm, I just don’t know if The Host will let us...", "sd1-2-1-2-1-2")
+				break;
+				
+					case "sd1-2-1-2-1-1":
+					SABINA_HAPPY
+					SAFF(1)
+					scr_text("oOo feisty...delicious...")
+					scr_goto("sd1-3-p")
+					break;
+					
+					case "sd1-2-1-2-1-2":
+					SABINA_HMM
+					SAFF(-1)
+					scr_text("Knew it...no game...")
+					scr_goto("sd1-3-n")
+					break;
 			
 			
+			case "sd1-2-2": //party scene dead
+			SABINA
+			scr_text("Just a couple years ago I was at Michael Jackson's 69th birthday party! Bet you've never been to MJ's")
+			scr_option("I thought he died when he was 50...", "sd1-2-2-1")
+			scr_option("Wow I haven’t...that’s awesome!!!", "sd1-2-2-2")
+			break;
 			
-			
-			
-			
+				case "sd1-2-2-1":
+				SABINA_HMM
+				scr_text("I guess technically yeah...")
+				scr_option("Technically?", "sd1-2-2-1-1")
+				scr_option("I might just have the date wrong...", "sd1-2-2-1-2")
+				break;
+				
+					case "sd1-2-2-1-1":
+					SABINA_ANGRY
+					SAFF(-1)
+					scr_text("Ugh, I don’t know! I’m just a girl! Tabloid much??")
+					scr_option("uhhh", "sd1-3-n")
+					break;
+					
+					case "sd1-2-2-1-2":
+					SABINA
+					scr_text("Haha yeah me too, I think it was longer ago!! He was totally like 49 or something...")
+					scr_option("uhhh how old were you?", "sd1-2-2-1-2-1")
+					scr_option("Yeah...", "sd1-3-u")
+					break;
+					
+						case "sd1-2-2-1-2-1":
+						SABINA_UPSET
+						scr_text("It’s rude to ask a lady her age!")
+						scr_goto("sd1-3-n")
+						break;
+						
+				case "sd1-2-2-2": //awesome!!
+				SABINA_HAPPY
+				SAFF(1)
+				scr_text("Right?! I've also been to Rihanna, Bolivia Rodriguez, George Was- I mean W. Bush...and Henry Caville!")
+				scr_option("Amazing! I love Rihanna!!", "sd1-2-2-2-1")
+				scr_option("George W. Bush? The president?!", "sd1-2-2-2-2")
+				break;
+				
+					case "sd1-2-2-2-1":
+					SABINA
+					scr_text("Haha Not more than me I hope!")
+					scr_goto("sd1-3-p")
+					break;
+					
+					case "sd1-2-2-2-2":
+					SABINA_HMM
+					scr_text("Uhhh yeah! That president!")
+					scr_goto("sd1-3-n")
+					break;
+					
+		case "sd1-3-p":
+		SABINA
+		scr_text("Seems like we're running out of time. I had such a nice time with you!! At the beginning I said I always finish things quick, buuuuut I just loved talking to you so much I never want it to end!!!")
+		switch obj_date1_controller.s_final_m{
+			case 0:
+			scr_text("You’re just such a treat to talk to!!! SUCH a treat... And that wax seal thing is cool! Kinda!")
+			break;
+			case 1:
+			scr_text("You’re just such a treat to talk to!!! SUCH a treat... And you like Peas Peas Peas! I love that song!!")
+			break;
+			case 2:
+			scr_text("You’re just such a treat to talk to!!! SUCH a treat... And I’m soooo glad we share a HATRED for that Bolivia...she’s SOOO trying to steal my thunder!!!")
+			break;
+			case 3:
+			scr_text("You’re just such a treat to talk to!!! SUCH a treat... And the fact that you’re so into hunting! I’m soooo into the fact that you care so much about a fresh kill!")
+			break;
+			case 4:
+			scr_text("You’re just such a treat to talk to!!! SUCH a treat... And the whole IPA thing is soooo impressive...I’d just loooove to have your ability to drink like that...!")
+			break;
+		}
+		scr_text("Have fun on your other date!! I’ll miss you!!")
+		break;
+		
+		case "sd1-3-u":
+		SABINA
+		scr_text("Seems like we're running out of time. So I guess that’s all! Sayonara, adiós, you're not bilingual, but you should know; Goodbyeeeeee")
+		break;
+		
+		case "sd1-3-n":
+		SABINA
+		scr_text("Seems like we're running out of time. I'd say it was fun…but like honestly I did not feel the vibe… Oh well! Bye now!")
+		break;
 			
 			
 			

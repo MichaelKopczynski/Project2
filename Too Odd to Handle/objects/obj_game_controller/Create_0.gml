@@ -15,6 +15,7 @@ enum GP {
 }
 
 global.gamephase = GP.INTERMISSION1
+global.name = ""
 
 global.milton_affection = 0
 global.sabina_affection = 0
