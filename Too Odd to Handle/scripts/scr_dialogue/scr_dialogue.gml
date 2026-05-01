@@ -14,6 +14,11 @@
 #macro SABINA_MEAT scr_speaker(spr_nametag_sabina, spr_sabina_with_meat)
 
 #macro KYLE scr_speaker(spr_nametag_kyle, spr_kyle_neutral)
+#macro KYLE_SMUG scr_speaker(spr_nametag_kyle, spr_kyle_smug)
+#macro KYLE_UPSET scr_speaker(spr_nametag_kyle, spr_kyle_upset)
+#macro KYLE_NOOO scr_speaker(spr_nametag_kyle, spr_kyle_devestated)
+
+
 #macro HOST scr_speaker(spr_nametag_host, spr_host_neutral)
  
 #macro MAFF milton_affection
@@ -1385,14 +1390,401 @@ function scr_dialogue(_text_id){
 			
 			
 			
+		//###################################[ KYLE DATE 1 ]########################################################
+	
+	
+		case "kd1-0":
+		KYLE
+		scr_text("Ayo fam, holdin' out on a playa till the end, huh? Get ready to be straight up #Blessed by yours truly, cause most plebs can't even handle my authentic aura.")
+		scr_text("Name's Kyle, but you can call me Mr. Wright if you feelin' froggy. Now, I ain't gonna lie, you ain't usually my type, but I ain't never been one to turn down a good time, ya feel?")
+		scr_option("Wow your Jaw bone is really sharp.","kd1-0-1")
+		scr_option("Uhm thanks... you really are a charmer huh","kd1-0-2")
+		break;
 			
+			case "kd1-0-1":
+			KYLE
+			KAFF(1)
+			scr_text("I partake in Bone Smashin on the reg. Some Lib’s say the constitution is the law of the land, nah, its bone law. ")
+			scr_option("Bone law?", "kd1-0-1-1")
+			break;
 			
+				case "kd1-0-1-1":
+				KYLE_SMUG
+				scr_text("Bone Law’s probably too complex for your mid-teir normie mind, but i’m feeling nice today so I can totes fill you in.")
+				scr_option("Is this that alphamaxxing BS...", "kd1-0-1-1-1")
+				scr_option("Sure I would love to hear more!", "kd1-0-1-1-2")
+				break;
+				
+					case "kd1-0-1-1-1":
+					KYLE_UPSET
+					KAFF(-2)
+					scr_text("How dare you call it BS!! It is not!! Just because you are a narrow shouldered, Low-Tier-Normie, with a terrible PSL does not mean it's BS. How else do you think I got to looking this good?")
+					scr_option("Steroids","kd1-0-1-1-1-1")
+					scr_option("Cheap plastic surgeons","kd1-0-1-1-1-2")
+					break;
+					
+						case "kd1-0-1-1-1-1":
+						KYLE
+						KAFF(1)
+						scr_text("I see you’ve noticed my enhancements. I recently transitioned to being a hardmaxxer. Started taking this new sup called Buffamuthasone, it’s super legit, gave me massive gains.")
+						scr_option("uh, do you mean Betamethasone...", "kd1-0-1-1-1-1-1")
+						scr_option("Wow it has buff in it, its gotta work!", "kd1-0-1-1-1-1-2")
+						break;
+						
+							case "kd1-0-1-1-1-1-1":
+							KYLE
+							KAFF(-1)
+							scr_text("Nahhhh, ts is for anti itch not big muscles. Duh. Plus my skin’s so thicc it’s basically rhino skin. I get my Buffamuthasone from my mentor, met him on the web, and its been working wonders for my gains.")
+							scr_option("I mean it is a type of steroid...", "kd1-0-1-1-1-1-1-1")
+							scr_option("I would be careful...", "kd1-0-1-1-1-1-1-2")
+							break;
+							
+								case "kd1-0-1-1-1-1-1-1":
+								KYLE_SMUG
+								KAFF(1)
+								scr_text("Exactly! Steroids mean big gains, which is what im after. No Pain no gain. That’s why I wake up everyday at 5:21 am to do my morning routine. I would tell you more but we’re running low on time.")
+								scr_goto("kd1-1-p")
+								break;
+								
+								case "kd1-0-1-1-1-1-1-2": //i'd be careful
+								KYLE_SMUG
+								KAFF(-2)
+								scr_text("My mentor warned me there would be haters. He was spittin facts, when everyones doggin on me that's when im doin it right. So sorry Hater, I don’t listen to low-tier-normie dweebs.")
+								scr_goto("kd1-1-n")
+								break;
+								
+							
+							case "kd1-0-1-1-1-1-2": //has buff in it!
+							KYLE_SMUG
+							KAFF(2)
+							scr_text("Read my mind, lowkey. Was a little worried you weren’t on my wavelength, but clearly you know ball. You should try some, I make sure to inject daily for max gains.")
+							scr_goto("kd1-1-p")
+							break;	
+						
+						case "kd1-0-1-1-1-2": //plastic surgeons
+						KYLE_NOOO
+						KAFF(-1)
+						scr_text("AYO You’re really yankin’ my chain with that one. For your information I’m  basically all natural. Aside from a supp or two. You normies always think us alphamaxxers are crazy, we’re just devoted to bettering ourselves. #get wrecked.")
+						scr_option("bettering yourself...right...", "kd1-0-1-1-1-2-1")
+						scr_option("I meannnn, I wouldn’t say you're all that crazy...", "kd1-0-1-1-1-2-2")
+						break;
+						
+							case "kd1-0-1-1-1-2-1":
+							KYLE_SMUG
+							scr_text("Judging from your appearance, I can tell you lack alotta things.  I could get you straight, put you on my 10 step mornin’ routine. But no cap... I don’t think you got that dawg in you. I think you’re a soyperson who can't take the heat.")
+							scr_option("I think your a ***hole personally.", "kd1-0-1-1-1-2-1-1")
+							scr_option("Your right, I need to lock in.", "kd1-0-1-1-1-2-1-2")
+							break;
+							
+								case "kd1-0-1-1-1-2-1-1":
+								KYLE_UPSET
+								KAFF(-1)
+								scr_text("I don’t listen to the opinions of Narks with a low PSL. Is your face even symmetrical bruh??")
+								scr_goto("kd1-1-n")
+								break;
+								
+								case "kd1-0-1-1-1-2-1-2":
+								KYLE
+								KAFF(2)
+								scr_text("Wicked dude, glad your starting to see the light. I was kinda like you when I started, total doubter. Now that I see the light, let me tell you, TS is mind-bendingggggg to the extreme. I’ll put you on crazy style. We start 5:21 am tomorrow.")
+								scr_goto("kd1-1-u")
+								break;
+							
+							case "kd1-0-1-1-1-2-2": //all that crazy 
+							KYLE
+							KAFF(1)
+							scr_text("Trying to win me back now I peep. Trust,some Buffamuthasone will get you Buzzzzzingggggg, straight lifted. When ur ready to bump it up, holla my line.")
+							scr_goto("kd1-1-u")
+							break;
+					
+					case "kd1-0-1-1-2": //love to hear more
+					KYLE
+					KAFF(2)
+					scr_text("Alphamaxxing is gonna re-vo-lotion-ize your lyfe my bro. Alphamaxxing is not a phase, it's a lyfe-style.")
+					scr_text("The down low is we alphamaxxers are focused on bettering ourselves inside and out. I follow a strict morning routine, strictdiet, and am always looking for ways to up my game.")
+					scr_option("Wow that sounds awesome, it has such a bad rep","kd1-0-1-1-2-1")
+					scr_option("Aren’t alphamaxxers known for doing dangerous things","kd1-0-1-1-2-2")
+					break;
+					
+						case "kd1-0-1-1-2-1":
+						KYLE_SMUG
+						KAFF(1)
+						scr_text("Now you peepin’ my style. Just cause some normie wants to seem tuff we all get a bad rep. Trust it's totally safe.")
+						scr_text("I’m straight up top-tier as far as alphaMaxxing goes, so I got full authority on dis matter. Injectin every now N’ then never hurt nobody, just gets you more alpha for-real.")
+						scr_option("Didn’t that Clavicular guy overdose like 3 days ago?", "kd1-0-1-1-2-1-1")
+						scr_option("I wanna be more alpha!", "kd1-0-1-1-2-1-2")
+						break;
+						
+							case "kd1-0-1-1-2-1-1":
+							KYLE_UPSET
+							scr_text("CAPPPP, bro is totally chillin’. Was just on his live last nite.  Those Lib’s are just tryin’ to cramp our style. Spreadin’ fake news like it 1984 in this piece. Trust he is ay-o-kay.")
+							scr_goto("kd1-1-u")
+							break;
+							
+							case "kd1-0-1-1-2-1-2":
+							KAFF(1)
+							scr_text("Algitht’ I gotchu cuhz. This finna be a long ride but trust it’ll be worth. Now you might need a little hardmaxxing just a warn. But i’m thinkin’ if we revamp errthang ‘bout you’ you’ll level up fo sho’.")
+							scr_goto("kd1-1-p")
+							break;
+						
+						
+						
+						case "kd1-0-1-1-2-2": //dangerous things
+						KYLE_UPSET
+						KAFF(-1)
+						scr_text("Nah, fam, that’s just bad PR, trust. We hardmax on the occass, but only when the softmax ain’t enough no-more. Gotta stay straight in this lyfe fo-real. Ain't nothin' shady 'bout goin' full alphamaxx.")
+						scr_option("Hardmaxing?", "kd1-0-1-1-2-2-1")
+						scr_option("If you say so, I don’t know if I have it in me...", "kd1-0-1-1-2-2-2")
+						break;
+						
+							case "kd1-0-1-1-2-2-1":
+							KYLE
+							scr_text("Hardmaxxing is legit frfr. I only peep the surface, dabble on the occass, but shiiiii is crayyyyy to the max. True Maxxers be injecting all kinds of shizz. I do my daily dose of roids tho. Gotta stay juiced to keep up my appearance. Can’t be caught slackin’ in these streets.")
+							scr_goto("kd1-1-u")
+							break;
+							
+							case "kd1-0-1-1-2-2-2":
+							KYLE_SMUG
+							scr_text("Nahhh I can get you strait! Trustttt. I’ll get you on 10 mg of Buffamuthasone stat. 10 Mg might not sound like a lot but trust, my mentor said its beyond the legal limit.")
+							scr_text("I don’t listen to no quack tho, and it’s improved my gains to the max so i think its legit.")
+							scr_option("Can’t wait to start!", "kd1-0-1-1-2-2-2-1")
+							scr_option("That sounds incredibly dangerous...", "kd1-0-1-1-2-2-2-2")
+							break;
+							
+								case "kd1-0-1-1-2-2-2-1":
+								KYLE
+								KAFF(1)
+								scr_text("Trust me, wit’ my guidance you’ll be a High-Tier-Normie in no time. Straight H.T.N. in dis bish.")
+								scr_goto("kd1-1-p")
+								break;
+								
+								case "kd1-0-1-1-2-2-2-2":
+								KYLE_UPSET
+								KAFF(-2)
+								scr_text("Haterz always be showin’ they true colors in the end. I still be breathin’, like its light work. Trust, I’m mad educated in this matter, so stop the hater train, Normie.")
+								scr_goto("kd1-1-n")
+								break;
+								
+						
+					
+			case "kd1-0-2": //charmer huh
+			KYLE_SMUG
+			KAFF(1)
+			scr_text("Oh you know it brochacho. I done see some crazy shizz in my day, no cap. Back in my spot, in AC, every weekends ferda boys. I’d drop more deets. But what happens in AC stays in AC. Don’t get it twisted I aint no snitch on my day ones.")
+			scr_option("AC, like air conditioning??", "kd1-0-2-1")
+			scr_option("Just one little story ;)", "kd1-0-2-2")
+			break;
 			
-			
-			
-			
-			
-			
+				case "kd1-0-2-1":
+				KYLE_NOOO
+				KAFF(-1)
+				scr_text("Nahhhh you TRIPPIN, say sike rn. I’m talking about ATLANTIC CITY, the best place on earth, no cap. It's basically Olympus or whatever those religious thumpers believe.")
+				scr_text("If this date goes well we should slide by my crib after this. Normally a slip n’ dip kinda fella, but seeing we gotta get hitched after this might as well show you my Bap, short for bachelor pad.")
+				scr_option("I heard there’s super Herpes in Atlantic City", "kd1-0-2-1-1")
+				scr_option("I love the beach too! The oceans so peaceful", "kd1-0-2-1-2")
+				break;
+				
+					case "kd1-0-2-1-1":
+					KYLE_SMUG
+					KAFF(1)
+					scr_text("Ayo you’ve heard of my magnum opus. My ex and I‘d get into some crazy stuff back in the day. She left me a couple months back, couldn’t take the heat IG.")
+					scr_text("Like no hard feelings tho cause she really put me on my grind. Made me realize my priorities weren’t on the right things in lyfe yknow. Gotta live every moment to its fullest amiright.")
+					scr_option("Totally Agree, what are your new priorities??", "kd1-0-2-1-1-1")
+					scr_option("Bringing up an ex on a date, yikes.", "kd1-0-2-1-1-2")
+					
+						case "kd1-0-2-1-1-1":
+						KYLE
+						scr_text("Ahh dawg lemme tell you i’ve been totes locked in since then. Like no shade to that foid, but she just wasn’t uplifting me. Been big into the gym as of lates, yknow pumpin’ that steel.")
+						scr_text("Started doing a new morning routine. Learned about stocks so I can get my bag up. Everyone always says its risky but no pain no gains amIright.")
+						scr_option("Whats your morning routine??", "kd1-0-2-1-1-1-1")
+						scr_option("...Andrew Tate wannabe", "kd1-0-2-1-1-1-2")
+						break;
+						
+							case "kd1-0-2-1-1-1-1":
+							KYLE_SMUG
+							scr_text("First I wake up at 5:21 every morning. Hyper-optimized to make sure I have optimal daily performance. Then I make sure to spend 14 1 / 2 minutes doing HIIT as my pre workout. Then I start on my alpha kibble...")
+							scr_option("Oh wow thats… extensive & Intensive!", "kd1-0-2-1-1-1-1-1")
+							scr_option("You need a job.", "kd1-0-2-1-1-1-1-2")
+							break;
+							
+								case "kd1-0-2-1-1-1-1-1":
+								KYLE
+								KAFF(2)
+								scr_text("Yeah, taking care of myself is top prior. Glad to see you appreciate a thorough morning routine. Maybe there is hope for your PSL with some guidance.")
+								scr_goto("kd1-1-p")
+								break;
+								
+								case "kd1-0-2-1-1-1-1-2":
+								KYLE_UPSET
+								KAFF(-2)
+								scr_text("Yo, I have a job i’m an entrepreneur. Sorry you can’t understand the grind. Maybe that’s why you're stuck as a Low-Tier-Normie with a PSL of 3.")
+								scr_goto("kd1-1-n")
+								break;
+							
+							case "kd1-0-2-1-1-1-2": //andrew tate wannabe
+							KYLE_UPSET
+							KAFF(-1)
+							scr_text("Uh Wrong. While Andrew is an icon and a true legend among me and my peeps. He isn’t legit enuff for my hardcore lyfestyle. I follow the teachings of Clavicular. He showed me the way from being a low PSL loser to having the highest SMV of all my boys.")
+							scr_option("Do you ever say full words or only initials?", "kd1-0-2-1-1-1-2-1")
+							scr_option("Wow it’s really working... I think...", "kd1-0-2-1-1-1-2-2")
+							break;
+							
+								case "kd1-0-2-1-1-1-2-1":
+								KYLE
+								KAFF(-1)
+								scr_text("Nahh my b fam I forgot not everyones locked into Alphamaxxing. SMV is sexual market value, aka me versus Milton. PSL is Puahate/Sluthate/Lookism or how attractive you are. Would explain more but it’s a little complex for a normie.")
+								scr_goto("kd1-1-u")
+								break;
+								
+								case "kd1-0-2-1-1-1-2-2":
+								KYLE_SMUG
+								KAFF(1)
+								scr_text("I see someone respects the grind of an alphamaxxer. It’s hard to find like minded users who respect the grind. Except my Ex who made me realize I wuz an unlovable low PSL loser. Since finding the Alphamaxxers I really feel like I found my peeps yknow. Losing that foid truly helped me ascend.")
+								scr_goto("kd1-1-p")
+								break;
+							
+						
+						case "kd1-0-2-1-1-2": //ex on date... yikes
+						KYLE
+						KAFF(-1)
+						scr_text("Nahh i’m Totally over her, like she's old news. By this point, that Bop has probably been all over AC anyways. Trust, I am totally focused on the here and the now, not that hag.")
+						scr_option("Do you want to talk about it?", "kd1-0-2-1-1-2-1")
+						scr_option("Gotta live in the moment!", "kd1-0-2-1-1-2-2")
+						break;
+						
+							case "kd1-0-2-1-1-2-1":
+							KYLE_UPSET
+							scr_text("Nah true alphamaxxers don’t share their feelings. Feelings are just a social construct to raise normies up and bring alphas down.")
+							scr_option("This is a safe space if you wanna talk about it", "kd1-0-2-1-1-2-1-1")
+							scr_option("My ex left me a couple months ago too", "kd1-0-2-1-1-2-1-2")
+							break;
+								
+								case "kd1-0-2-1-1-2-1-1":
+								KYLE_UPSET
+								KAFF(-2)
+								scr_text("I dont’t appresh this energy, a normie loser like you shouldn’t be questioning a chad like me. Do you know what my PSL IS!! DO YOU KNOW WHAT MY SMV IS??? Didn’t think so!")
+								scr_goto("kd1-1-n")
+								break;
+								
+								case "kd1-0-2-1-1-2-1-2":
+								KYLE_SMUG
+								scr_text("Kekekek loooserrrr, probably left you for a chad alpha like me.")
+								scr_goto("kd1-1-u")
+								break;
+								
+							case "kd1-0-2-1-1-2-2": //live in the moment
+							KYLE_SMUG
+							KAFF(2)
+							scr_text("Kekekek loooserrrr, probably left you for a chad alpha like me.")
+							scr_goto("kd1-1-u")
+							break;
+					
+					case "kd1-0-2-1-2": //love the beach
+					KYLE
+					KAFF(-1)
+					scr_text("Nah nah nah, you’ve clearly never been to AC. Real AC natives know we don’t get in the water. It's more for deco than anythin, like a fancy smancy Christian Riese Lassen-esque scene.")
+					scr_text("We straight livin’ on that sand, but at night we take a little detour. Below the boardwalk has some of my best mems of AC.")
+					scr_option("You don’t go swimming?? But you're at the beach?", "kd1-0-2-1-2-1")
+					break;
+					
+						case "kd1-0-2-1-2-1":
+						KYLE_UPSET
+						KAFF(-1)
+						scr_text("Yo it’s called the shore, not the beach, not the coast. The Shore. And like no duh we don’t swim. How would I drink my PBR if I'm swimmin?")
+						scr_option("Can’t you just drink it after?", "kd1-0-2-1-2-1-1")
+						scr_option("That’s true, can’t have a warm beer after all", "kd1-0-2-1-2-1-2")
+						break;
+						
+							case "kd1-0-2-1-2-1-1":
+							KYLE
+							scr_text("And have a warm beer?? Your trippin, sake sike rn. And I thought I was a nasty dawg. A warm PBR might be worse than a bad Shag.")
+							scr_option("Yeah I hate a bad haircut.", "kd1-0-2-1-2-1-1-1")
+							scr_option("A pub in town has good warm beer, my treat", "kd1-0-2-1-2-1-1-2")
+							break;
+							
+								case "kd1-0-2-1-2-1-1-1":
+								KYLE_UPSET
+								scr_text("Haircut?? You sped or sumthin?")
+								scr_goto("kd1-1-n")
+								break;
+								
+								case "kd1-0-2-1-2-1-1-2":
+								KYLE_SMUG
+								KAFF(1)
+								scr_text("Damn shorty really layin it on strong here. I respect the hustle no cap no kizzy. I’ll def keep it under considz.")
+								scr_goto("kd1-1-u")
+								break;
+						
+							case "kd1-0-2-1-2-1-2": //warm beer
+							KYLE
+							KAFF(2)
+							scr_text("See now your readin what I'm putting down slim. I assumed you were just a normie but I see you do have some class after all. A warm PBR might be worse than death itself, gotta stay crisper than a $3 bill.")
+							scr_goto("kd1-1-p")
+							break;
+				
+				case "kd1-0-2-2": //one little story ;)
+				KYLE
+				scr_text("Hmmmmmmmmm, I gotta keep my radar up, can’t be caught slackin. I got some real shizz in this noggin. Cops be beggin’ for this intel.")
+				scr_option("I pinky promise im not a cop.", "kd1-0-2-2-1")
+				scr_option("What about a story for a story??", "kd1-0-2-2-1")
+				break;
+				
+					case "kd1-0-2-2-1":
+					KYLE_UPSET
+					scr_text("Not sure that’s enuff, I have two pinkies after all.")
+					scr_option("I double pinky promise.", "kd1-story")
+					break;
+					
+						case "kd1-story":
+						KYLE_SMUG
+						KAFF(2)
+						scr_text("Ahh shiiiii! Fine you got me, i’ll spill a lil. Last week me n’ my crew were kickin’ at the boardwalk. Cold PBR in one hand, total dime piece in the other.")
+						scr_text("When she hit me with the \"Lets get out of here.\" So I was like, \"Yo, I got the keys right here\". We all hop in my whip, I’m cruisin’ 90mph down the strip when a 12 pops outta nowhere in pursuit, bringin’ a whole squad wit him.")
+						scr_text("So I started swervin’, dodgin’ some kids. Cops on the radio screamin’ about speeding inna residential zone, but they were tweakin’. They keep tailinn’ me so I get the genius idea to just drive into the ocean. Bro, it was wild. If i wasn’t quick with the moves we’d totes be fish food right now.")
+						scr_option("Oh uhm, thrilling!", "kd1-story-1")
+						scr_option("Thats a little scary...", "kd1-story-2")
+						break;
+						
+							case "kd1-story-1":
+							KYLE
+							scr_text("I like to live lyfe on the edge. Agnes is my steed and I will drive her into every battle lyfe throws at me. There’s no challenge she can’t take. Maybe when we done here you’ll get to witness my jawn.")
+							scr_goto("kd1-1-p")
+							break;
+							
+							case "kd1-story-2":
+							KYLE_UPSET
+							KAFF(-1)
+							scr_text("Nahh you triffilin, jus’ keepin my heart strong. Yknow the hearts a muscle ya gotta train it to failure sometimes.")
+							scr_goto("kd1-1-u")
+							break;
+							
+					case "kd1-0-2-2-2": //story for a story
+					KYLE
+					scr_text("Hm... you’ve piqued my interest, tell me your worst.")
+					scr_option("I had intercourse in public once...", "kd1-0-2-2-2-1")
+					scr_option("I’m the 2024 IPA Keg stand regional champion", "kd1-story")
+					break;
+					
+						case "kd1-0-2-2-2-1":
+						KYLE_UPSET
+						KAFF(-2)
+						scr_text("Hasn’t everyone? My lips are sealed, you Low-tier-normie chud.")
+						break;
+					
+					
+		case "kd1-1-p":
+		KYLE
+		scr_text("Ah, seems like we're outta time. Now at first I wasn’t too sure bout you, glad to see you legit fam. Guess I can be wrong after all.. Nah, Sike! A playa’ never wrong about good huzz. But FR it would be mad dope to see you again l8r, but I think you’ll be back for thirds anyways.")
+		break;
+		
+		case "kd1-1-u":
+		KYLE
+		scr_text("Ah, seems like we're outta time. Tbh not sure if i’m really vibing with the energy you're emitting. If you ever wanna jump the bone or ride the dragon hmu.")
+		break;
+		
+		case "kd1-1-n":
+		KYLE
+		scr_text("Ah, seems like we're outta time. I was hoping you would be legit, but nah. You just some normie tryin’ seem cool. Don’t hate the playa’ for callin it as it is. Maybe if you were as devoted as I am you would be gettin some play’ in this piece.")
 			
 			
 			

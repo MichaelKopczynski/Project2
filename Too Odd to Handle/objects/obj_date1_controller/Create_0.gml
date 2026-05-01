@@ -1,3 +1,3 @@
-create_textbox("sd1-0")
+create_textbox("kd1-0")
 
 s_final_m = noone
