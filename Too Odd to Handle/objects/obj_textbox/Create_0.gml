@@ -2,6 +2,13 @@
 gui_h = display_get_gui_height()
 gui_w = display_get_gui_width()
 
+//-----[Portraits]-----
+portrait = noone
+portrait_x = 704
+portrait_y = 160
+portrait_scale = 0.5
+
+
 //-----[Box Parameters]-----
 
 margin = 50
@@ -20,6 +27,7 @@ tb_y = gui_h - margin - tb_height
 //-----[Text Variables]-----
 
 page = 0
+goto = noone
 page_number = 0
 text[0] = ""
 text_length[0] = string_length(text[0])

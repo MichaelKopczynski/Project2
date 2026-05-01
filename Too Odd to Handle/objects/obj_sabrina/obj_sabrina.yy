@@ -3,7 +3,6 @@
   "%Name":"obj_sabrina",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":69,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_sabrina",
@@ -34,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_sabrina_temp",
-    "path":"sprites/spr_sabrina_temp/spr_sabrina_temp.yy",
+    "name":"spr_sabrina_sprite",
+    "path":"sprites/spr_sabrina_sprite/spr_sabrina_sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,

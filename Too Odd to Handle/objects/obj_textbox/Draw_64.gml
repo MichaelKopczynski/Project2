@@ -47,12 +47,20 @@ if keyboard_check_pressed(next_key){
 			if option_count > 0 {
 				create_textbox(option_link_id[option_pos])
 			}
+			if goto != noone {
+				create_textbox(goto)
+			}
 			instance_destroy()
 		}
 	} else {
 		curr_char = text_length[page]
 	}
 	
+}
+
+//-----[Drawing Portrait]-----
+if portrait != noone{
+	draw_sprite_ext(portrait, 0, portrait_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1)
 }
 
 //-----[Drawing textbox]-----

@@ -26,12 +26,13 @@ function scr_option(_option, _link_id) {
 
 /// @param link_id
 function scr_goto(_link_id) {
-	create_textbox(_link_id)
+	goto = _link_id
 }
 
 
-function scr_speaker(_nametag) {
+function scr_speaker(_nametag, _portrait = noone) {
 	nametag = _nametag
+	portrait = _portrait
 	
 }
 
@@ -40,4 +41,20 @@ function create_textbox(_text_id){
 	with(instance_create_depth(0,0,0,obj_textbox)){
 		scr_dialogue(_text_id) // can just pass text_id if i dont go about the per-instance route
 	}
+}
+
+/// @param Change in Milton's affection
+function milton_affection(_change) {
+	show_debug_message(_change)
+	global.milton_affection += _change
+}
+
+/// @param Change in Sabina's affection
+function sabina_affection(_change) {
+	global.sabina_affection += _change
+}
+
+/// @param Change in Kyles's affection
+function kyle_affection(_change) {
+	global.kyle_affection += _change
 }

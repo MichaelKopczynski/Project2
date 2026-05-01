@@ -1,3 +1,3 @@
-if !place_meeting(x,y,obj_player) exit
+if !place_meeting(x,y,obj_player) or instance_exists(obj_textbox) exit
 
-create_textbox(text_id)
+if global.gamephase == GP.INTERMISSION1 { create_textbox("mi1") }

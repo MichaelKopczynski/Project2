@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_milton_neutral",
-    "path":"sprites/spr_milton_neutral/spr_milton_neutral.yy",
+    "name":"spr_milton_sprite",
+    "path":"sprites/spr_milton_sprite/spr_milton_sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,
