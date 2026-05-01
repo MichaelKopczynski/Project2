@@ -60,10 +60,11 @@ if keyboard_check_pressed(next_key){
 
 //-----[Drawing Portrait]-----
 if portrait != noone{
-	if sprite_get_number(portrait) > 1 {
-		// TODO
-	}
 	draw_sprite_ext(portrait, -1, portrait_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1)
+	if room==rm_date2 {
+		//draw table infront of portrait
+		draw_sprite_ext(spr_date2_table, -1, -32, -32, 0.75, 0.75, 0, c_white, 1)
+	}
 }
 
 //-----[Drawing textbox]-----

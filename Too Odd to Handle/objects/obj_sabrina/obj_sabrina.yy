@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_sabrina_sprite",
-    "path":"sprites/spr_sabrina_sprite/spr_sabrina_sprite.yy",
+    "name":"spr_sabina_sprite",
+    "path":"sprites/spr_sabina_sprite/spr_sabina_sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,

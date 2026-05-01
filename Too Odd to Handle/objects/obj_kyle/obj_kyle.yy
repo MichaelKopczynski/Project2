@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mop",
-    "path":"sprites/spr_mop/spr_mop.yy",
+    "name":"spr_kyle_sprite",
+    "path":"sprites/spr_kyle_sprite/spr_kyle_sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,

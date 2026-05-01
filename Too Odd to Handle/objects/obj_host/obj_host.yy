@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_goob",
-    "path":"sprites/spr_goob/spr_goob.yy",
+    "name":"spr_host_sprite",
+    "path":"sprites/spr_host_sprite/spr_host_sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,

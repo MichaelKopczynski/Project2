@@ -1936,7 +1936,7 @@ function scr_dialogue(_text_id){
 		
 		case "mi2-rose-y":
 		obj_player.holding_rose = false
-		//TODO
+		obj_game_controller.i2_chosen = 1
 		break;
 	
 	case "si2-p":
@@ -1971,7 +1971,7 @@ function scr_dialogue(_text_id){
 	
 		case "si2-rose-y":
 		obj_player.holding_rose = false
-		//TODO
+		obj_game_controller.i2_chosen = 2
 		break;
 	
 	case "ki2-p":
@@ -2006,10 +2006,28 @@ function scr_dialogue(_text_id){
 	
 		case "ki2-rose-y":
 		obj_player.holding_rose = false
-		//TODO
+		obj_game_controller.i2_chosen = 3
 		break;
-	
-	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 }
