@@ -1,3 +1,4 @@
+if !obj_chore_controller.intro then exit
 
 if !picked_up{
 	if place_meeting(x,y,obj_player_chores){

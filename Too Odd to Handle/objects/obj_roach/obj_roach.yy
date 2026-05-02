@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cockraoch",
-    "path":"sprites/spr_cockraoch/spr_cockraoch.yy",
+    "name":"spr_cockroach",
+    "path":"sprites/spr_cockroach/spr_cockroach.yy",
   },
   "spriteMaskId":null,
   "visible":true,

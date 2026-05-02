@@ -1,8 +1,11 @@
-show_debug_message(on_plate)
 if room != rm_chores_kitchen then exit
 
 if position_meeting(mouse_x, mouse_y, obj_spread_bread){
 	add_to_plate(obj_bread)
+}
+
+if position_meeting(mouse_x, mouse_y, obj_spread_lettuce){
+	add_to_plate(obj_lettuce)
 }
 
 if position_meeting(mouse_x, mouse_y, obj_spread_tomato){
@@ -29,3 +32,5 @@ if position_meeting(mouse_x, mouse_y, obj_trash){
 if position_meeting(mouse_x, mouse_y, obj_X_button){
 	room_goto(rm_chores)
 }
+
+show_debug_message(on_plate)

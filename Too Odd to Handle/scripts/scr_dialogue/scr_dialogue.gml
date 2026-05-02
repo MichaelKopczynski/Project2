@@ -125,6 +125,10 @@
 #macro KYLE2_U K_TXTBX KD2_U FR
 #macro KYLE2_D K_TXTBX KD2_D FR
 
+//############ OTHER
+
+#macro MILTON_EYE //TODO
+
 
 //AFFECTION MACROS
  
@@ -3982,7 +3986,7 @@ function scr_dialogue(_text_id){
 			K_TXTBX KD2_U, KD2_M FR
 			KAFF(-2)
 			MAFF(1)
-			scr_text("You are trip-pin, “Overcompensating”, Nahhhhh, you strait tweakin’. Do I look like someone whose overcompensating?? You ain’t never been on the grind. Haters always roll deep.")
+			scr_text("You are trip-pin, “Overcompensating”, Nahhhhh, you strait tweakin'. Do I look like someone whose overcompensating?? You ain't never been on the grind. Haters always roll deep.")
 			scr_goto("kd2-2u-1b")
 			break;
 		
@@ -4212,21 +4216,34 @@ function scr_dialogue(_text_id){
 		
 		case "mi4-golden-rose":
 		scr_text("Give Milton the golden rose? You wont be able to go any further dates.")
-		scr_option("Yes", "ki2-rose-y")
+		scr_option("Yes", "m-date3")
 		scr_option("No", "destroy")
 		break;
+		
+			case "m-date3":
+			global.gamephase = GP.DATE3_MILTON
+			room_goto(rm_chores)
+			break;
 		
 		case "si4-golden-rose":
 		scr_text("Give Sabina the golden rose? You wont be able to go any further dates.")
-		scr_option("Yes", "ki2-rose-y")
+		scr_option("Yes", "s-date3")
 		scr_option("No", "destroy")
 		break;
 		
+			case "s-date3":
+			room_goto(rm_rhythm)
+			break;
+		
 		case "ki4-golden-rose":
 		scr_text("Give Kyle the golden rose? You wont be able to go any further dates.")
-		scr_option("Yes", "ki2-rose-y")
+		scr_option("Yes", "k-date3")
 		scr_option("No", "destroy")
 		break;
+		
+			case "k-date3":
+			room_goto(rm_driving)
+			break;
 		
 		case "destroy":
 		instance_destroy()
@@ -4236,9 +4253,9 @@ function scr_dialogue(_text_id){
 		case "mi4":
 		MILTON
 		if MILTON_HATES {
-			scr_text("I know what I would choose, but I simply do not have any desire to participate in yet another awful date with you. I don’t really have a choice, though. Just don’t pick me please.")
+			scr_text("I know what I would choose, but I simply do not have any desire to participate in yet another awful date with you. I don't really have a choice, though. Just don't pick me please.")
 		} else {
-			scr_text("I obviously know what I will be choosing. Would you like to join me at my apartment for a....surprise activity? You won’t be disappointed.")
+			scr_text("I obviously know what I will be choosing. Would you like to join me at my apartment for a....surprise activity? You won't be disappointed.")
 		}
 		if !array_contains(obj_game_controller.i4_spoken_to, 1) {
 			array_push(obj_game_controller.i4_spoken_to, 1)
@@ -4248,9 +4265,9 @@ function scr_dialogue(_text_id){
 		case "si4":
 		SABINA
 		if SABINA_HATES {
-			scr_text("Uhm, I think it’s nice that you’d try to ask me, but you’ve icked me out.")
+			scr_text("Uhm, I think it's nice that you'd try to ask me, but you've icked me out.")
 		} else {
-			scr_text("Hmmmm what to do!! There are so many options! Maybe I should choose something I’m good at...like dancing! Or singing! I know!! Let’s do karaoke!!! I can give you the private show most fans only dream of!!")
+			scr_text("Hmmmm what to do!! There are so many options! Maybe I should choose something I'm good at...like dancing! Or singing! I know!! Let's do karaoke!!! I can give you the private show most fans only dream of!!")
 		}
 		if !array_contains(obj_game_controller.i4_spoken_to, 2) {
 			array_push(obj_game_controller.i4_spoken_to, 2)
@@ -4260,14 +4277,180 @@ function scr_dialogue(_text_id){
 		case "ki4":
 		KYLE
 		if KYLE_HATES {
-			scr_text("Nahhhh aint no way you out here tryna get all buddy buddy with me after those dates...nahhhhh.... You trippin’.")
+			scr_text("Nahhhh aint no way you out here tryna get all buddy buddy with me after those dates...nahhhhh.... You trippin'.")
 		} else {
-			scr_text("Duuuude I know exactly what we need. I been stashin’ a case of PBR for an occash like this. LEZ GET DRUNK ON THE FREEWAY!!")
+			scr_text("Duuuude I know exactly what we need. I been stashin' a case of PBR for an occash like this. LEZ GET DRUNK ON THE FREEWAY!!")
 		}
 		if !array_contains(obj_game_controller.i4_spoken_to, 3) {
 			array_push(obj_game_controller.i4_spoken_to, 3)
 		}
 		break;
+		
+		
+		//###############################################################################################################
+		//##########################################[  DATE 3   ]##################################################
+		//###############################################################################################################
+		
+		
+		case "md3":
+		MILTON
+		if MILTON_HATES {
+			scr_text("Why even bother choosing me? I told you it would not be what you hoped. I’ve invited my friends over, maybe they will keep me occupied in this little time I get to be in my home again.")
+			scr_text("We’ll be playing a game of Dungeons and Dragons, and as it is likely a little too intellectual for you, you can clean up around the house. At least you’ll be of some use. You can start with sweeping.")
+		} else {
+			scr_text("You made the right decision choosing me. There has been one complication, however. My friends heard I was going to be making it out of The Studio tonight, and they wanted to engage in some intellectual Dungeons and Dragons gameplay.")
+			scr_text("I understand it is likely a little high brow for you, so I thought you would enjoy...helping around the hovel. I’ll be in the living room playing, so try not to make too much noise and disturb us.")
+			scr_option("Bro what", "md3-1")
+			scr_option("I would love to help, Milton!", "md3-2")
+		}
+		break;
+		
+			case "md3-1":
+			MILTON
+			scr_text("I know it’s not exactly what you were expecting, so I offer my apologies and your first task, which is to sweep the floor please! If you can get that cockroach as well, I would be most appreciative.")
+			scr_goto("Sweeping")
+			break;
+			
+				case "Sweeping":
+				scr_text("Sweep the debris on the floor with the broom in the utility closet. Press E to use.")
+				break;
+			
+			case "md3-2":
+			MILTON
+			scr_text("Wonderful, just wonderful. Your first task is to sweep the floor. If you can get that cockroach as well, I would be most appreciative.")
+			scr_goto("Sweeping")
+			break;
+		
+		case "md3-not-swept":
+		MILTON_BRUH
+		scr_text("Have you even started? My guests do not appreciate how dirty the floor is.")
+		scr_goto("Sweeping")
+		break;
+		
+		case "md3-swept":
+		MILTON_HMM
+		scr_text("Hmm. I suppose it is passable. Next, I hope it won’t trouble you too much to make a sandwich for little old me? I’m just starved.")
+		scr_goto("Cooking")
+		break;
+		
+			case "Cooking":
+			scr_text("Make Milton's favorite sandwich in the kitchen.")
+			break;
+		
+		case "md3-cooked":
+		obj_chore_controller.cooked = true
+		scr_text("Delicious!")
+		obj_chore_controller.sandwich_arr = []
+		scr_text("One last thing, I’ve been having some issues with the viruses on my computer recently, so I would appreciate it if you could fix that.")
+		scr_goto("Computer")
+		break;
+		
+			case "Computer":
+			scr_text("Download the anti-virus on Milton's PC")
+			break;
+		
+		case "m3-done":
+		MILTON
+		scr_text("Wonderful. My hovel feels more like home now. I hope this date wasn’t too disappointing. Most everything was done alright, but even then, I still appreciate it.")
+		scr_option("Of course Milty!! I love doing chores for you!!", "m3-done-1")
+		scr_option(" I literally just did chores for you while you played with your friends...", "m3-done-2")
+		break;
+		
+			case "m3-done-1":
+			MILTON_HAPPY
+			MAFF(1)
+			scr_text("You do? That is wonderful. I think this relationship will be very beneficial. For both of us of course.")
+			scr_goto("m3-end")
+			break;
+			
+			case "m3-done-2":
+			MILTON_HMM
+			MAFF(-1)
+			scr_text("Yes. Did you have a problem with that? I thought you would enjoy fulfilling your natural role. Your help was appreciated, and I see much potential in the future of our relationship...")
+			scr_goto("m3-end")
+			break;
+			
+		case "m3-end":
+		if MILTON_HATES {
+			scr_text("Was that as exciting as you had hoped? No? Me neither. Let’s just go back to the studio.")
+		} else {
+			scr_text("There is one more thing I need to show you before we make this official. I have...been slightly untruthful about my single eye.")	
+			scr_text("The bandage on my lower half...it covers another one. I choose to keep it hidden, as it tends to startle people. It also secretes liquid, so it is not as pleasing or beautiful as my other eye.")
+			scr_option("Can I see it?", "m3-end-1")
+		}
+		break;
+		
+			case "m3-end-1":
+			MILTON
+			scr_text("Oh. I don’t typically enjoy showing people, but if I must.")
+			scr_goto("m3-reveal")
+			break;
+			
+				case "m3-reveal":
+				MILTON_EYE
+				scr_text("...")
+				scr_goto("Well?")
+				scr_option("Oh...that is disgusting...", "m3-reveal-1")
+				scr_option("It’s not so bad!! Don’t worry!", "m3-reveal-2")
+				break;
+				
+					case "m3-reveal-1":
+					MILTON_ANGRY
+					MAFF(-3)
+					scr_text("Disgusting??? I thought we had bonded past physical desire...I promise it does not hinder me in any way!! I will keep it covered for you if you wish...")
+					scr_option("It was just a visceral reaction!! It isn’t gross! You don’t have to cover it!! I’m sorry!", "m3-reveal-1-1")
+					scr_option("If you keep it covered I guess it’s ok...", "m3-reveal-1-2")
+					break;
+					
+						case "m3-reveal-1-1":
+						MILTON_BRUH
+						MAFF(1)
+						scr_text("It is ok. The damage has been dealt. I suppose you will never look upon me with desire henceforth...let’s just go back to the studio...")
+						scr_goto("d3-leave")
+						break;
+						
+						case "m3-reveal-1-2":
+						MILTON_ANGRY
+						MAFF(-1)
+						scr_text("I will! I will keep it covered! You will never have to lay your eyes on my hideous form ever again...I’ll see you back at the Studio I guess...")
+						scr_goto("d3-leave")
+						break;
+					
+					case "m3-reveal-2": // not too bad
+					MILTON_HMM
+					MAFF(1)
+					scr_text("Really? You aren’t disgusted by it?")
+					scr_option("Of course not!", "m3-reveal-2-1")
+					scr_option("I mean, it is a little...odd", "m3-reveal-2-2")
+					break;
+					
+						case "m3-reveal-2-1":
+						MILTON_HAPPY
+						MAFF(2)
+						scr_text("That...is the kindest thing anyone has ever said to me...thank you. I will see you back at the Studio after this then. I cannot wait to leave here together! My Lepidopterian form is quivering with excitement...")
+						scr_goto("d3-leave")
+						break;
+						
+						case "m3-reveal-2-2":
+						MILTON_HAPPY
+						MAFF(1)
+						scr_text("Still a better reaction than I anticipated! Wonderful! I expect to see you back at the Studio after this.")
+						scr_goto("d3-leave")
+						break;
+						
+			
+		case "d3-leave":
+		global.gamephase = GP.EPILOGUE
+		room_goto(rm_studio)
+		break;
+		
+		case "mop away":
+		scr_text("Put the broom away by approaching the utility closet and pressing E.")
+		break;
+		
+		
+		
+		
 	
 	}
 }

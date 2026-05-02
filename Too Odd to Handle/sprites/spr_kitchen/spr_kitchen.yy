@@ -1,8 +1,8 @@
 {
   "$GMSprite":"v2",
   "%Name":"spr_kitchen",
-  "bboxMode":0,
-  "bbox_bottom":61,
+  "bboxMode":2,
+  "bbox_bottom":26,
   "bbox_left":0,
   "bbox_right":63,
   "bbox_top":1,
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Cooking",
-    "path":"folders/Sprites/Chores/Cooking.yy",
+    "name":"Chores",
+    "path":"folders/Sprites/Chores.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

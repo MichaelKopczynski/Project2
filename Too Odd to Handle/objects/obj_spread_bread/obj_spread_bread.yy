@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_spread_bread",
-    "path":"sprites/spr_spread_bread/spr_spread_bread.yy",
+    "name":"spr_cuttingboard",
+    "path":"sprites/spr_cuttingboard/spr_cuttingboard.yy",
   },
   "spriteMaskId":null,
   "visible":true,

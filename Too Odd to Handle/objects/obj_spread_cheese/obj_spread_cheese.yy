@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_spread_cheese",
-    "path":"sprites/spr_spread_cheese/spr_spread_cheese.yy",
+    "name":"spr_cuttingboard",
+    "path":"sprites/spr_cuttingboard/spr_cuttingboard.yy",
   },
   "spriteMaskId":null,
   "visible":true,
