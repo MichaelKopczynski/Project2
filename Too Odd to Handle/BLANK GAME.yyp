@@ -195,8 +195,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_date2","path":"rooms/rm_date2/rm_date2.yy",},},
     {"roomId":{"name":"rm_studio","path":"rooms/rm_studio/rm_studio.yy",},},
+    {"roomId":{"name":"rm_date2","path":"rooms/rm_date2/rm_date2.yy",},},
     {"roomId":{"name":"rm_date1","path":"rooms/rm_date1/rm_date1.yy",},},
     {"roomId":{"name":"rm_chores_computer","path":"rooms/rm_chores_computer/rm_chores_computer.yy",},},
     {"roomId":{"name":"rm_chores","path":"rooms/rm_chores/rm_chores.yy",},},

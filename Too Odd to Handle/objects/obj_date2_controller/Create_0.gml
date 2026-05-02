@@ -1,1 +1,8 @@
-create_textbox("sd1-0")
+
+if obj_game_controller.i2_chosen == 1 {
+	create_textbox("md2-0")
+} else if obj_game_controller.i2_chosen == 2 {
+	create_textbox("sd2-0")
+} else {
+	create_textbox("kd2-0")
+}

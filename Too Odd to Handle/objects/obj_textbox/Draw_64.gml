@@ -1,6 +1,9 @@
 faster_key = vk_space
 next_key = vk_enter
 
+var sx = display_get_gui_width() / room_width
+var sy = display_get_gui_height() / room_height
+
 //tb_x = camera_get_view_x(view_camera[0]) + margin
 //tb_y = camera_get_view_y(view_camera[0]) + gui_h - margin - tb_height
 
@@ -59,12 +62,45 @@ if keyboard_check_pressed(next_key){
 }
 
 //-----[Drawing Portrait]-----
+
+//Portrait should be a list of tuples [person, x, y, scale, xflip(1 or -1)]
 if portrait != noone{
-	draw_sprite_ext(portrait, -1, portrait_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1)
+	
+	for (i = 0; i < array_length(portrait); i ++){
+		_p = portrait[i][0]
+		_px = portrait[i][1]
+		_py = portrait[i][2]
+		_ps =portrait[i][3]
+		_pxs = portrait[i][4]
+		draw_sprite_ext(_p, -1, _px, _py, _ps * sx * _pxs, _ps * sy, 0, c_white, 1)
+	}
+	
+	
+	
+	
 	if room==rm_date2 {
 		//draw table infront of portrait
-		draw_sprite_ext(spr_date2_table, -1, -32, -32, 0.75, 0.75, 0, c_white, 1)
+
+		draw_sprite_ext(spr_date2_table, 0, 0, 0, sx, sy, 0, c_white, 1)
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//if is_array(portrait) and array_length(portrait) == 2{
+		
+	//} else {
+		//draw_sprite_ext(portrait, -1, portrait_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1)
+		//if room==rm_date2 {
+			//draw table infront of portrait
+			//draw_sprite_ext(spr_date2_table, -1, -32, -32, 0.75, 0.75, 0, c_white, 1)
+		//}
+	//}
 }
 
 //-----[Drawing textbox]-----

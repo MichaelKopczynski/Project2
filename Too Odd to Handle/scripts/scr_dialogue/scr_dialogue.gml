@@ -1,17 +1,57 @@
+//###########[ POSITION VARIBALES ]########################
+//----MILTON DATES----
+#macro M_X 704
+#macro M_Y 160
+#macro M_S 0.5
 
-#macro MILTON scr_speaker(spr_nametag_milton, spr_milton_neutral)
-#macro MILTON_HAPPY scr_speaker(spr_nametag_milton,spr_milton_happy)
-#macro MILTON_ANGRY scr_speaker(spr_nametag_milton,spr_milton_angry)
-#macro MILTON_HMM scr_speaker(spr_nametag_milton,spr_milton_hmm)
-#macro MILTON_BRUH scr_speaker(spr_nametag_milton,spr_milton_bruh)
-#macro MILTON_WIGGLE scr_speaker(spr_nametag_milton, spr_milton_wiggle)
+#macro M2_X 928
+#macro M2_Y 384
+#macro M2_S 0.6
+#macro M2_S_X 352
+#macro M2_S_Y 288
+#macro M2_S_Z 0.6
 
-#macro SABINA scr_speaker(spr_nametag_sabina, spr_sabina_neutral)
-#macro SABINA_HAPPY scr_speaker(spr_nametag_sabina, spr_sabina_happy)
-#macro SABINA_ANGRY scr_speaker(spr_nametag_sabina, spr_sabina_angry)
-#macro SABINA_HMM scr_speaker(spr_nametag_sabina, spr_sabina_confused)
-#macro SABINA_UPSET scr_speaker(spr_nametag_sabina, spr_sabina_upset)
-#macro SABINA_MEAT scr_speaker(spr_nametag_sabina, spr_sabina_with_meat)
+//-----SABINA DATES----
+#macro S_X 704
+#macro S_Y 160
+#macro S_S 0.5
+
+#macro S2_X 928
+#macro S2_Y 384
+#macro S2_S 0.6
+#macro S2_K_X 1568
+#macro S2_K_Y 288
+#macro S2_K_Z 0.85
+#macro S2_H_X 544
+#macro S2_H_Y 256
+#macro S2_H_Z 0.6
+
+#macro K_X 704
+#macro K_Y 160
+#macro K_S 0.5
+
+#macro K2_X 896
+#macro K2_Y 320
+#macro K2_S 0.9
+#macro K2_M_X 896
+#macro K2_M_Y 320
+#macro K2_M_Z 0.6 // FLIP X!!
+
+//###############[ SPEAKER & AFFECTION MACROS ########################
+
+#macro MILTON scr_speaker(spr_nametag_milton, [[spr_milton_neutral, M_X, M_Y, M_S, 1]])
+#macro MILTON_HAPPY scr_speaker(spr_nametag_milton, [[spr_milton_happy, M_X, M_Y, M_S, 1]])
+#macro MILTON_ANGRY scr_speaker(spr_nametag_milton, [[spr_milton_angry, M_X, M_Y, M_S, 1]])
+#macro MILTON_HMM scr_speaker(spr_nametag_milton, [[spr_milton_hmm, M_X, M_Y, M_S, 1]])
+#macro MILTON_BRUH scr_speaker(spr_nametag_milton, [[spr_milton_bruh, M_X, M_Y, M_S, 1]])
+#macro MILTON_WIGGLE scr_speaker(spr_nametag_milton, [[spr_milton_wiggle, M_X, M_Y, M_S, 1]])
+
+#macro SABINA scr_speaker(spr_nametag_sabina, [[spr_sabina_neutral, S_X, S_Y, S_S, 1]])
+#macro SABINA_HAPPY scr_speaker(spr_nametag_sabina, [[spr_sabina_happy, S_X, S_Y, S_S, 1]])
+#macro SABINA_ANGRY scr_speaker(spr_nametag_sabina, [[spr_sabina_angry, S_X, S_Y, S_S, 1]])
+#macro SABINA_HMM scr_speaker(spr_nametag_sabina, [[spr_sabina_confused, S_X, S_Y, S_S, 1]])
+#macro SABINA_UPSET scr_speaker(spr_nametag_sabina, [[spr_sabina_upset, S_X, S_Y, S_S, 1]])
+#macro SABINA_MEAT scr_speaker(spr_nametag_sabina, [[spr_sabina_with_meat, S_X, S_Y, S_S, 1]])
 
 #macro KYLE scr_speaker(spr_nametag_kyle, spr_kyle_neutral)
 #macro KYLE_SMUG scr_speaker(spr_nametag_kyle, spr_kyle_smug)
@@ -27,6 +67,19 @@
 
 
 #macro AFFECTION_MARGIN global.affection_margin
+
+#macro MILTON_LOVES global.milton_affection > global.milton_margin
+#macro MILTON_HATES global.milton_affection < -global.milton_margin
+
+#macro SABINA_LOVES global.sabina_affection > global.affection_margin
+#macro SABINA_HATES global.sabina_affection < -global.affection_margin
+
+#macro KYLE_LOVES global.kyle_affection > global.kyle_margin
+#macro KYLE_HATES global.kyle_affection < -global.kyle_margin
+
+
+
+
 
 
 global.md1_1_options = [[1, "I love a good book! What are you currently reading?", "md1-1-1"],
@@ -1858,174 +1911,544 @@ function scr_dialogue(_text_id){
 			
 //######################################################################[INTERMISSION 2]#########################################################
 			
-	case "hi2":
-	HOST
-	scr_text("And that’s the first date done! About the cast - did you like them? Did you hate them? Can’t you just IMAGINE how wonderful life might be with one of those beautiful monstrosities?")
-	scr_text("For the fans - voting for your favorite cast member is now available! As for you, " + global.name + " Let’s take a look at how you did with each of them!")
-	scr_text("This is the only time this information will be revealed to you - it’s the LOVE CHART! Take note of who likes you, who doesn’t really care about you, and who hates your guts!")
-	scr_option("Show me!", "hi2-1")
-	break;
-		
-	case "hi2-1":
-	obj_game_controller.showing_affection = true
-	scr_text("Take a look...")
-	scr_option("Continue", "hi2-2")
-	break;
-		
-	case "hi2-2":
-	obj_game_controller.showing_affection = false
-	HOST
-	scr_text("For the next date, you will give a rose to a cast member of your choice to “ask” them out to a romantic dinner! Don’t worry about rejection, they don’t have a choice!")
-	scr_text("Take this time to gauge interests. Once you’ve talked to everyone you want to talk to, come back to me to get a rose!")
-	break;
-		
-	case "hi2-nat":
-	HOST
-	scr_text("It looks like there are still some cast members you haven’t talked to yet! Would you still like a rose?")
-	scr_option("Yes", "hi2-give-rose")
-	scr_option("No", "hi2-nat-2")
-	break;
-		
-		case "hi2-give-rose":
+		case "hi2":
 		HOST
-		scr_text("Got your sights set on someone? GOOD! Just give them this rose and enjoy your second date!")
-		obj_player.holding_rose = true
+		scr_text("And that’s the first date done! About the cast - did you like them? Did you hate them? Can’t you just IMAGINE how wonderful life might be with one of those beautiful monstrosities?")
+		scr_text("For the fans - voting for your favorite cast member is now available! As for you, " + global.name + " Let’s take a look at how you did with each of them!")
+		scr_text("This is the only time this information will be revealed to you - it’s the LOVE CHART! Take note of who likes you, who doesn’t really care about you, and who hates your guts!")
+		scr_option("Show me!", "hi2-1")
 		break;
+		
+		case "hi2-1":
+		obj_game_controller.showing_affection = true
+		scr_text("Take a look...")
+		scr_option("Continue", "hi2-2")
+		break;
+		
+		case "hi2-2":
+		obj_game_controller.showing_affection = false
+		HOST
+		scr_text("For the next date, you will give a rose to a cast member of your choice to “ask” them out to a romantic dinner! Don’t worry about rejection, they don’t have a choice!")
+		scr_text("Take this time to gauge interests. Once you’ve talked to everyone you want to talk to, come back to me to get a rose!")
+		break;
+		
+		case "hi2-nat":
+		HOST
+		scr_text("It looks like there are still some cast members you haven’t talked to yet! Would you still like a rose?")
+		scr_option("Yes", "hi2-give-rose")
+		scr_option("No", "hi2-nat-2")
+		break;
+		
+			case "hi2-give-rose":
+			HOST
+			scr_text("Got your sights set on someone? GOOD! Just give them this rose and enjoy your second date!")
+			obj_player.holding_rose = true
+			break;
 			
-		case "hi2-nat-2":
+			case "hi2-nat-2":
+			HOST
+			scr_text("Get back out there then!")
+			break;
+		
+		case "hi2-w-rose":
 		HOST
-		scr_text("Get back out there then!")
-		break;
-		
-	case "hi2-w-rose":
-	HOST
-	scr_text("M-me? You’d choose silly old me for a romantic dinner?")
-	scr_text("Haha no. Good luck with the others though!")
-	break;
-	
-	case "mi2-p":
-	MILTON
-	if !array_contains(obj_game_controller.i2_spoken_to, 1) {
-		array_push(obj_game_controller.i2_spoken_to, 1)
-	}
-	scr_text("Ah, greetings. While I hope you had a good time on the rest of your rendezvous, I also hope that none were as...enthralling as mine. It would be my utmost pleasure should you ask me on a second date.")
-	scr_text("Just imagine...no time constraint, just mine singular yet beautiful eye looking at dioptic and beautiful eyes across a candlelit tabletop.")
-	break;
-	
-	case "mi2-u":
-	MILTON_HMM
-	if !array_contains(obj_game_controller.i2_spoken_to, 1) {
-		array_push(obj_game_controller.i2_spoken_to, 1)
-	}
-	scr_text("Greetings. Did the rest of your rendezvous this evening go well? I understand if you feel the need to choose someone else, but I promise I would not be disinclined to go on a second date with you, should you ask...")
-	break;
-	
-	case "mi2-n":
-	MILTON_BRUH
-	if !array_contains(obj_game_controller.i2_spoken_to, 1) {
-		array_push(obj_game_controller.i2_spoken_to, 1)
-	}
-	scr_text("Honestly, it surprises me that you’re speaking to me right now. For both our sakes, I do think it would be best if you would choose someone else. I don’t know if I could stand such intellectual boredom once again.")
-	break;
-	
-	case "mi2-rose":
-	scr_text("Give Milton the rose?")
-	scr_option("Yes", "mi2-rose-y")
-	scr_option("No", "")
-	break;
-		
-		case "mi2-rose-y":
-		obj_player.holding_rose = false
-		obj_game_controller.i2_chosen = 1
+		scr_text("M-me? You’d choose silly old me for a romantic dinner?")
+		scr_text("Haha no. Good luck with the others though!")
 		break;
 	
-	case "si2-p":
-	SABINA
-	if !array_contains(obj_game_controller.i2_spoken_to, 2) {
-		array_push(obj_game_controller.i2_spoken_to, 2)
-	}
-	scr_text("Hiiii!!! I had suuuch a good time on our date!! I have my fingers crossed that you’ll choose me for dinner tonight...if not I’ll be very angry. But I’m sure you’ll make the right choice! You were such a cutie pie for me, and I am ravenous...")
-	break;
-	
-	case "si2-u":
-	SABINA_HMM
-	if !array_contains(obj_game_controller.i2_spoken_to, 2) {
-		array_push(obj_game_controller.i2_spoken_to, 2)
-	}
-	scr_text("Heyyyy so were you thinking you were gonna choose me for dinner tonight? I wasn’t getting a crazzzyyyy vibe from you but like I could definitely go for some food!!")
-	break;
-	
-	case "si2-n":
-	SABINA_ANGRY
-	if !array_contains(obj_game_controller.i2_spoken_to, 2) {
-		array_push(obj_game_controller.i2_spoken_to, 2)
-	}
-	scr_text("Ugh, you STINKY BOLIVIA LOVER!!! Don’t even THINK of asking me to dinner!!! UGH. The first potential suit I’ve had in 2 months and you just HAD to be insufferable!!")
-	break;
-	
-	case "si2-rose":
-	scr_text("Give Sabina the rose?")
-	scr_option("Yes", "si2-rose-y")
-	scr_option("No", "")
-	break;
-	
-		case "si2-rose-y":
-		obj_player.holding_rose = false
-		obj_game_controller.i2_chosen = 2
+		case "mi2-p":
+		MILTON
+		if !array_contains(obj_game_controller.i2_spoken_to, 1) {
+			array_push(obj_game_controller.i2_spoken_to, 1)
+		}
+		scr_text("Ah, greetings. While I hope you had a good time on the rest of your rendezvous, I also hope that none were as...enthralling as mine. It would be my utmost pleasure should you ask me on a second date.")
+		scr_text("Just imagine...no time constraint, just mine singular yet beautiful eye looking at dioptic and beautiful eyes across a candlelit tabletop.")
 		break;
 	
-	case "ki2-p":
-	KYLE_SMUG
-	if !array_contains(obj_game_controller.i2_spoken_to, 3) {
-		array_push(obj_game_controller.i2_spoken_to, 3)
-	}
-	scr_text("Hopin' you make the irresponsible move n pick me... Living for the danger, thats how I dig em.")
-	break;
+		case "mi2-u":
+		MILTON_HMM
+		if !array_contains(obj_game_controller.i2_spoken_to, 1) {
+			array_push(obj_game_controller.i2_spoken_to, 1)
+		}
+		scr_text("Greetings. Did the rest of your rendezvous this evening go well? I understand if you feel the need to choose someone else, but I promise I would not be disinclined to go on a second date with you, should you ask...")
+		break;
 	
-	case "ki2-u":
-	KYLE
-	if !array_contains(obj_game_controller.i2_spoken_to, 3) {
-		array_push(obj_game_controller.i2_spoken_to, 3)
-	}
-	scr_text("Thinking of me for the rose? could a beta handle THEE alpha? Guess we'll have to see.")
-	break;
+		case "mi2-n":
+		MILTON_BRUH
+		if !array_contains(obj_game_controller.i2_spoken_to, 1) {
+			array_push(obj_game_controller.i2_spoken_to, 1)
+		}
+		scr_text("Honestly, it surprises me that you’re speaking to me right now. For both our sakes, I do think it would be best if you would choose someone else. I don’t know if I could stand such intellectual boredom once again.")
+		break;
 	
-	case "ki2-n":
-	KYLE_UPSET
-	if !array_contains(obj_game_controller.i2_spoken_to, 3) {
-		array_push(obj_game_controller.i2_spoken_to, 3)
-	}
-	scr_text("Ayo what you even talking in this direction for. Your SMV is actually in the trenches fam...")
-	break;
-	
-	case "ki2-rose":
-	scr_text("Give Kyle the rose?")
-	scr_option("Yes", "ki2-rose-y")
-	scr_option("No", "")
-	break;
-	
-		case "ki2-rose-y":
-		obj_player.holding_rose = false
-		obj_game_controller.i2_chosen = 3
+		case "mi2-rose":
+		scr_text("Give Milton the rose?")
+		scr_option("Yes", "mi2-rose-y")
+		scr_option("No", "")
 		break;
 		
+			case "mi2-rose-y":
+			obj_player.holding_rose = false
+			obj_game_controller.i2_chosen = 1
+			global.gamephase = GP.DATE2
+			room_goto(rm_date2)
+			break;
+	
+		case "si2-p":
+		SABINA
+		if !array_contains(obj_game_controller.i2_spoken_to, 2) {
+			array_push(obj_game_controller.i2_spoken_to, 2)
+		}
+		scr_text("Hiiii!!! I had suuuch a good time on our date!! I have my fingers crossed that you’ll choose me for dinner tonight...if not I’ll be very angry. But I’m sure you’ll make the right choice! You were such a cutie pie for me, and I am ravenous...")
+		break;
+	
+		case "si2-u":
+		SABINA_HMM
+		if !array_contains(obj_game_controller.i2_spoken_to, 2) {
+			array_push(obj_game_controller.i2_spoken_to, 2)
+		}
+		scr_text("Heyyyy so were you thinking you were gonna choose me for dinner tonight? I wasn’t getting a crazzzyyyy vibe from you but like I could definitely go for some food!!")
+		break;
+	
+		case "si2-n":
+		SABINA_ANGRY
+		if !array_contains(obj_game_controller.i2_spoken_to, 2) {
+			array_push(obj_game_controller.i2_spoken_to, 2)
+		}
+		scr_text("Ugh, you STINKY BOLIVIA LOVER!!! Don’t even THINK of asking me to dinner!!! UGH. The first potential suit I’ve had in 2 months and you just HAD to be insufferable!!")
+		break;
+	
+		case "si2-rose":
+		scr_text("Give Sabina the rose?")
+		scr_option("Yes", "si2-rose-y")
+		scr_option("No", "")
+		break;
+	
+			case "si2-rose-y":
+			obj_player.holding_rose = false
+			obj_game_controller.i2_chosen = 2
+			global.gamephase = GP.DATE2
+			room_goto(rm_date2)
+			break;
+	
+		case "ki2-p":
+		KYLE_SMUG
+		if !array_contains(obj_game_controller.i2_spoken_to, 3) {
+			array_push(obj_game_controller.i2_spoken_to, 3)
+		}
+		scr_text("Hopin' you make the irresponsible move n pick me... Living for the danger, thats how I dig em.")
+		break;
+	
+		case "ki2-u":
+		KYLE
+		if !array_contains(obj_game_controller.i2_spoken_to, 3) {
+			array_push(obj_game_controller.i2_spoken_to, 3)
+		}
+		scr_text("Thinking of me for the rose? could a beta handle THEE alpha? Guess we'll have to see.")
+		break;
+	
+		case "ki2-n":
+		KYLE_UPSET
+		if !array_contains(obj_game_controller.i2_spoken_to, 3) {
+			array_push(obj_game_controller.i2_spoken_to, 3)
+		}
+		scr_text("Ayo what you even talking in this direction for. Your SMV is actually in the trenches fam...")
+		break;
+	
+		case "ki2-rose":
+		scr_text("Give Kyle the rose?")
+		scr_option("Yes", "ki2-rose-y")
+		scr_option("No", "")
+		break;
+	
+			case "ki2-rose-y":
+			obj_player.holding_rose = false
+			obj_game_controller.i2_chosen = 3
+			global.gamephase = GP.DATE2
+			room_goto(rm_date2)
+			break;
+
+		
+//#################################################################################### [DATE 2] #######################(im sacred)##############################
 		
 		
+		case "md2-0":
+		if MILTON_LOVES {
+			scr_text("It pleases me that you’re joining me on this fair eve, made fairer for the fact that you’ve chosen to spend it with me. Let’s see...what’s on the menu for tonight?")
+		} else if MILTON_HATES {
+			scr_text("We’re here! Oh how I’m just trembling with excitement! Sarcasm of course. Lucky I thought to say or you might not have noticed. That wouldn’t do. Let’s see the menu, the only saving grace of the night.")
+		} else {
+			scr_text("Shall we commence ordering? I am quite excited for the delicacies prepared for us tonight...")
+		}
+		
+		scr_text("What will you be ordering?")
+		scr_option("Caesar salad", "md2-0-1")
+		scr_option("82oz Ribeye", "md2-0-2")
+		scr_option("The Bonga Bonga Burger Bonanza! With Fries!", "md2-0-3")
+		break;
+		
+			case "md2-0-1":
+			if MILTON_LOVES {
+				scr_text("A vegan...oh how you must care so much about animals and insects...so admirable of you.")
+				scr_option("Actually I just like salad...", "md2-0-1-1")
+				scr_option("Why thank you!", "md2-0-1-2")
+			} else if MILTON_HATES {
+				scr_text("You would be a vegan...")
+				scr_option("What’s that supposed to mean?", "md2-0-3")
+			} else {
+				scr_text("Ah, a vegan.")
+				scr_goto("md2-1")
+			}
+			break;
+			
+				case "md2-0-1-1":
+				scr_text("Oh. Well then!")
+				scr_goto("md2-1")
+				break;
+		
+				case "md2-0-1-2":
+				scr_text("Of course of course...")
+				scr_goto("md2-1")
+				break;
+				
+				case "md2-0-3":
+				scr_text("Oh nothing.")
+				scr_goto("md2-1")
+				break;
 		
 		
+			case "md2-0-2":
+			if MILTON_LOVES {
+				scr_text("H-hungry aren’t you? A big ol’ steak huh? Gonna g-get all those meat juices all over you?")
+				scr_option("W-what?", "md2-0-2-1")
+				scr_option("Yeah I am...", "md2-0-2-2")
+			} else if MILTON_HATES {
+				scr_text("Typical. Gluttony resides in thee.")
+				scr_goto("md2-1")
+			} else {
+				scr_text("What a big steak...")
+				scr_goto("md2-1")
+			}
+			break;
+			
+				case "md2-0-2-1":
+				scr_text("My apologies...I just love, uh, steak.")
+				scr_goto("md2-1")
+				break;
+				
+				case "md2-0-2-2":
+				scr_text("Good kitten...")
+				scr_goto("md2-1")
+				break;
+				
+			case "md2-0-3":
+			if MILTON_LOVES {
+				scr_text("Oh how I love a Bonga Bonga Burger Bonanza!")
+				scr_goto("md2-1")
+			} else if MILTON_HATES {
+				scr_text("Ordering my favorite item won’t get you into my good graces...")
+				scr_goto("md2-1")
+			} else {
+				scr_text("Ah, the Bonga Bonga Burger Bonanza. Delicious.")
+				scr_goto("md2-1")
+			}
+			break;
 		
+		case "md2-1":
+		scr_text("I suppose we must converse with one another wait for the food to arrive.")
+		if MILTON_LOVES {
+			scr_text("I find myself somehow more excited for our conversation than I am for my Bonga Bonga Burger Bonanza!")
+		} else if MILTON_HATES {
+			scr_text("I don’t expect much from this conversation, but at least I have my Bonga Bonga Burger Bonanza on the way...")
+		} else {
+			scr_text("I’m almost as excited for our conversation as I am for my Bonga Bonga Burger Bonanza. Almost.")
+		}
+		scr_text("My father always used to order them from the fine dining establishment Mick Donald. How I miss him...")
+		scr_option("What happened to him?", "md2-2")
+		scr_option("Um...actually I think it’s called McDona-", "md2-1-1")
+		break;
 		
+			case "md2-1-1":
+			scr_text("DON’T say that name...the CopyRight Man is always lurking...")
+			scr_option("Oh...so what happened to your dad?", "md2-2")
+			scr_option("The CopyRight Man?", "md2-1-1-1")
+			break;
+			
+				case "md2-1-1-1":
+				scr_text("Yes.")
+				scr_option("Cool...so what happened to your dad?", "md2-2")
+				break;
+				
+		case "md2-2":
+		scr_text("It’s less what happened to him and more what happened to me...")
+		scr_option("Do you want to talk about it?", "md2-3")
+		scr_option("What happened to you?", "md2-3")
+		break;
 		
+		case "md2-3":
+		if MILTON_LOVES {
+			scr_text("You want to know about me? Really? It’s a bit of a sad story, but who am I to deny the first person who’s cared about me since him...")
+			scr_option("I’m here for you Milton, whatever you need.", "md2-3-1")
+			scr_option("You don’t have to talk about it if you don’t want to...", "md2-3-2")
+			scr_option("Throwing a pity party for yourself?", "md2-3-3")
+		} else if MILTON_HATES {
+			scr_text("I do not feel the urge to converse with you about so personal a topic. You haven’t exactly demonstrated understanding up to this point.")
+			scr_goto("md2-5")
+		} else {
+			scr_text("I don’t know...it’s a bit of a hard topic for me, but I suppose there isn’t much else to talk about...")
+			scr_option("I’m here for you Milton, whatever you need.", "md2-3-1")
+			scr_option("You don’t have to talk about it if you don’t want to...", "md2-3-2")
+			scr_option("Throwing a pity party for yourself?", "md2-3-3")
+		}
+		break;
 		
+			case "md2-3-1":
+			scr_text("Thank you. I appreciate your kindness.")
+			scr_goto("md2-4")
+			break;
+			
+			case "md2-3-2":
+			scr_text("It’s ok. I will push through it.")
+			scr_goto("md2-4")
+			break;
+			
+			case "md2-3-3":
+			scr_text("Oh. Well nevermind then.")
+			scr_option("I’m sorry! I didn’t mean it!", "md2-3-3-1")
+			scr_option("So you were going to throw one?", "md2-3-3-2")
+			break;
+			
+				case "md2-3-3-1":
+				scr_text("I don’t know how much I believe you, but I suppose I have no other to talk to, Everyone has abandoned me...")
+				scr_goto("md2-4")
+				break;
+				
+				case "md2-3-3-2":
+				scr_text("No.")
+				scr_goto("md2-5")
+				
+		case "md2-4":
+		scr_text("It all began long ago in the St. Louisville Local Library. I was just a worm. My cognition had not yet ignited. One day, one of our regulars, a Science Man named Dave, brought an apple for lunch.")
+		scr_text("Whilst engaging in what must have been the most riveting of research (he was always rambling about MordeTwi and “creating a family”), he knocked his apple off the table.")
+		scr_text("It’s lucky he didn’t eat it, for it was radioactive, but I did. Upon taking my first bite, my DNA began to change. My first thought was of confusion, but I had become sentient.")
+		scr_text("For years, I would sit on a nearby bookshelf and watch as my Father consumed countless television shows. My favorite was the Big Boom Theory re-runs he always had on.")
+		scr_text("But alas, as my mind grew, so did my body. For a while, they let me stay there. Once I became too big, they kicked me out. My Lepidopteran form was scaring the patrons.")
+		scr_text("I thought my Father would come visit me in my hole, but he never did. I suspect they must have banned him from coming. I hope they did...the alternative is too much to bear.")
+		scr_option("Oh Milton you poor thing...", "md2-4-1")
+		scr_option("That just sounds like a rip off of Spiderman...", "md2-4-2")
+		scr_option("Long ah story", "md2-4-3")
+		break;
 		
+			case "md2-4-1":
+			scr_text("Yes...I am such a poor thing aren’t I...")
+			scr_option("Yes you are Milty-poo, yes you are", "md2-4-1")
+			scr_option("Uh... yeah?", "md2-4-2")
+			break;
+			
+				case "md2-4-1":
+				scr_text("Do not speak to me like that. But yes, my life has just been sooo hard...")
+				scr_goto("md2-5")
+				break;
+				
+				case "md2-4-2":
+				scr_text("My life has just been sooo hard...the only thing that would make me feel better is just a glimpse of — sorry...I just was uh.")
+				scr_goto("md2-5")
+				break;
+				
+			case "md2-4-2": //rip off spiderman
+			scr_text("I do not know what this Spider Man of which you speak is. That sounds horrifying...a spider with the form of a man...arachn*ds are undeserving of sentience.")
+			scr_option("You’re a worm that’s like a bug too...", "md2-4-2-1")
+			scr_option("Spiderman is cool dw he’s just a dude with spider powers.", "md2-4-2-2")
+			break;
+			
+				case "md2-4-2-1":
+				scr_text("Uhm, actually, though your species likes to derogatarily group many of what they deem “lesser” creatures into the single group of “bugs,” your comparison of me to an Arachn*d is as far-fetched as comparing humans to a beetle.")
+				scr_option("I didn’t mean any offense by it!", "md2-4-2-1-1")
+				scr_option("\"ErM aCtUaLlY\"", "md2-4-2-1-2")
+				break;
+				
+					case "md2-4-2-1-1":
+					scr_text("I took offense from it.")
+					scr_goto("md2-5")
+					break;
+					
+					case "md2-4-2-1-2":
+					scr_text("Ah. The common trope of bullying those you are intellectually inferior to by attempting to make them out as the loser for their intelligence because you are insecure about your lack of it. Classic.")
+					scr_goto("md2-5")
+					break;
+					
+				case "md2-4-2-2":
+				scr_text("Very well. I suppose the comparison isn’t as terrible as I might have initially supposed. It still disturbs me that a human would...do that...with an Arachn*d.")
+				scr_option("No he got his powers by getting bitten by a radioactive spider...", "md2-4-2-2-1")
+				scr_option("Aren’t we supposed to get together...and aren’t you a worm?", "md2-4-2-2-2")
+				break;
+				
+					case "md2-4-2-2-1":
+					scr_text("I see where the resemblance stems from, but our stories are clearly different. If he had a parental figure that wasn’t truly his relative yet stepped up to raise him after his parents were no longer in his life-")
+					scr_text("AND his parental figure then disappeared due to events that were related to his newfound powers... only then I might see it.")
+					scr_goto("md2-5")
+					break;
+					
+					case "md2-4-2-2-2":
+					scr_text("A worm is very different to an Arachn*d. And I believe I already showed you how useful I can be...have you already forgotten?")
+					scr_option("Oh trust me, I haven’t ;)","md2-4-2-2-2-1")
+					scr_option("Forgotten what?","md2-4-2-2-2-2")
+					break;
+					
+						case "md2-4-2-2-2-1":
+						scr_text("Good. I will be sure to show you more...in depth later, kitten.")
+						scr_goto("md2-5")
+						break;
+						
+						case "md2-4-2-2-2-2":
+						scr_text("Hmm. Not here. Don't worry, I will ensure to jog your memory...")
+						scr_goto("md2-5")
+						break;
+			
+			case "md2-4-3": //long ah story
+			scr_text("Oh? Have the scars on my bare soul bored you so? Perhaps you did not understand, allow me to reiterate...")
+			scr_goto("md2-4")
+			break;
 		
+		case "md2-5":
+		scr_text("Ah, do you hear that? The sound of footsteps approaches. I believe our food has nearly arrived.")
+		scr_goto("md2-5a")
+		break;
 		
+		case "md2-5a":
+		scr_text("Oh! Hey y'all! What's going on here?")
+		scr_goto("md2-5b")
+		break;
 		
+		case "md2-5b":
+		scr_text("Greetings m’lady. What brings you to this establishment on this fine eve? " + global.name + "and I were just waiting in anticipation of our meal.")
+		scr_goto("md2-5c")
+		break;
 		
+		case "md2-5c":
+		scr_text("Uhhhh I thought this was my hot date...")
+		scr_goto("md2-5d")
+		break;
 		
+		case "md2-5d":
+		scr_text("Erm, actually " + global.name + " invited me to a private dinner, so your appearance, I believe, has surprised us both.")
+		scr_goto("md2-5e")
+		break;
 		
+		case "md2-5e":
+		scr_text("That’s not what The Host told me... Well, what is it then, " + global.name + "?")
+		scr_option("Yeah... I asked Milton out...", "md2-5e-1")
+		scr_option("Uhm, I was kinda regretting my choice, so you showing up is my saving grace!", "md2-5e-2")
+		scr_option("Maybe we can all have a hot date!", "md2-5e-3")
+		break;
 		
+			case "md2-5e-1":
+			scr_text("There you have it. But if this is what The Host has deemed to be entertaining, then I certainly am not opposed. Gazing on thy form with mine singular yet beautiful eye is not displeasing to say the least.")
+			scr_goto("md2-5f")
+			break;
+			
+			case "md2-5e-2":
+			scr_text("Is that so? I thought when you bequeathed that rose unto me it meant something, but clearly your motivation was to break my poor little Lepidopterian heart...")
+			scr_goto("md2-5ea")
+			break;
+			
+				case "md2-5ea":
+				scr_text("Awww... poor Milty... I hope I’m not crashing your date, lifes so hard when you're hot!")
+				scr_goto("md2-5f")
+				break;
+			
+			case "md2-5e-3":
+			scr_text("Very well. I certainly do not mind being joined by such a beauty. It is a pleasure to gaze upon thee with mine singular yet beautiful eye.")
+			scr_goto("md2-5f")
+			break;
 		
+		case "md2-5f":
+		scr_text("Oh... uhh.. Okay!")
+		scr_goto("md2-5g")
+		break;
+		
+		case "md2-5g":
+		scr_text("Indeed...(Milton tries to wink, but he only has one eye so he just blinks and no one notices)")
+		scr_option("Sooo... do you and Sabina even know eachother?", "md2-5g-1")
+		scr_option("Do you have a crush on Sabina or something?", "md2-5g-2")
+		break;
+		
+			case "md2-5g-1":
+			scr_text("I have always wished to get to know her more intimately through the secret language of eye contact we’ve shared in the studio. Dare I say, before your arrival, it was quite likely we would have been next to couple up.")
+			scr_goto("md2-5h")
+			break;
+			
+			case "md2-5g-1": //duplicate for affection
+			scr_text("I have always wished to get to know her more intimately through the secret language of eye contact we’ve shared in the studio. Dare I say, before your arrival, it was quite likely we would have been next to couple up.")
+			scr_goto("md2-5h")
+			break;
+		
+		case "md2-5h":
+		scr_text("I thought he couldn’t see me as long as I stood still.")
+		scr_goto("md2-5i")
+		break;
+		
+		case "md2-5i":
+		scr_text("Oh Sabina, don’t play coy with me. But if you wish our relationship to remain a secret, I will respect that wish, just like I respect all wom*n.")
+		scr_goto("md2-5j")
+		break;
+		
+		case "md2-5j":
+		scr_text("Oh boy... another secret admirer, big Samuel J. May fan I bet.")
+		scr_goto("md2-5k")
+		break;
+		
+		case "md2-5k":
+		scr_text("Indeed. Does my support of the female gender impress you? I can assure you, I’ve got a lot more in the tank. You’d be hard pressed to find one who respects females as much as I.")
+		scr_option("Then name three women.", "md2-5k-1")
+		scr_option("Prove your feminist prowess Milty!! Show her!!", "md2-5k-2")
+		break;
+		
+			case "md2-5k-1":
+			scr_text("Erm, the implication that I would not be able to name three wom*n is insulting.")
+			scr_goto("md2-5l")
+			break;
+			
+			case "md2-5k-2":
+			scr_text("Fantastic idea. I do think I will. Revel in amazement as I name three women with ease.")
+			scr_goto("md2-5l")
+			break;
+		
+		case "md2-5l":
+		scr_text("To start off, we have this beauty in front of me, Sabina Carpeter. Next, we have my manure diving disgrace of a mother, Gorgorothnitia the Fourteenth.")
+		scr_text("I and the rest of my cocoonal siblings were left to fend for ourselves while she left to gorge on the droppings of a nearby horse and get her Clitellum mingled by Brachovic the 92nd.")
+		scr_goto("md2-5m")
+		break;
+		
+		case "md2-5m":
+		scr_text("Uhmmm first of all ew, second of all, keep going...")
+		scr_goto("md2-5n")
+		break;
+		
+		case "md2-5n":
+		scr_text("Well I don’t know much after she left us, but Incestry.com says I am distantly related to the Hungry Hungry Caterpillar.")
+		scr_goto("md2-5o")
+		break;
+		
+		case "md2-5o":
+		scr_text("Ugh, I don’t care about your gross family!!! Who’s the third woman!!")
+		scr_goto("md2-5p")
+		break;
+		
+		case "md2-5m":
+		scr_text("Uhmmm first of all ew, second of all, keep going...")
+		scr_goto("md2-5n")
+		break;
+		
+		case "md2-5m":
+		scr_text("Uhmmm first of all ew, second of all, keep going...")
+		scr_goto("md2-5n")
+		break;
+		
+		case "md2-5m":
+		scr_text("Uhmmm first of all ew, second of all, keep going...")
+		scr_goto("md2-5n")
+		break;
 		
 		
 	}

@@ -29,7 +29,8 @@ function scr_goto(_link_id) {
 	goto = _link_id
 }
 
-
+/// @param _nametag nametag sprite
+/// @param _portrait array with sprite, location, and scale of each speaker portrait
 function scr_speaker(_nametag, _portrait = noone) {
 	nametag = _nametag
 	portrait = _portrait
@@ -52,9 +53,10 @@ function milton_affection(_change) {
 /// @param Change in Sabina's affection
 function sabina_affection(_change) {
 	global.sabina_affection += _change
+	show_debug_message(global.sabina_affection)
 }
 
 /// @param Change in Kyles's affection
 function kyle_affection(_change) {
-	global.kyle_affection += _change
+	show_debug_message(global.kyle_affection)
 }

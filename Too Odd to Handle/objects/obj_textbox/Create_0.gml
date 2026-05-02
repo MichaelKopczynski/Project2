@@ -3,10 +3,16 @@ gui_h = display_get_gui_height()
 gui_w = display_get_gui_width()
 
 //-----[Portraits]-----
-portrait = noone
+portrait = []
 portrait_x = 704
 portrait_y = 160
 portrait_scale = 0.5
+
+portrait_A_x = 704
+portrait_A_y = 160
+
+portrait_B_x = 704
+portrait_B_y = 160
 
 
 //-----[Box Parameters]-----
