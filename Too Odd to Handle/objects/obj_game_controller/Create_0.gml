@@ -31,4 +31,6 @@ i1_spoken_to = []
 i1_last_spoken_to = noone
 
 i2_spoken_to = []
+
+d2_taken = []
 i2_chosen = noone

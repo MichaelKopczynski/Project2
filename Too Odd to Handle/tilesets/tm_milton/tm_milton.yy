@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"tmspr_milton_tmp",
-    "path":"sprites/tmspr_milton_tmp/tmspr_milton_tmp.yy",
+    "name":"tmspr_milton",
+    "path":"sprites/tmspr_milton/tmspr_milton.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -28,10 +28,10 @@
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,
-  "tileHeight":64,
+  "tileHeight":128,
   "tilehsep":0,
   "tilevsep":0,
-  "tileWidth":64,
+  "tileWidth":128,
   "tilexoff":0,
   "tileyoff":0,
   "tile_count":16,

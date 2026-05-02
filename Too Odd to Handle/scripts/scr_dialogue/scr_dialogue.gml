@@ -1288,8 +1288,8 @@ function scr_dialogue(_text_id){
 					case "sd1-0-1-2-1-2": //dedication album did well
 					SABINA
 					scr_text("Yeah! It was superrr difficult to write... coming up with that many words in a row can be a real challenge.")
-					scr_option("Is it true the albums based off of Berry Keogham??", "sd1-0-1-2-2-1")
-					scr_option("I get it, childman did get a lot of backlash.", "sd1-0-1-2-2-2")
+					scr_option("Is it true the albums based off of Berry Keogham??", "sd1-0-1-2-1-2-1")
+					scr_option("I get it, childman did get a lot of backlash.", "sd1-0-1-2-1-2-2")
 					break;
 					
 						case "sd1-0-1-2-1-2-1":
@@ -1306,7 +1306,7 @@ function scr_dialogue(_text_id){
 						scr_option("You shouldn't focus so much on her! She'll just bring you down!" , "sd1-0-1-2-2-2-2")
 						break;
 						
-							case "sd1-0-1-2-1-2-2-1":
+							case "sd1-0-1-2-2-2-1":
 							SABINA_HAPPY
 							SAFF(2)
 							scr_text("Wowie! You really seem to get me. Normally I tell people about how much I hate Bolivia Rodriguez and they just don't get it. Her skin's just so perfect! It's not fair, but I'm glad you see how she really is ;).")
@@ -1314,7 +1314,7 @@ function scr_dialogue(_text_id){
 							scr_goto("sd1-1-p")
 							break;
 							
-							case "sd1-0-1-2-1-2-2-2":
+							case "sd1-0-1-2-2-2-2":
 							SABINA_HMM
 							scr_text("I see you've never had a sworn enemy! The tabloids have revealed to me all her dirty lies. I can't fight fire with water! Fire can only be fought with fire!")
 							scr_goto("sd1-1-u")
@@ -2147,7 +2147,6 @@ function scr_dialogue(_text_id){
 		case "d2-leave":
 		global.gamephase = GP.INTERMISSION3
 		room_goto(rm_studio)
-		scr_goto("hi2")
 		break;
 		
 		//-------------------------------------MILTON---------------------------------------------
@@ -2987,14 +2986,13 @@ function scr_dialogue(_text_id){
 		if MILTON_LOVES{
 			scr_text("I did not think it possible, but this date has gone better than the first! Most exciting. I do believe if things keep going according to plan, I can show you some of the...prowess I was referencing in our earlier date.")
 			scr_text("Ah-ah, don't look too excited now. Goodbye for now, kitten. Be good.")
-			scr_goto("d2-leave")
 		}else if MILTON_HATES {
 			scr_text("I had thought this torment would never end, tattle toe! See you in the Studio.")
-			scr_goto("d2-leave")
 		} else {
 			scr_text("I will be seeing you back in the studio it seems. Good day to you.")
-			scr_goto("d2-leave")
 		}
+			array_push(obj_game_controller.d2_taken, 1)
+			scr_goto("d2-leave")
 		break;
 		
 		//----------------------------------------------- [SABINA] ------------------------------------------------------------
@@ -3688,6 +3686,7 @@ function scr_dialogue(_text_id){
 		} else {
 			scr_text("Looks like we're out of time but thanks for dinner and everything. I was quiteeee hungy! I guess I'll see you back at the studio!!")
 		}
+		array_push(obj_game_controller.d2_taken, 2)
 		scr_goto("d2-leave")
 		break;
 		
@@ -4132,12 +4131,28 @@ function scr_dialogue(_text_id){
 		case "kd2-3l":
 		KYLE2
 		scr_text("You a real one...thank you... fr fr.")
-		scr_goto("d3-leave")
+		array_push(obj_game_controller.d2_taken, 3)
+		scr_goto("d2-leave")
 		break;
 		
-		case "d3-leave":
-		global.gamephase = GP.INTERMISSION3
-		room_goto(rm_studio)
+		
+		//################################################################[ INTERMISSION 3 ]##########################################################################################################################
+		
+		case "hi3":
+		HOST
+		if array_length(obj_game_controller.d2_taken) == 1{ //after first 'second date'
+			scr_text("Welcome back everyone! I hope you enjoyed the second date! Did the surprise guest shock you? Did the spicy dynamics that emerged get your heart pounding?")
+			scr_text("Let us know by sending in your votes for your favorite! Now then, onto the important stuff.")
+			scr_text(global.name + ", you have the option to go on another second dates should you choose to. Just give the remaining contestants a red rose like last time!")
+			scr_text("But with any contestant you've already taken on a second date, you can now take them on a third date with the GOLDEN ROSE!")
+			scr_text("This season, we’re allowing each contestant to choose an activity they would most like to do on their third date, and you will be joining them!")
+			scr_text("Go on and ask each contestant about their date plans, and come back for the golden rose!")
+			
+		} else { //returning from more dates
+			
+		}
+		
+		
 		break;
 	
 	}
