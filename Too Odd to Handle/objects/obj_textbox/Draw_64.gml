@@ -4,6 +4,7 @@ next_key = vk_enter
 var sx = display_get_gui_width() / room_width
 var sy = display_get_gui_height() / room_height
 
+
 //tb_x = camera_get_view_x(view_camera[0]) + margin
 //tb_y = camera_get_view_y(view_camera[0]) + gui_h - margin - tb_height
 

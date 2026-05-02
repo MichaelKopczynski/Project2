@@ -34,3 +34,9 @@ if global.gamephase == GP.INTERMISSION2 {
 		create_textbox("hi2-w-rose")
 	}
 }
+
+if global.gamephase == GP.INTERMISSION3 or global.gamephase == GP.INTERMISSION4 {
+	
+	create_textbox("hi3-change")
+	
+}

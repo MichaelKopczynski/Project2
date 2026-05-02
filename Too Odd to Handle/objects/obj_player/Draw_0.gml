@@ -8,3 +8,7 @@ if place_meeting(x,y,obj_interactable) and !interacting{
 if holding_rose {
 	draw_sprite(spr_rose, 0, x, y-32)
 }
+
+if holding_golden_rose {
+	draw_sprite(spr_golden_rose, 0, x, y-32)
+}

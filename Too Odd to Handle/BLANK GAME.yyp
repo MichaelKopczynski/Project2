@@ -131,6 +131,7 @@
     {"id":{"name":"spr_date2_table","path":"sprites/spr_date2_table/spr_date2_table.yy",},},
     {"id":{"name":"spr_dnd_table","path":"sprites/spr_dnd_table/spr_dnd_table.yy",},},
     {"id":{"name":"spr_downloader","path":"sprites/spr_downloader/spr_downloader.yy",},},
+    {"id":{"name":"spr_golden_rose","path":"sprites/spr_golden_rose/spr_golden_rose.yy",},},
     {"id":{"name":"spr_goob","path":"sprites/spr_goob/spr_goob.yy",},},
     {"id":{"name":"spr_held_plate","path":"sprites/spr_held_plate/spr_held_plate.yy",},},
     {"id":{"name":"spr_host_neutral","path":"sprites/spr_host_neutral/spr_host_neutral.yy",},},

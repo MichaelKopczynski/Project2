@@ -1967,7 +1967,6 @@ function scr_dialogue(_text_id){
 		case "d1-leave":
 		global.gamephase = GP.INTERMISSION2
 		room_goto(rm_studio)
-		scr_goto("hi2")
 		break;
 		
 		case "kd1-1-u":
@@ -2057,12 +2056,12 @@ function scr_dialogue(_text_id){
 		case "mi2-rose":
 		scr_text("Give Milton the rose?")
 		scr_option("Yes", "mi2-rose-y")
-		scr_option("No", "")
+		scr_option("No", "destroy")
 		break;
 		
 			case "mi2-rose-y":
 			obj_player.holding_rose = false
-			obj_game_controller.i2_chosen = 1
+			obj_game_controller.d2_chosen = 1
 			global.gamephase = GP.DATE2
 			room_goto(rm_date2)
 			break;
@@ -2094,12 +2093,12 @@ function scr_dialogue(_text_id){
 		case "si2-rose":
 		scr_text("Give Sabina the rose?")
 		scr_option("Yes", "si2-rose-y")
-		scr_option("No", "")
+		scr_option("No", "destroy")
 		break;
 	
 			case "si2-rose-y":
 			obj_player.holding_rose = false
-			obj_game_controller.i2_chosen = 2
+			obj_game_controller.d2_chosen = 2
 			global.gamephase = GP.DATE2
 			room_goto(rm_date2)
 			break;
@@ -2131,12 +2130,12 @@ function scr_dialogue(_text_id){
 		case "ki2-rose":
 		scr_text("Give Kyle the rose?")
 		scr_option("Yes", "ki2-rose-y")
-		scr_option("No", "")
+		scr_option("No", "destroy")
 		break;
 	
 			case "ki2-rose-y":
 			obj_player.holding_rose = false
-			obj_game_controller.i2_chosen = 3
+			obj_game_controller.d2_chosen = 3
 			global.gamephase = GP.DATE2
 			room_goto(rm_date2)
 			break;
@@ -2147,6 +2146,7 @@ function scr_dialogue(_text_id){
 		case "d2-leave":
 		global.gamephase = GP.INTERMISSION3
 		room_goto(rm_studio)
+		scr_goto("hi3")
 		break;
 		
 		//-------------------------------------MILTON---------------------------------------------
@@ -2981,7 +2981,7 @@ function scr_dialogue(_text_id){
 			break;
 			
 		case "md2-6":
-		MILTON
+		MILTON2
 		scr_text("I suppose we should begin wrapping up.")
 		if MILTON_LOVES{
 			scr_text("I did not think it possible, but this date has gone better than the first! Most exciting. I do believe if things keep going according to plan, I can show you some of the...prowess I was referencing in our earlier date.")
@@ -3102,6 +3102,7 @@ function scr_dialogue(_text_id){
 					SABINA2_H
 					SAFF(1)
 					scr_text("Well I hope you didn't think my beauty was just surface level. From my skin. Uhhh ;)")
+					scr_goto("sd2-2")
 					break;
 					
 					case "sd2-1-1-1-2": //the forest?
@@ -4140,19 +4141,132 @@ function scr_dialogue(_text_id){
 		
 		case "hi3":
 		HOST
+		show_debug_message("hmmm")
 		if array_length(obj_game_controller.d2_taken) == 1{ //after first 'second date'
 			scr_text("Welcome back everyone! I hope you enjoyed the second date! Did the surprise guest shock you? Did the spicy dynamics that emerged get your heart pounding?")
 			scr_text("Let us know by sending in your votes for your favorite! Now then, onto the important stuff.")
-			scr_text(global.name + ", you have the option to go on another second dates should you choose to. Just give the remaining contestants a red rose like last time!")
-			scr_text("But with any contestant you've already taken on a second date, you can now take them on a third date with the GOLDEN ROSE!")
-			scr_text("This season, we’re allowing each contestant to choose an activity they would most like to do on their third date, and you will be joining them!")
-			scr_text("Go on and ask each contestant about their date plans, and come back for the golden rose!")
+			scr_text(global.name + ", while you still have the option to go on more \"second dates\" with the red rose, you can now take a contestant on a \"third date\" with the GOLDEN ROSE!")
+			scr_text("But be wary, there is only one golden rose, and once you return from the third date you will have to make your final decision of who you'd like to leave with...")
+			scr_text("So what will it be, " + global.name + "?")
+			scr_option("One red rose, please!", "hi3-red")
+			scr_option("The golden rose!", "hi3-golden")
 			
-		} else { //returning from more dates
+		} else if array_length(obj_game_controller.d2_taken) == 2{ //returning from 2nd second date
+			scr_text("Welcome back everyone! Another fantastic date indeed!")
+			scr_text("Once again, you have the option to go on another dinner date or choose who you will take on the final date with the GOLDEN ROSE.")
+			scr_text("So what will it be, " + global.name + "?")
+			scr_option("One red rose, please!", "hi3-red")
+			scr_option("The golden rose!", "hi3-golden")
+			break;
 			
+		} else { //all three second dates done
+			scr_text("Welcome back everyone! If you're just tuning in, our dear " + global.name + " has returned from thier date and now has a very important decision...")
+			scr_text("The time has come to choose someone to bequeath the golden rose and take on a third date. Are you ready?")
+			scr_option("Uhhh I guess", "hi3-golden")
+			scr_option("Yes!", "hi3-golden")
 		}
 		
+		break;
 		
+			case "hi3-red":
+			HOST
+			global.gamephase = GP.INTERMISSION3
+			scr_text("Another dinner date it is! Here you are.")
+			obj_player.holding_rose = true
+			break;
+		
+			case "hi3-golden":
+			HOST
+			global.gamephase = GP.INTERMISSION4
+			if array_length(obj_game_controller.i4_spoken_to) < 3 {
+				scr_text("Eager are we? Make sure to ask each contestant what their plan for your date is first!")
+			} else {
+				obj_player.holding_golden_rose = true
+				scr_text("Here you are, choose wisely!")
+			}
+			break;
+			
+			case "hi3-change":
+			HOST
+			obj_player.holding_rose = false
+			obj_player.holding_golden_rose = false
+			scr_text("Change your mind?")
+			scr_option("One red rose, please!", "hi3-red")
+			scr_option("The golden rose!", "hi3-golden")
+			break;
+			
+		case "mi3-rose-taken":
+		MILTON_HMM
+		scr_text("Erm, have you already forgotten the date we went on? Come back with the gold rose and we can talk")
+		break;
+		
+		case "si3-rose-taken":
+		SABINA
+		scr_text("Aw, wanting to relieve our date so soon? Come back with that gold rose and we can make it happen ;)")
+		break;
+		
+		case "ki3-rose-taken":
+		KYLE
+		scr_text("Ayyy you again. Leave a good impression did I? Hit me up when you've got some 24 carat up in this joint.")
+		break;
+		
+		case "mi4-golden-rose":
+		scr_text("Give Milton the golden rose? You wont be able to go any further dates.")
+		scr_option("Yes", "ki2-rose-y")
+		scr_option("No", "destroy")
+		break;
+		
+		case "si4-golden-rose":
+		scr_text("Give Sabina the golden rose? You wont be able to go any further dates.")
+		scr_option("Yes", "ki2-rose-y")
+		scr_option("No", "destroy")
+		break;
+		
+		case "ki4-golden-rose":
+		scr_text("Give Kyle the golden rose? You wont be able to go any further dates.")
+		scr_option("Yes", "ki2-rose-y")
+		scr_option("No", "destroy")
+		break;
+		
+		case "destroy":
+		instance_destroy()
+		break
+		
+		
+		case "mi4":
+		MILTON
+		if MILTON_HATES {
+			scr_text("I know what I would choose, but I simply do not have any desire to participate in yet another awful date with you. I don’t really have a choice, though. Just don’t pick me please.")
+		} else {
+			scr_text("I obviously know what I will be choosing. Would you like to join me at my apartment for a....surprise activity? You won’t be disappointed.")
+		}
+		if !array_contains(obj_game_controller.i4_spoken_to, 1) {
+			array_push(obj_game_controller.i4_spoken_to, 1)
+		}
+		break;
+		
+		case "si4":
+		SABINA
+		if SABINA_HATES {
+			scr_text("Uhm, I think it’s nice that you’d try to ask me, but you’ve icked me out.")
+		} else {
+			scr_text("Hmmmm what to do!! There are so many options! Maybe I should choose something I’m good at...like dancing! Or singing! I know!! Let’s do karaoke!!! I can give you the private show most fans only dream of!!")
+		}
+		if !array_contains(obj_game_controller.i4_spoken_to, 2) {
+			array_push(obj_game_controller.i4_spoken_to, 2)
+		}
+		break;
+		
+		case "ki4":
+		KYLE
+		if KYLE_HATES {
+			scr_text("Nahhhh aint no way you out here tryna get all buddy buddy with me after those dates...nahhhhh.... You trippin’.")
+		} else {
+			scr_text("Duuuude I know exactly what we need. I been stashin’ a case of PBR for an occash like this. LEZ GET DRUNK ON THE FREEWAY!!")
+		}
+		if !array_contains(obj_game_controller.i4_spoken_to, 3) {
+			array_push(obj_game_controller.i4_spoken_to, 3)
+		}
 		break;
 	
 	}

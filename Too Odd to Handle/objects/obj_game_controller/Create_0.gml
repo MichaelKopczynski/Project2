@@ -8,6 +8,7 @@ enum GP {
 	INTERMISSION2,
 	DATE2,
 	INTERMISSION3,
+	INTERMISSION4,
 	DATE3_MILTON,
 	DATE3_SABINA,
 	DATE3_KYLE,
@@ -32,5 +33,9 @@ i1_last_spoken_to = noone
 
 i2_spoken_to = []
 
+d2_chosen = noone
 d2_taken = []
-i2_chosen = noone
+
+i4_spoken_to = [] //asked about thier dates
+d3_chosen = noone
+
