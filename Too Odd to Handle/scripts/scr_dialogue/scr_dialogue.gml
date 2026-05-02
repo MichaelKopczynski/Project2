@@ -53,13 +53,13 @@
 #macro SABINA_UPSET scr_speaker(spr_nametag_sabina, [[spr_sabina_upset, S_X, S_Y, S_S, 1]])
 #macro SABINA_MEAT scr_speaker(spr_nametag_sabina, [[spr_sabina_with_meat, S_X, S_Y, S_S, 1]])
 
-#macro KYLE scr_speaker(spr_nametag_kyle, spr_kyle_neutral)
-#macro KYLE_SMUG scr_speaker(spr_nametag_kyle, spr_kyle_smug)
-#macro KYLE_UPSET scr_speaker(spr_nametag_kyle, spr_kyle_upset)
-#macro KYLE_NOOO scr_speaker(spr_nametag_kyle, spr_kyle_devestated)
+#macro KYLE scr_speaker(spr_nametag_kyle, [[spr_kyle_neutral, K_X, K_Y, K_S, 1]])
+#macro KYLE_SMUG scr_speaker(spr_nametag_kyle, [[spr_kyle_smug, K_X, K_Y, K_S, 1]])
+#macro KYLE_UPSET scr_speaker(spr_nametag_kyle, [[spr_kyle_upset, K_X, K_Y, K_S, 1]])
+#macro KYLE_NOOO scr_speaker(spr_nametag_kyle, [[spr_kyle_devestated, K_X, K_Y, K_S, 1]])
 
 
-#macro HOST scr_speaker(spr_nametag_host, spr_host_neutral)
+#macro HOST scr_speaker(spr_nametag_host, [[spr_host_neutral, K_X, K_Y, K_S, 1]])
  
 #macro MAFF milton_affection
 #macro SAFF sabina_affection
@@ -185,6 +185,7 @@ function scr_dialogue(_text_id){
 	// ##################################################[SPEED DATES]##################################################################
 	// ************ MILTON *****************
 		case "md1-0":
+		obj_date1_controller.talking_to = 1
 		MILTON
 		scr_text("O' graceful one, it is my pleasure to be the first of your little rendezvous this evening, and I would just like to reiterate how pleasurous it is to make your acquaintance.") 
 		scr_text("I hope my Lepidopterian form does not disturb you. I know it may seem a bit...unusual...but you have my utmost assurance that I can still be of use in...that department.")
@@ -694,6 +695,7 @@ function scr_dialogue(_text_id){
 	
 	
 		case "sd1-0":
+		obj_date1_controller.talking_to = 2
 			SABINA
 			scr_text("Omg heyyyyy cutie! I'm sooo glad we get some alone time...I just don't know why they felt the need to call it a speed date. I mean, I allllways finish things quick ;)")
 			scr_option("Sabina Carpeter? Didn't you go missing? What are you doing in St. Louiville?", "sd1-0-1")
@@ -1507,6 +1509,7 @@ function scr_dialogue(_text_id){
 	
 	
 		case "kd1-0":
+		obj_date1_controller.talking_to = 3
 		KYLE
 		scr_text("Ayo fam, holdin' out on a playa till the end, huh? Get ready to be straight up #Blessed by yours truly, cause most plebs can't even handle my authentic aura.")
 		scr_text("Name's Kyle, but you can call me Mr. Wright if you feelin' froggy. Now, I ain't gonna lie, you ain't usually my type, but I ain't never been one to turn down a good time, ya feel?")
@@ -2094,7 +2097,7 @@ function scr_dialogue(_text_id){
 				scr_option("Why thank you!", "md2-0-1-2")
 			} else if MILTON_HATES {
 				scr_text("You would be a vegan...")
-				scr_option("What’s that supposed to mean?", "md2-0-3")
+				scr_option("What’s that supposed to mean?", "md2-0-1-3")
 			} else {
 				scr_text("Ah, a vegan.")
 				scr_goto("md2-1")
@@ -2111,7 +2114,7 @@ function scr_dialogue(_text_id){
 				scr_goto("md2-1")
 				break;
 				
-				case "md2-0-3":
+				case "md2-0-1-3":
 				scr_text("Oh nothing.")
 				scr_goto("md2-1")
 				break;
@@ -2241,16 +2244,16 @@ function scr_dialogue(_text_id){
 		
 			case "md2-4-1":
 			scr_text("Yes...I am such a poor thing aren’t I...")
-			scr_option("Yes you are Milty-poo, yes you are", "md2-4-1")
-			scr_option("Uh... yeah?", "md2-4-2")
+			scr_option("Yes you are Milty-poo, yes you are", "md2-4-1-1")
+			scr_option("Uh... yeah?", "md2-4-1-2")
 			break;
 			
-				case "md2-4-1":
+				case "md2-4-1-1":
 				scr_text("Do not speak to me like that. But yes, my life has just been sooo hard...")
 				scr_goto("md2-5")
 				break;
 				
-				case "md2-4-2":
+				case "md2-4-1-2":
 				scr_text("My life has just been sooo hard...the only thing that would make me feel better is just a glimpse of — sorry...I just was uh.")
 				scr_goto("md2-5")
 				break;
@@ -2378,7 +2381,7 @@ function scr_dialogue(_text_id){
 			scr_goto("md2-5h")
 			break;
 			
-			case "md2-5g-1": //duplicate for affection
+			case "md2-5g-2": //duplicate for affection
 			scr_text("I have always wished to get to know her more intimately through the secret language of eye contact we’ve shared in the studio. Dare I say, before your arrival, it was quite likely we would have been next to couple up.")
 			scr_goto("md2-5h")
 			break;
@@ -2433,21 +2436,6 @@ function scr_dialogue(_text_id){
 		case "md2-5o":
 		scr_text("Ugh, I don’t care about your gross family!!! Who’s the third woman!!")
 		scr_goto("md2-5p")
-		break;
-		
-		case "md2-5m":
-		scr_text("Uhmmm first of all ew, second of all, keep going...")
-		scr_goto("md2-5n")
-		break;
-		
-		case "md2-5m":
-		scr_text("Uhmmm first of all ew, second of all, keep going...")
-		scr_goto("md2-5n")
-		break;
-		
-		case "md2-5m":
-		scr_text("Uhmmm first of all ew, second of all, keep going...")
-		scr_goto("md2-5n")
 		break;
 		
 		
