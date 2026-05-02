@@ -72,7 +72,9 @@ if portrait != noone{
 		_py = portrait[i][2]
 		_ps =portrait[i][3]
 		_pxs = portrait[i][4]
-		draw_sprite_ext(_p, -1, _px, _py, _ps * sx * _pxs, _ps * sy, 0, c_white, 1)
+		//draw_sprite_ext(_p, -1, _px, _py, _ps * sx * _pxs, _ps * sy, 0, c_white, 1)
+		draw_sprite_ext(_p, -1, _px, _py, _ps * _pxs, _ps, 0, c_white, 1)
+		
 	}
 	
 	
@@ -104,10 +106,11 @@ if portrait != noone{
 }
 
 //-----[Drawing textbox]-----
-draw_sprite_stretched(spr_box, 0 , tb_x, tb_y, tb_width, tb_height)
+draw_sprite_stretched(textbox_spr, 0 , tb_x, tb_y, tb_width, tb_height)
 
 var curr_text = string_copy(text[page], 0, curr_char)
 
+draw_set_colour(text_color)
 draw_text_ext(tb_x + padding, tb_y + padding, curr_text, line_sep, line_width)
 
 //-----[Drawing Nametag]-----
@@ -137,6 +140,7 @@ if curr_char == text_length[page] && page == page_number - 1 {
 			draw_sprite(spr_select_arrow,0, tb_x, option_y + option_height/2)
 		}
 		
+		draw_set_color(c_white)
 		draw_text(option_x + option_pad_h, option_y + option_pad_v, option[op])
 		
 		

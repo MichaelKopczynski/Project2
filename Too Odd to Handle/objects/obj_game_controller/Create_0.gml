@@ -14,8 +14,10 @@ enum GP {
 	EPILOGUE
 }
 
+display_set_gui_size(room_width, room_height)
+
 global.gamephase = GP.INTERMISSION1
-global.name = ""
+global.name = "Player"
 
 global.milton_affection = 0
 global.sabina_affection = 0

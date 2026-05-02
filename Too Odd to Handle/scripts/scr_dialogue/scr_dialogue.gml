@@ -9,7 +9,7 @@
 #macro M2_S 0.6
 #macro M2_S_X 352
 #macro M2_S_Y 288
-#macro M2_S_Z 0.6
+#macro M2_S_S 0.6
 
 //-----SABINA DATES----
 #macro S_X 704
@@ -21,11 +21,12 @@
 #macro S2_S 0.6
 #macro S2_K_X 1568
 #macro S2_K_Y 288
-#macro S2_K_Z 0.85
+#macro S2_K_S 0.85
 #macro S2_H_X 544
 #macro S2_H_Y 256
-#macro S2_H_Z 0.6
+#macro S2_H_S 0.6
 
+//-----KYLE DATES----
 #macro K_X 704
 #macro K_Y 160
 #macro K_S 0.5
@@ -33,33 +34,99 @@
 #macro K2_X 896
 #macro K2_Y 320
 #macro K2_S 0.9
-#macro K2_M_X 896
-#macro K2_M_Y 320
-#macro K2_M_Z 0.6 // FLIP X!!
+#macro K2_M_X 352
+#macro K2_M_Y 448
+#macro K2_M_S 0.6 // FLIP X!!
 
-//###############[ SPEAKER & AFFECTION MACROS ########################
+//###############[ DATE 1 SPRITE MACROS ########################
 
-#macro MILTON scr_speaker(spr_nametag_milton, [[spr_milton_neutral, M_X, M_Y, M_S, 1]])
-#macro MILTON_HAPPY scr_speaker(spr_nametag_milton, [[spr_milton_happy, M_X, M_Y, M_S, 1]])
-#macro MILTON_ANGRY scr_speaker(spr_nametag_milton, [[spr_milton_angry, M_X, M_Y, M_S, 1]])
-#macro MILTON_HMM scr_speaker(spr_nametag_milton, [[spr_milton_hmm, M_X, M_Y, M_S, 1]])
-#macro MILTON_BRUH scr_speaker(spr_nametag_milton, [[spr_milton_bruh, M_X, M_Y, M_S, 1]])
-#macro MILTON_WIGGLE scr_speaker(spr_nametag_milton, [[spr_milton_wiggle, M_X, M_Y, M_S, 1]])
+#macro M_TXTBX scr_speaker(spr_nametag_milton, spr_milton_textbox, c_white, [
+#macro S_TXTBX scr_speaker(spr_nametag_sabina, spr_sabina_textbox, c_black, [
+#macro K_TXTBX scr_speaker(spr_nametag_kyle, spr_kyle_textbox, c_white, [
+#macro H_TXTBX scr_speaker(spr_nametag_host, spr_host_textbox, c_black, [
 
-#macro SABINA scr_speaker(spr_nametag_sabina, [[spr_sabina_neutral, S_X, S_Y, S_S, 1]])
-#macro SABINA_HAPPY scr_speaker(spr_nametag_sabina, [[spr_sabina_happy, S_X, S_Y, S_S, 1]])
-#macro SABINA_ANGRY scr_speaker(spr_nametag_sabina, [[spr_sabina_angry, S_X, S_Y, S_S, 1]])
-#macro SABINA_HMM scr_speaker(spr_nametag_sabina, [[spr_sabina_confused, S_X, S_Y, S_S, 1]])
-#macro SABINA_UPSET scr_speaker(spr_nametag_sabina, [[spr_sabina_upset, S_X, S_Y, S_S, 1]])
-#macro SABINA_MEAT scr_speaker(spr_nametag_sabina, [[spr_sabina_with_meat, S_X, S_Y, S_S, 1]])
+#macro MILTON M_TXTBX [spr_milton_neutral, M_X, M_Y, M_S, 1]])
+#macro MILTON_HAPPY M_TXTBX [spr_milton_happy, M_X, M_Y, M_S, 1]])
+#macro MILTON_ANGRY M_TXTBX [spr_milton_angry, M_X, M_Y, M_S, 1]])
+#macro MILTON_HMM M_TXTBX [spr_milton_hmm, M_X, M_Y, M_S, 1]])
+#macro MILTON_BRUH M_TXTBX [spr_milton_bruh, M_X, M_Y, M_S, 1]])
+#macro MILTON_WIGGLE M_TXTBX [spr_milton_wiggle, M_X, M_Y, M_S, 1]])
 
-#macro KYLE scr_speaker(spr_nametag_kyle, [[spr_kyle_neutral, K_X, K_Y, K_S, 1]])
-#macro KYLE_SMUG scr_speaker(spr_nametag_kyle, [[spr_kyle_smug, K_X, K_Y, K_S, 1]])
-#macro KYLE_UPSET scr_speaker(spr_nametag_kyle, [[spr_kyle_upset, K_X, K_Y, K_S, 1]])
-#macro KYLE_NOOO scr_speaker(spr_nametag_kyle, [[spr_kyle_devestated, K_X, K_Y, K_S, 1]])
+#macro SABINA S_TXTBX[spr_sabina_neutral, S_X, S_Y, S_S, 1]])
+#macro SABINA_HAPPY S_TXTBX [spr_sabina_happy, S_X, S_Y, S_S, 1]])
+#macro SABINA_ANGRY S_TXTBX [spr_sabina_angry, S_X, S_Y, S_S, 1]])
+#macro SABINA_HMM S_TXTBX [spr_sabina_confused, S_X, S_Y, S_S, 1]])
+#macro SABINA_UPSET S_TXTBX [spr_sabina_upset, S_X, S_Y, S_S, 1]])
+#macro SABINA_MEAT S_TXTBX [spr_sabina_with_meat, S_X, S_Y, S_S, 1]])
+
+#macro KYLE K_TXTBX [spr_kyle_neutral, K_X, K_Y, K_S, 1]])
+#macro KYLE_SMUG K_TXTBX [spr_kyle_smug, K_X, K_Y, K_S, 1]])
+#macro KYLE_UPSET K_TXTBX [spr_kyle_upset, K_X, K_Y, K_S, 1]])
+#macro KYLE_NOOO K_TXTBX [spr_kyle_devestated, K_X, K_Y, K_S, 1]])
 
 
-#macro HOST scr_speaker(spr_nametag_host, [[spr_host_neutral, K_X, K_Y, K_S, 1]])
+#macro HOST H_TXTBX [spr_host_neutral, K_X, K_Y, K_S, 1]])
+
+//#############[DATE 2]##############################################
+// example : M_TXTBX MD2, MD2_S FR 
+
+#macro FR ])
+
+//milton date 2
+#macro MD2 [spr_milton_neutral, M2_X, M2_Y, M2_S, 1]
+#macro MD2_HA [spr_milton_happy, M2_X, M2_Y, M2_S, 1]
+#macro MD2_A [spr_milton_angry, M2_X, M2_Y, M2_S, 1]
+#macro MD2_HM [spr_milton_hmm, M2_X, M2_Y, M2_S, 1]
+#macro MD2_B [spr_milton_bruh, M2_X, M2_Y, M2_S, 1]
+#macro MD2_S [spr_sabina_neutral, M2_S_X, M2_S_Y, M2_S_S, 1]
+#macro MD2_S_H [spr_sabina_happy, M2_S_X, M2_S_Y, M2_S_S, 1]
+#macro MD2_S_A [spr_sabina_angry, M2_S_X, M2_S_Y, M2_S_S, 1]
+#macro MD2_S_C [spr_sabina_confused, M2_S_X, M2_S_Y, M2_S_S, 1]
+#macro MD2_S_U [spr_sabina_upset, M2_S_X, M2_S_Y, M2_S_S, 1]
+
+#macro MILTON2 M_TXTBX MD2 FR
+#macro MILTON2_HAPPY M_TXTBX MD2_HA FR
+#macro MILTON2_ANGRY M_TXTBX MD2_A FR
+#macro MILTON2_HMM M_TXTBX MD2_HM FR
+#macro MILTON2_BRUH M_TXTBX MD2_B FR
+
+//sabina date 2
+#macro SD2 [spr_sabina_neutral, S2_X, S2_Y,S2_S, 1]
+#macro SD2_H [spr_sabina_happy, S2_X, S2_Y,S2_S, 1]
+#macro SD2_A [spr_sabina_angry, S2_X, S2_Y,S2_S, 1]
+#macro SD2_C [spr_sabina_confused, S2_X, S2_Y,S2_S, 1]
+#macro SD2_U [spr_sabina_upset, S2_X, S2_Y,S2_S, 1]
+#macro SD2_M [spr_sabina_with_meat, S2_X, S2_Y,S2_S, 1]
+#macro SD2_K [spr_kyle_neutral, S2_K_X, S2_K_Y, S2_K_S, 1]
+#macro SD2_K_S [spr_kyle_smug, S2_K_X, S2_K_Y, S2_K_S, 1]
+#macro SD2_K_U [spr_kyle_upset, S2_K_X, S2_K_Y, S2_K_S, 1]
+#macro SD2_K_D [spr_kyle_devestated, S2_K_X, S2_K_Y, S2_K_S, 1]
+#macro SD2_HO [spr_host_neutral, S2_H_X, S2_H_Y, S2_H_S, 1]
+
+#macro SABINA2 S_TXTBX SD2 FR
+#macro SABINA2_H S_TXTBX SD2_H FR
+#macro SABINA2_A S_TXTBX SD2_A FR
+#macro SABINA2_C S_TXTBX SD2_C FR
+#macro SABINA2_U S_TXTBX SD2_U FR
+
+//kyle date 2
+#macro KD2 [spr_kyle_neutral, K2_X, K2_Y, K2_S, 1]
+#macro KD2_S [spr_kyle_smug, K2_X, K2_Y, K2_S, 1]
+#macro KD2_U [spr_kyle_upset, K2_X, K2_Y, K2_S, 1]
+#macro KD2_D [spr_kyle_devestated, K2_X, K2_Y, K2_S, 1]
+#macro KD2_M [spr_milton_neutral, K2_M_X, K2_M_Y, K2_M_S, -1]
+#macro KD2_M_HA [spr_milton_happy, K2_M_X, K2_M_Y, K2_M_S, -1]
+#macro KD2_M_HM [spr_milton_hmm, K2_M_X, K2_M_Y, K2_M_S, -1]
+#macro KD2_M_A [spr_milton_angry, K2_M_X, K2_M_Y, K2_M_S, -1]
+#macro KD2_M_B [spr_milton_bruh, K2_M_X, K2_M_Y, K2_M_S, -1]
+
+#macro KYLE2 K_TXTBX KD2 FR
+#macro KYLE2_S K_TXTBX KD2_S FR
+#macro KYLE2_U K_TXTBX KD2_U FR
+#macro KYLE2_D K_TXTBX KD2_D FR
+
+
+//AFFECTION MACROS
  
 #macro MAFF milton_affection
 #macro SAFF sabina_affection
@@ -2085,6 +2152,7 @@ function scr_dialogue(_text_id){
 		
 		//-------------------------------------MILTON---------------------------------------------
 		case "md2-0":
+		MILTON2
 		if MILTON_LOVES {
 			scr_text("It pleases me that you're joining me on this fair eve, made fairer for the fact that you've chosen to spend it with me. Let's see...what's on the menu for tonight?")
 		} else if MILTON_HATES {
@@ -2092,7 +2160,6 @@ function scr_dialogue(_text_id){
 		} else {
 			scr_text("Shall we commence ordering? I am quite excited for the delicacies prepared for us tonight...")
 		}
-		
 		scr_text("What will you be ordering?")
 		scr_option("Caesar salad", "md2-0-1")
 		scr_option("82oz Ribeye", "md2-0-2")
@@ -2101,29 +2168,36 @@ function scr_dialogue(_text_id){
 		
 			case "md2-0-1":
 			if MILTON_LOVES {
+				MILTON2_HAPPY
 				scr_text("A vegan...oh how you must care so much about animals and insects...so admirable of you.")
 				scr_option("Actually I just like salad...", "md2-0-1-1")
 				scr_option("Why thank you!", "md2-0-1-2")
 			} else if MILTON_HATES {
+				MILTON2_BRUH
 				scr_text("You would be a vegan...")
 				scr_option("What's that supposed to mean?", "md2-0-1-3")
 			} else {
+				MILTON2_HMM
 				scr_text("Ah, a vegan.")
 				scr_goto("md2-1")
 			}
 			break;
 			
 				case "md2-0-1-1":
+				MILTON2_HMM
+				MAFF(-1)
 				scr_text("Oh. Well then!")
 				scr_goto("md2-1")
 				break;
 		
 				case "md2-0-1-2":
+				MILTON2
 				scr_text("Of course of course...")
 				scr_goto("md2-1")
 				break;
 				
 				case "md2-0-1-3":
+				MILTON2_ANGRY
 				scr_text("Oh nothing.")
 				scr_goto("md2-1")
 				break;
@@ -2131,42 +2205,54 @@ function scr_dialogue(_text_id){
 		
 			case "md2-0-2":
 			if MILTON_LOVES {
+				MILTON2_HAPPY
 				scr_text("H-hungry aren't you? A big ol' steak huh? Gonna g-get all those meat juices all over you?")
 				scr_option("W-what?", "md2-0-2-1")
 				scr_option("Yeah I am...", "md2-0-2-2")
 			} else if MILTON_HATES {
+				MILTON2_ANGRY
 				scr_text("Typical. Gluttony resides in thee.")
 				scr_goto("md2-1")
 			} else {
+				MILTON2
 				scr_text("What a big steak...")
 				scr_goto("md2-1")
 			}
 			break;
 			
 				case "md2-0-2-1":
+				MILTON2_HMM
+				MAFF(-1)
 				scr_text("My apologies...I just love, uh, steak.")
 				scr_goto("md2-1")
 				break;
 				
 				case "md2-0-2-2":
+				MILTON2
+				MAFF(1)
 				scr_text("Good kitten...")
 				scr_goto("md2-1")
 				break;
 				
 			case "md2-0-3":
+			MAFF(1)
 			if MILTON_LOVES {
+				MILTON2_HAPPY
 				scr_text("Oh how I love a Bonga Bonga Burger Bonanza!")
 				scr_goto("md2-1")
 			} else if MILTON_HATES {
+				MILTON2_HMM
 				scr_text("Ordering my favorite item won't get you into my good graces...")
 				scr_goto("md2-1")
 			} else {
+				MILTON2
 				scr_text("Ah, the Bonga Bonga Burger Bonanza. Delicious.")
 				scr_goto("md2-1")
 			}
 			break;
 		
 		case "md2-1":
+		MILTON2
 		scr_text("I suppose we must converse with one another wait for the food to arrive.")
 		if MILTON_LOVES {
 			scr_text("I find myself somehow more excited for our conversation than I am for my Bonga Bonga Burger Bonanza!")
@@ -2181,17 +2267,20 @@ function scr_dialogue(_text_id){
 		break;
 		
 			case "md2-1-1":
+			MILTON2_BRUH
 			scr_text("DON'T say that name...the CopyRight Man is always lurking...")
 			scr_option("Oh...so what happened to your dad?", "md2-2")
 			scr_option("The CopyRight Man?", "md2-1-1-1")
 			break;
 			
 				case "md2-1-1-1":
+				MILTON2_ANGRY
 				scr_text("Yes.")
 				scr_option("Cool...so what happened to your dad?", "md2-2")
 				break;
 				
 		case "md2-2":
+		MILTON2
 		scr_text("It's less what happened to him and more what happened to me...")
 		scr_option("Do you want to talk about it?", "md2-3")
 		scr_option("What happened to you?", "md2-3")
@@ -2199,14 +2288,17 @@ function scr_dialogue(_text_id){
 		
 		case "md2-3":
 		if MILTON_LOVES {
+			MILTON2_HAPPY
 			scr_text("You want to know about me? Really? It's a bit of a sad story, but who am I to deny the first person who's cared about me since him...")
 			scr_option("I'm here for you Milton, whatever you need.", "md2-3-1")
 			scr_option("You don't have to talk about it if you don't want to...", "md2-3-2")
 			scr_option("Throwing a pity party for yourself?", "md2-3-3")
 		} else if MILTON_HATES {
+			MILTON2_HMM
 			scr_text("I do not feel the urge to converse with you about so personal a topic. You haven't exactly demonstrated understanding up to this point.")
 			scr_goto("md2-5")
 		} else {
+			MILTON2_HMM
 			scr_text("I don't know...it's a bit of a hard topic for me, but I suppose there isn't much else to talk about...")
 			scr_option("I'm here for you Milton, whatever you need.", "md2-3-1")
 			scr_option("You don't have to talk about it if you don't want to...", "md2-3-2")
@@ -2215,32 +2307,41 @@ function scr_dialogue(_text_id){
 		break;
 		
 			case "md2-3-1":
+			MILTON2_HAPPY
+			MAFF(1)
 			scr_text("Thank you. I appreciate your kindness.")
 			scr_goto("md2-4")
 			break;
 			
 			case "md2-3-2":
+			MILTON2
 			scr_text("It's ok. I will push through it.")
 			scr_goto("md2-4")
 			break;
 			
 			case "md2-3-3":
+			MILTON2_ANGRY
+			MAFF(-1)
 			scr_text("Oh. Well nevermind then.")
 			scr_option("I'm sorry! I didn't mean it!", "md2-3-3-1")
 			scr_option("So you were going to throw one?", "md2-3-3-2")
 			break;
 			
 				case "md2-3-3-1":
+				MILTON2_HMM
 				scr_text("I don't know how much I believe you, but I suppose I have no other to talk to, Everyone has abandoned me...")
 				scr_goto("md2-4")
 				break;
 				
 				case "md2-3-3-2":
+				MILTON2_BRUH
+				MAFF(-2)
 				scr_text("No.")
 				scr_goto("md2-5")
 				break;
 				
 		case "md2-4":
+		MILTON2
 		scr_text("It all began long ago in the St. Louisville Local Library. I was just a worm. My cognition had not yet ignited. One day, one of our regulars, a Science Man named Dave, brought an apple for lunch.")
 		scr_text("Whilst engaging in what must have been the most riveting of research (he was always rambling about MordeTwi and \"creating a family\"), he knocked his apple off the table.")
 		scr_text("It's lucky he didn't eat it, for it was radioactive, but I did. Upon taking my first bite, my DNA began to change. My first thought was of confusion, but I had become sentient.")
@@ -2253,102 +2354,129 @@ function scr_dialogue(_text_id){
 		break;
 		
 			case "md2-4-1":
+			MILTON2_HMM
+			MAFF(1)
 			scr_text("Yes...I am such a poor thing aren't I...")
 			scr_option("Yes you are Milty-poo, yes you are", "md2-4-1-1")
 			scr_option("Uh... yeah?", "md2-4-1-2")
 			break;
 			
 				case "md2-4-1-1":
+				MILTON2_BRUH
+				MAFF(-1)
 				scr_text("Do not speak to me like that. But yes, my life has just been sooo hard...")
 				scr_goto("md2-5")
 				break;
 				
 				case "md2-4-1-2":
-				scr_text("My life has just been sooo hard...the only thing that would make me feel better is just a glimpse of — sorry...I just was uh.")
+				MILTON2
+				MAFF(1)
+				scr_text("My life has just been sooo hard...the only thing that would make me feel better is just a glimpse of - sorry...I just was uh.")
 				scr_goto("md2-5")
 				break;
 				
 			case "md2-4-2": //rip off spiderman
+			MILTON2_HMM
 			scr_text("I do not know what this Spider Man of which you speak is. That sounds horrifying...a spider with the form of a man...arachn*ds are undeserving of sentience.")
 			scr_option("You're a worm that's like a bug too...", "md2-4-2-1")
 			scr_option("Spiderman is cool dw he's just a dude with spider powers.", "md2-4-2-2")
 			break;
 			
 				case "md2-4-2-1":
+				MILTON2_BRUH
+				MAFF(-1)
 				scr_text("Uhm, actually, though your species likes to derogatarily group many of what they deem \"lesser\" creatures into the single group of \"bugs,\" your comparison of me to an Arachn*d is as far-fetched as comparing humans to a beetle.")
 				scr_option("I didn't mean any offense by it!", "md2-4-2-1-1")
 				scr_option("\"ErM aCtUaLlY\"", "md2-4-2-1-2")
 				break;
 				
 					case "md2-4-2-1-1":
+					MILTON2_ANGRY
+					MAFF(1)
 					scr_text("I took offense from it.")
 					scr_goto("md2-5")
 					break;
 					
 					case "md2-4-2-1-2":
+					MILTON2_BRUH
+					MAFF(-1)
 					scr_text("Ah. The common trope of bullying those you are intellectually inferior to by attempting to make them out as the loser for their intelligence because you are insecure about your lack of it. Classic.")
 					scr_goto("md2-5")
 					break;
 					
-				case "md2-4-2-2":
+				case "md2-4-2-2": //dw hes cool
+				MILTON2
 				scr_text("Very well. I suppose the comparison isn't as terrible as I might have initially supposed. It still disturbs me that a human would...do that...with an Arachn*d.")
 				scr_option("No he got his powers by getting bitten by a radioactive spider...", "md2-4-2-2-1")
 				scr_option("Aren't we supposed to get together...and aren't you a worm?", "md2-4-2-2-2")
 				break;
 				
 					case "md2-4-2-2-1":
+					MILTON2_HMM
 					scr_text("I see where the resemblance stems from, but our stories are clearly different. If he had a parental figure that wasn't truly his relative yet stepped up to raise him after his parents were no longer in his life-")
 					scr_text("AND his parental figure then disappeared due to events that were related to his newfound powers... only then I might see it.")
 					scr_goto("md2-5")
 					break;
 					
 					case "md2-4-2-2-2":
+					MILTON2
 					scr_text("A worm is very different to an Arachn*d. And I believe I already showed you how useful I can be...have you already forgotten?")
 					scr_option("Oh trust me, I haven't ;)","md2-4-2-2-2-1")
 					scr_option("Forgotten what?","md2-4-2-2-2-2")
 					break;
 					
 						case "md2-4-2-2-2-1":
+						MILTON2_HAPPY
+						MAFF(2)
 						scr_text("Good. I will be sure to show you more...in depth later, kitten.")
 						scr_goto("md2-5")
 						break;
 						
 						case "md2-4-2-2-2-2":
+						MILTON2_HMM
 						scr_text("Hmm. Not here. Don't worry, I will ensure to jog your memory...")
 						scr_goto("md2-5")
 						break;
 			
 			case "md2-4-3": //long ah story
+			MILTON2_BRUH
+			MAFF(-1)
 			scr_text("Oh? Have the scars on my bare soul bored you so? Perhaps you did not understand, allow me to reiterate...")
 			scr_goto("md2-4")
 			break;
 		
 		case "md2-5":
+		MILTON2
 		scr_text("Ah, do you hear that? The sound of footsteps approaches. I believe our food has nearly arrived.")
 		scr_goto("md2-5a")
 		break;
 		
 		case "md2-5a":
+		S_TXTBX MD2, MD2_S FR
 		scr_text("Oh! Hey y'all! What's going on here?")
 		scr_goto("md2-5b")
 		break;
 		
 		case "md2-5b":
+		M_TXTBX MD2, MD2_S FR
 		scr_text("Greetings m'lady. What brings you to this establishment on this fine eve? " + global.name + "and I were just waiting in anticipation of our meal.")
 		scr_goto("md2-5c")
 		break;
 		
 		case "md2-5c":
+		S_TXTBX MD2, MD2_S_C FR
 		scr_text("Uhhhh I thought this was my hot date...")
 		scr_goto("md2-5d")
 		break;
 		
 		case "md2-5d":
+		M_TXTBX MD2_HM, MD2_S_C FR
 		scr_text("Erm, actually " + global.name + " invited me to a private dinner, so your appearance, I believe, has surprised us both.")
 		scr_goto("md2-5e")
 		break;
 		
 		case "md2-5e":
+		S_TXTBX MD2_HM, MD2_S_C FR
 		scr_text("That's not what The Host told me... Well, what is it then, " + global.name + "?")
 		scr_option("Yeah... I asked Milton out...", "md2-5e-1")
 		scr_option("Uhm, I was kinda regretting my choice, so you showing up is my saving grace!", "md2-5e-2")
@@ -2356,287 +2484,360 @@ function scr_dialogue(_text_id){
 		break;
 		
 			case "md2-5e-1":
+			M_TXTBX MD2, MD2_S_U FR
+			MAFF(2)
+			SAFF(-1)
 			scr_text("There you have it. But if this is what The Host has deemed to be entertaining, then I certainly am not opposed. Gazing on thy form with mine singular yet beautiful eye is not displeasing to say the least.")
 			scr_goto("md2-5f")
 			break;
 			
 			case "md2-5e-2":
+			M_TXTBX MD2_B, MD2_S_H FR
+			MAFF(-1)
+			SAFF(1)
 			scr_text("Is that so? I thought when you bequeathed that rose unto me it meant something, but clearly your motivation was to break my poor little Lepidopterian heart...")
 			scr_goto("md2-5ea")
 			break;
 			
 				case "md2-5ea":
+				S_TXTBX MD2_A, MD2_S_U FR
 				scr_text("Awww... poor Milty... I hope I'm not crashing your date, lifes so hard when you're hot!")
-				scr_goto("md2-5f")
+				scr_goto("md2-5e-3")
 				break;
 			
 			case "md2-5e-3":
+			M_TXTBX MD2, MD2_S FR
 			scr_text("Very well. I certainly do not mind being joined by such a beauty. It is a pleasure to gaze upon thee with mine singular yet beautiful eye.")
 			scr_goto("md2-5f")
 			break;
 		
 		case "md2-5f":
+		S_TXTBX MD2, MD2_S_C FR
 		scr_text("Oh... uhh.. Okay!")
 		scr_goto("md2-5g")
 		break;
 		
 		case "md2-5g":
+		M_TXTBX MD2, MD2_S_C FR
 		scr_text("Indeed...(Milton tries to wink, but he only has one eye so he just blinks and no one notices)")
 		scr_option("Sooo... do you and Sabina even know eachother?", "md2-5g-1")
 		scr_option("Do you have a crush on Sabina or something?", "md2-5g-2")
 		break;
 		
 			case "md2-5g-1":
+			M_TXTBX MD2_HM, MD2_S FR
+			MAFF(1)
 			scr_text("I have always wished to get to know her more intimately through the secret language of eye contact we've shared in the studio. Dare I say, before your arrival, it was quite likely we would have been next to couple up.")
 			scr_goto("md2-5h")
 			break;
 			
 			case "md2-5g-2": //duplicate for affection
+			M_TXTBX MD2_HM, MD2_S FR
+			MAFF(-1)
+			SAFF(1)
 			scr_text("I have always wished to get to know her more intimately through the secret language of eye contact we've shared in the studio. Dare I say, before your arrival, it was quite likely we would have been next to couple up.")
 			scr_goto("md2-5h")
 			break;
 		
 		case "md2-5h":
+		S_TXTBX MD2, MD2_S FR
 		scr_text("I thought he couldn't see me as long as I stood still.")
 		scr_goto("md2-5i")
 		break;
 		
 		case "md2-5i":
+		M_TXTBX MD2_HM, MD2_S FR
 		scr_text("Oh Sabina, don't play coy with me. But if you wish our relationship to remain a secret, I will respect that wish, just like I respect all women.")
 		scr_goto("md2-5j")
 		break;
 		
 		case "md2-5j":
+		S_TXTBX MD2, MD2_S_C FR
 		scr_text("Oh boy... another secret admirer, big Samuel J. May fan I bet.")
 		scr_goto("md2-5k")
 		break;
 		
 		case "md2-5k":
+		M_TXTBX MD2, MD2_S_C FR
 		scr_text("Indeed. Does my support of the female gender impress you? I can assure you, I've got a lot more in the tank. You'd be hard pressed to find one who respects females as much as I.")
 		scr_option("Then name three women.", "md2-5k-1")
 		scr_option("Prove your feminist prowess Milty!! Show her!!", "md2-5k-2")
 		break;
 		
 			case "md2-5k-1":
+			M_TXTBX MD2_B, MD2_S FR
+			MAFF(-1)
+			SAFF(1)
 			scr_text("Erm, the implication that I would not be able to name three women is insulting.")
 			scr_goto("md2-5l")
 			break;
 			
 			case "md2-5k-2":
+			M_TXTBX MD2_HM, MD2_S_C FR
+			MAFF(1)
+			SAFF(-1)
 			scr_text("Fantastic idea. I do think I will. Revel in amazement as I name three women with ease.")
 			scr_goto("md2-5l")
 			break;
 		
 		case "md2-5l":
+		M_TXTBX MD2_HM, MD2_S_C FR
 		scr_text("To start off, we have this beauty in front of me, Sabina Carpeter. Next, we have my manure diving disgrace of a mother, Gorgorothnitia the Fourteenth.")
 		scr_text("I and the rest of my cocoonal siblings were left to fend for ourselves while she left to gorge on the droppings of a nearby horse and get her Clitellum mingled by Brachovic the 92nd.")
 		scr_goto("md2-5m")
 		break;
 		
 		case "md2-5m":
+		S_TXTBX MD2, MD2_S_U FR
 		scr_text("Uhmmm first of all ew, second of all, keep going...")
 		scr_goto("md2-5n")
 		break;
 		
 		case "md2-5n":
+		M_TXTBX MD2_HM, MD2_S_U FR
 		scr_text("Well I don't know much after she left us, but Incestry.com says I am distantly related to the Hungry Hungry Caterpillar.")
 		scr_goto("md2-5o")
 		break;
 		
 		case "md2-5o":
+		S_TXTBX MD2_HM, MD2_S_A FR
 		scr_text("Ugh, I don't care about your gross family!!! Who's the third woman!!")
 		scr_goto("md2-5p")
 		break;
 		
 		case "md2-5p":
+		M_TXTBX MD2_B, MD2_S FR
 		scr_text("Sigh. My \"apologies\" that I got distracted due to re-living my trauma. Thank you so much for your undying support. I should have just ignored all my past problems to answer your very important question that I can obviously easily answer.")
 		scr_goto("md2-5q")
 		break;
 		
 		case "md2-5q":
+		S_TXTBX MD2_B, MD2_S_C FR
 		scr_text("Soooo are you going to \"easily\" answer it?")
 		scr_goto("md2-5r")
 		break;
 		
 		case "md2-5r":
+		M_TXTBX MD2_A, MD2_S_C FR
 		scr_text("FINE. If it means so much to you, I suppose I'll have to bring up Bolivia Rodriguez.")
 		scr_goto("md2-5s")
 		break;
 		
 		case "md2-5s":
+		S_TXTBX MD2_A, MD2_S_A FR
 		scr_text("Don't bring up that wretched floozy. As far as I'm aware she's no more of a woman than a snake. Doesn't count!")
 		scr_goto("md2-5t")
 		break;
 		
 		case "md2-5t":
+		M_TXTBX MD2_B, MD2_S_A FR
 		scr_text("I have fulfilled your silly challenge and you remain unsatisfied. Typical. I don't believe the onus lies on me to once again satisfy your wants like a plaything.")
 		scr_option("Why so reluctant?", "md2-5t-1")
 		scr_option("Sabina, that was three women to be fair.", "md2-5t-2")
 		break;
 		
 			case "md2-5t-1":
+			M_TXTBX MD2_A, MD2_S FR
+			MAFF(-1)
+			SAFF(1)
 			scr_text("I for one am not reluctant, I completed your silly game and will no longer be partaking in such frivolous activities.")
 			scr_goto("md2-5t-1b")
 			break;
 			
 				case "md2-5t-1b":
+				S_TXTBX MD2_B, MD2_S FR
 				scr_text("Wow that's a big word, I know big words too! I love absquatulating!")
 				scr_goto("md2-5t-1c")
 				break;
 			
 				case "md2-5t-1c":
+				M_TXTBX MD2_HM, MD2_S FR
 				scr_text("Yes Sabina, that is quite an obstreperous word. Your intelligence never ceases to... amaze me. Tell me, for one so intelligent, how then are the content of your songs so simple minded and one-note?")
 				scr_goto("md2-5t-1d")
 				break;
 			
 				case "md2-5t-1d":
+				S_TXTBX MD2_HM, MD2_S_C FR
 				scr_text("Uhh I dunno, I just say lots of words and then put them together... Hahah I'm so good at putting words together...")
+				scr_goto("md2-5t-1da")
+				break;
+				
+				case "md2-5t-1da":
+				S_TXTBX MD2_HM, MD2_S_H FR
 				scr_text("Just like I'm so good at matchmaking! You two would be so good together!!! Not me and Milton, but YOU TWO!!! #my new fav celeb couple.")
 				scr_goto("md2-5t-1e")
 				break;
 			
 				case "md2-5t-1e":
+				M_TXTBX MD2_B, MD2_S FR
 				scr_text("I appreciate your enthusiasm and support, m'lady. Your selflessness in allowing me to explore another blossoming love at your expense only makes me fall for you more deeply, but I understand your want.")
 				scr_text("If only " + global.name + " could muster up the ability to be a tad more respectful.")
 				scr_goto("md2-5t-1f")
 				break;
 				
 				case "md2-5t-1f":
+				S_TXTBX MD2_B, MD2_S_C FR
 				scr_text("I thought " + global.name + " was being plenty respectful!!")
 				scr_goto("md2-5t-1g")
 				break;
 				
 				case "md2-5t-1g":
+				M_TXTBX MD2_HM, MD2_S_C FR
 				scr_text("I suppose you might be right. Who am I to argue with the dominating force of correctness that is a women's opinion.")
 				scr_goto("md2-5u")
 				break;
 			
 			case "md2-5t-2":
-			scr_text("Wrong! " + gloabl.name + ", if you knew the horrible things she's done you wouldn't consider her a woman either.")
+			S_TXTBX MD2, MD2_S_A FR
+			MAFF(1)
+			SAFF(-1)
+			scr_text("Wrong! " + global.name + ", if you knew the horrible things she's done you wouldn't consider her a woman either.")
 			scr_text("The tabloids have revealed all of her secrets to me and it's some heavy stuff. I had to read so many, do you know how much a tabloid weighs!")
 			scr_goto("md2-5t-2b")
 			break;
 			
 				case "md2-5t-2b":
+				M_TXTBX MD2_HM, MD2_S_A FR
 				scr_text("Sabina, you too are in those tabloids. I ensure I am up to date with all the current literature, and I have seen your face in them many times. Quite recently actually, with your big disappearance.")
 				scr_goto("md2-5t-2c")
 				break;
 			
 				case "md2-5t-2c":
+				S_TXTBX MD2_HM, MD2_S FR
 				scr_text("Well I have no reason to be in them, I'm right here after all! Sabina in the flesh! In perfect condition too just look at my skin! It literally could not be more perfect. I make sure to give it lots of sun!")
 				scr_goto("md2-5t-2d")
 				break;
 			
 				case "md2-5t-2d":
+				M_TXTBX MD2, MD2_S FR
 				scr_text("It truly is wonderful. You know, worm slime is actually quite good for the skin...")
 				scr_goto("md2-5t-2e")
 				break;
 			
 				case "md2-5t-2e":
+				S_TXTBX MD2, MD2_S_C FR
 				scr_text("Yuckers! I haven't heard that before. I'm super picky about what goes on my skin, only the best for this h*e!")
 				scr_goto("md2-5t-2f")
 				break;
 			
 				case "md2-5t-2f":
+				M_TXTBX MD2_B, MD2_S_C FR
 				scr_text("Erm, I don't appreciate you calling a w*man a hoe.")
 				scr_goto("md2-5u")
 				break;
 				
 		
 		case "md2-5u":
+		S_TXTBX MD2_B, MD2_S_A FR
 		scr_text("???? You're so performative...How is that, like, all you say? It's like you've never interacted with the real world. You're such a Hobbadehoy, saying big words that don't mean anything at all!")
 		scr_goto("md2-5v")
 		break;
 		
 		case "md2-5v":
+		M_TXTBX MD2_A, MD2_S_A FR
 		scr_text("Sigh. I thought we were coming to an understanding. Another day another plebian. It seems you too cannot comprehend the idea that a man would stand up for Feminism in this day and age.")
 		scr_text("It just has to be performative?? And by the way, the words I use do have meaning, even if they are out of reach of your mind. Unlike the words you have been saying.")
-		scr_option("", "md2-5v-1" )
-		scr_option("", "md2-5v-2" )
+		scr_option("She is right...that was a bit much...", "md2-5v-1" )
+		scr_option("Stand on business Milton!!", "md2-5v-2" )
 		break;
 		
 			case "md2-5v-1":
+			S_TXTBX MD2_B, MD2_S FR
+			SAFF(1)
+			MAFF(-1)
 			scr_text("Sigh, I've studied lots for my music and trust me, those songs are packed full of meaning! I am also a ssuuupper big feminist, like a real feminist, some people call me the modern Joan of Arc #girl power.")
 			scr_goto("md2-5w")
 			break;
 			
 			case "md2-5v-2": //duplicate for affection change
+			S_TXTBX MD2, MD2_S FR
+			MAFF(1)
+			SAFF(-1)
 			scr_text("Sigh, I've studied lots for my music and trust me, those songs are packed full of meaning! I am also a ssuuupper big feminist, like a real feminist, some people call me the modern Joan of Arc #girl power.")
 			scr_goto("md2-5w")
 			break;
 			
 		case "md2-5w":
+		M_TXTBX MD2_B, MD2_S FR
 		scr_text("The very notion that you would compare yourself to Joan of Arc is ridiculous. Your silly little songs could never compare to what she did for not just Le France, but the world. A true female Warrior of her day.")
 		scr_goto("md2-5x")
 		break;
 		
 		case "md2-5x":
-		scr_text("Ver stupide, tu ne connais rien au monde que tu habites. Je devrais te jeter une tarte a la figure pour de tels commentaires. Idiot! Bet you didn't see that one coming, Oui Oui baguet!")
-		scr_goto("md2-5y")
-		break;
-		
-		case "md2-5y":
+		S_TXTBX MD2_B, MD2_S_A FR
 		scr_text("Ver stupide, tu ne connais rien au monde que tu habites. Je devrais te jeter une tarte a la figure pour de tels commentaires. Idiot! Bet you didn't see that one coming, Oui Oui baguet!")
 		scr_goto("md2-5z")
 		break;
 		
 		case "md2-5z":
+		M_TXTBX MD2, MD2_S FR
 		scr_text("Er, very impressive, I too am a multilingualist. My Nihonjin is kurimasu very good desu.")
 		scr_text("I intend to learn the beautiful and elegant language of La Français soon, and given my natural proclivity and ease in which I picked up Nihonjin, it should be a breeze.")
 		scr_goto("md2-5aa")
 		break;
 		
 		case "md2-5aa":
+		S_TXTBX MD2, MD2_S_C FR
 		scr_text("I don't think you speak very good Japanese actually :<, did you learn from magazines? Your pronunciation is ter-")
 		scr_goto("md2-5ab")
 		break;
 		
 		case "md2-5ab":
+		M_TXTBX MD2_B, MD2_S_C FR
 		scr_text("Of course you wouldn't think so, you just don't understand what loan words are. And I learned them from Manga not magazines thank you very much.")
 		scr_goto("md2-5ac")
 		break;
 		
 		case "md2-5ac":
+		S_TXTBX MD2_B, MD2_S FR
 		scr_text("It just sounded like English with a japanese accent!!")
 		scr_goto("md2-5ad")
 		break;
 		
 		case "md2-5ad":
+		M_TXTBX MD2_A, MD2_S FR
 		scr_text("So judgemental about a language which you do not even understand. Typical.")
 		scr_goto("md2-5ae")
 		break;
 		
 		case "md2-5ae":
+		S_TXTBX MD2_A, MD2_S_C FR
 		scr_text("Sure Milty, sure. Anywayysss I think I've had my fun here so I'll leave you two to it~~.")
 		scr_goto("md2-5af")
 		break;
 		
 		case "md2-5af":
+		M_TXTBX MD2_HM, MD2_S_C FR
 		scr_text("It seemed as though you'd never leave. I hope you don't miss my Lepidopterian form as much as I will miss yours. Not that you have a Lepidopterian form. Just that I will miss your form, which isn't Lepidopterian.")
 		scr_goto("md2-5ag")
 		break;
 		
 		case "md2-5ag":
+		S_TXTBX MD2_HM, MD2_S FR
 		scr_text("Uhm...tata!!!")
 		scr_goto("md2-5ah")
 		break;
 		
 		case "md2-5ah":
+		MILTON2
 		scr_text("She has finally left us.")
 		scr_goto("md2-5ai")
 		break;
 		
 		case "md2-5ai":
 		if MILTON_LOVES {
+			MILTON2_HMM
 			scr_text("Were you awaiting her departure as eagerly as I?")
 			scr_option("You seemed pretty down bad, you sure you wanted her to leave?", "md2-5ai-1")
 			scr_option("Finally that skank is gone...", "md2-5ai-2")
 			scr_option("She was the only thing keeping this conversation interesting...", "md2-5ai-3")
 		} else if MILTON_HATES {
+			MILTON2_ANGRY
 			scr_text("There goes the only thing keeping this conversation interesting...")
 			scr_option("I agree.", "md2-6")
 			scr_option("You still have me!!", "md2-5ai-4")
 		} else {
+			MILTON2
 			scr_text("I suppose it's just us now.")
 			scr_option("You seemed pretty down bad, you sure you wanted her to leave?", "md2-5ai-1")
 			scr_option("Finally that skank is gone...", "md2-5ai-2")
@@ -2645,111 +2846,143 @@ function scr_dialogue(_text_id){
 		break;
 		
 			case "md2-5ai-1":
+			MILTON2
 			scr_text("Wom*n scare me. She was so insistent on my naming of 3 wom*n...what if I had failed?")
 			scr_option("You wouldn't have failed Milty!", "md2-5ai-1-1")
 			scr_option("It seemed like you almost did...", "md2-5ai-1-2")
 			break;
 			
 				case "md2-5ai-1-1":
+				MILTON2
+				MAFF(1)
 				scr_text("The confidence you place in me is reassuring...thank you. I am glad I mustered the strength to name a third...thank goodness I read that tabloid I saw in Sabina's purse under the table")
 				scr_option("How were you reading a tabloid while we were talking?", "md2-5ai-1-1-1")
 				scr_option("That is lucky! I always knew you had it in you!", "md2-5ai-1-1-2")
 				break;
 				
 					case "md2-5ai-1-1-1":
+					MILTON2_HMM
 					scr_text("I can't reveal all my secrets so quickly now can I? I'm not that easy. I need to make you come back for more...")
 					scr_goto("md2-6")
 					break;
 					
 					case "md2-5ai-1-1-2":
+					MILTON2_HAPPY
+					MAFF(1)
 					scr_text("I am most appreciative. Maybe I did always have it in me...")
 					scr_goto("md2-6")
 					break;
 				
 				case "md2-5ai-1-2": // you almost did...
+				MILTON2
 				scr_text("I admit, it was a closer call than I was hoping for. I am lucky I was able to read the tabloid that fell out of Sabina's purse when she came in.")
 				scr_option("How were you reading a tabloid while we were talking?", "md2-5ai-1-1-1")
 				scr_option("I didn't even notice that! You're so smart Milty...", "md2-5ai-1-2-2")
 				break;
 				
 					case "md2-5ai-1-2-2":
+					MILTON2
+					MAFF(1)
 					scr_text("Indubitably so.")
 					scr_goto("md2-6")
 					break;
 				
 			case "md2-5ai-2"://skank
-				scr_text("S-skank?! Do NOT call Sabina that. She is so much more...not that I care after how rude she was. But maybe if I just send her some money she would act more kindly....")
-				scr_text("that always works with the fine streamers on Twitch.com. Once I gift tier 3 subscriptions, their tone changes. The same should work for her.")
-				scr_option("Oh totally...", "md2-5ai-2-1")
-				scr_option("Ok simp...", "md2-5ai-2-2")
-				break;
+			MILTON2_BRUH
+			MAFF(-1)
+			scr_text("S-skank?! Do NOT call Sabina that. She is so much more...not that I care after how rude she was. But maybe if I just send her some money she would act more kindly....")
+			scr_text("that always works with the fine streamers on Twitch.com. Once I gift tier 3 subscriptions, their tone changes. The same should work for her.")
+			scr_option("Oh totally...", "md2-5ai-2-1")
+			scr_option("Ok simp...", "md2-5ai-2-2")
+			break;
 				
-					case "md2-5ai-2-1":
-					scr_text("I'm a 27 month tier 3 PokeyMain subscriber.")
-					scr_option("Uh...cool?", "md2-5ai-2-1-1")
-					scr_option("Me too.", "md2-5ai-2-1-2")
+				case "md2-5ai-2-1":
+				MILTON2
+				scr_text("I'm a 27 month tier 3 PokeyMain subscriber.")
+				scr_option("Uh...cool?", "md2-5ai-2-1-1")
+				scr_option("Me too.", "md2-5ai-2-1-2")
+				break;
+					
+					case "md2-5ai-2-1-1":
+					MILTON2_HMM
+					MAFF(-1)
+					scr_text("Hmm, you don't seem incredibly impressed. Normies just don't understand.")
+					scr_goto("md2-6")
 					break;
 					
-						case "md2-5ai-2-1-1":
-						scr_text("Hmm, you don't seem incredibly impressed. Normies just don't understand.")
-						scr_goto("md2-6")
-						break;
-					
-						case "md2-5ai-2-1-2":
-						scr_text("Wonderful! Yet another experience we can bond over. I would be a tier 3 subscriber to you if you were a streamer.")
-						scr_option("Oh Milton...","md2-5ai-2-1-2-1" )
-						scr_option("Thanks?","md2-5ai-2-1-2-2" )
-						break;
-						
-							case "md2-5ai-2-1-2-1":
-							scr_text("Heh, you deserve the flattery.")
-							scr_goto("md2-6")
-							break;
-							
-							case "md2-5ai-2-1-2-2":
-							scr_text("Oh, you are more than welcome.")
-							scr_goto("md2-6")
-							break;
-							
-					case "md2-5ai-2-2": //ok simp
-					scr_text("Do not refer to me so derogatarily. I simply support the lifestyle of women who I will never meet under the hope that they will give me a crumb of attention.")
-					scr_text("It's a fair trade. Who else would want to say the name of one such as I...")
-					scr_option("You don't have to pay someone to pay attention to you...", "md2-5ai-2-2-1")
-					scr_option("Kinda cringe bruh", "md2-5ai-2-2-2")
+					case "md2-5ai-2-1-2":
+					MILTON2_HAPPY
+					MAFF(2)
+					scr_text("Wonderful! Yet another experience we can bond over. I would be a tier 3 subscriber to you if you were a streamer.")
+					scr_option("Oh Milton...","md2-5ai-2-1-2-1" )
+					scr_option("Thanks?","md2-5ai-2-1-2-2" )
 					break;
-					
-						case "md2-5ai-2-2-1":
-						scr_text("No one else does. If The Host weren't forcing you to be here, you probably wouldn't be either...")
-						scr_goto("md2-6")
-						break;
 						
-						case "md2-5ai-2-2-2":
-						scr_text("There is no getting through to you, is there.")
+						case "md2-5ai-2-1-2-1":
+						MILTON2
+						MAFF(1)
+						scr_text("Heh, you deserve the flattery.")
 						scr_goto("md2-6")
 						break;
+							
+						case "md2-5ai-2-1-2-2":
+						MILTON2
+						scr_text("Oh, you are more than welcome.")
+						scr_goto("md2-6")
+						break;
+							
+				case "md2-5ai-2-2": //ok simp
+				MILTON2_ANGRY
+				MAFF(-2)
+				scr_text("Do not refer to me so derogatarily. I simply support the lifestyle of women who I will never meet under the hope that they will give me a crumb of attention.")
+				scr_text("It's a fair trade. Who else would want to say the name of one such as I...")
+				scr_option("You don't have to pay someone to pay attention to you...", "md2-5ai-2-2-1")
+				scr_option("Kinda cringe bruh", "md2-5ai-2-2-2")
+				break;
+					
+					case "md2-5ai-2-2-1":
+					MILTON2
+					MAFF(1)
+					scr_text("No one else does. If The Host weren't forcing you to be here, you probably wouldn't be either...")
+					scr_goto("md2-6")
+					break;
+						
+					case "md2-5ai-2-2-2":
+					MILTON2_BRUH
+					MAFF(-1)
+					scr_text("There is no getting through to you, is there.")
+					scr_goto("md2-6")
+					break;
 			
 			case "md2-5ai-3": //keeping this convo interesting
+			MILTON2_BRUH
+			MAFF(-2)
 			scr_text("She was the only thing?! I am insulted. I thought we had a deeper connection than you and her!")
 			scr_option("I was joking!! I'm glad she's gone too!", "md2-5ai-3-1")
 			scr_option("I mean she was a tad more interesting...", "md2-5ai-3-2")
 			break;
 			
 				case "md2-5ai-3-1":
+				MILTON2_HMM
+				MAFF(2)
 				scr_text("Oh, uh, obviously I knew you were joking. I don't particularly mind either way of course. Engaging in frivolous emotional dynamics and drama is far beneath me.")
 				scr_goto("md2-6")
 				break;
 				
 				case "md2-5ai-3-2":
+				MILTON2_ANGRY
 				scr_text("Obviously. Low intellect specimens would not enjoy conversation with an intellectual such as myself as much as they would enjoy mindless drabble between each other.")
 				scr_goto("md2-6")
 				break;
 			
 			case "md2-5ai-4": //you still have me!!
+			MILTON2_ANGRY
 			scr_text("Great. Just great. I don't know how much more of this drivel I can take.")
 			scr_goto("md2-6")
 			break;
 			
 		case "md2-6":
+		MILTON
 		scr_text("I suppose we should begin wrapping up.")
 		if MILTON_LOVES{
 			scr_text("I did not think it possible, but this date has gone better than the first! Most exciting. I do believe if things keep going according to plan, I can show you some of the...prowess I was referencing in our earlier date.")
@@ -2768,11 +3001,14 @@ function scr_dialogue(_text_id){
 		
 		case "sd2-0":
 		if SABINA_LOVES {
+			SABINA2
 			scr_text("OMG heyyyyyyyy cutie, coming back for dessert huh ;). What's your favorite desert? Mine is a good venison with chocolate drizzle.")
 			scr_text("Uhm, this menu is like wayyyy long. Can you order for me?? There's too many words...")
 		} else if SABINA_HATES {
+			SABINA2_A
 			scr_text("Ugh! You again, you're so last season!! Why are you even choosing me!! LAMEEE!!! The least you can do is order me something, this menu has too many words for little ol' me.")
 		} else {
+			SABINA2
 			scr_text("Omg heyyy! I was just looking at this menu, but it has too many words for me...do you think you can help me order??")
 		}
 		scr_option("For the lady, perhaps a salad.", "sd2-0-1")
@@ -2781,6 +3017,8 @@ function scr_dialogue(_text_id){
 		break;
 		
 			case "sd2-0-1":
+			SABINA2_A
+			SAFF(-1)
 			scr_text("Perhaps not. Are you assuming I want a salad? Do I look like a rabbit to you? I'll have the steak smothered in funions.")
 			scr_option("Seems like you could use a salad...", "sd2-0-1-1")
 			scr_option("No! I just thought that's what girls liked...", "sd2-0-1-2")
@@ -2788,69 +3026,88 @@ function scr_dialogue(_text_id){
 			break;
 			
 				case "sd2-0-1-1":
+				SABINA2_U
+				SAFF(-2)
 				scr_text("Are you calling me fat? Ugh! I'd like to see YOU squeeze into a 1960s corset every night!")
 				scr_goto("sd2-1")
 				break;
 				
 				case "sd2-0-1-2":
+				SABINA2_U
+				SAFF(-1)
 				scr_text("UGH! I am NOT GIRLS!!! I'm my own...being!!! I'd like a real meaty meal!!")
 				scr_goto("sd2-1")
 				break;
 				
 				case "sd2-0-1-3":
+				SABINA2_C
 				scr_text("Mmmm I usually prefer eating rabbits to being them.")
 				scr_goto("sd2-1")
 				break;
 			
 			case "sd2-0-2": //ribeye
-			scr_text("Oh " + player.name + ", you know me so well! My mouth is watering already. Get it Rare! Blue Rare! I can't wait to tear into this big ole' hunk of meat with my teet- I mean a spoon.")
+			SABINA2_H
+			SAFF(1)
+			scr_text("Oh " + global.name + ", you know me so well! My mouth is watering already. Get it Rare! Blue Rare! I can't wait to tear into this big ole' hunk of meat with my teet- I mean a spoon.")
 			scr_option("You can chew on my hunk of meat ;)", "sd2-0-2-1")
 			scr_option("Uhm, you want it cooked raw?", "sd2-0-2-2")
 			break;
 			
 				case "sd2-0-2-1":
+				SABINA2
 				scr_text("Don't tempt me! Maybe I can take a bit of your skin home with me ;)")
 				scr_goto("sd2-1")
 				break;
 				
 				case "sd2-0-2-2":
+				SABINA2_C
 				scr_text("DUH! When you cook it, you ruin the skin!! That's the more important part!!")
 				scr_goto("sd2-1")
 				break;
 			
 			case "sd2-0-3": // burger
 			if SABINA_HATES {
+				SABINA2_U
 				scr_text("Omg, if the tabloids saw me eating this I would get totally canceled...you must not know a lot about the celebrity life. Unlike me. I know a LOT.")
 			} else {
+				SABINA2
 				scr_text("Wow! Two all-beef patties, special sauce, lettuce, cheese, pickles, onions on a sesame seed bun!")
 				scr_text("It's the perfect meal for the whole family, or one girl! And it's only $4.29 at McDonalds! What a steal!")
 			}
 			scr_goto("sd2-1")
+			break;
 			
 			
 		case "sd2-1":
+		SABINA2
 		scr_text("The food here always takes for-EVER....mmmmmaybe we could get to know each other some mmmore while we wait.")
 		scr_option("So, where are you from originally?", "sd2-1-1")
 		scr_option("So what do you think you would do if you weren't a pop star?", "sd2-1-2")
 		break;
 		
 			case "sd2-1-1":
+			SABINA2_C
 			scr_text("I'm not like super good at geography but I know it's really cold, and we have lots of trains. I think it's pretty far from here. I haven't been back in like a suuuuper long time and I try not to think about it.")
 			scr_option("That's pretty vague...", "sd2-1-1-1")
 			scr_option("I can keep you warm, we should visit sometime!", "sd2-1-1-2")
 			break;
 			
 				case "sd2-1-1-1":
+				SABINA2
+				SAFF(-1)
 				scr_text("Sorry... it was a lifetime or two ago... Now, the stage is my home! And the forest.")
 				scr_option("That's... beautiful.", "sd2-1-1-1-1")
 				scr_option("The forest?", "sd2-1-1-1-2")
 				break;
 				
 					case "sd2-1-1-1-1":
+					SABINA2_H
+					SAFF(1)
 					scr_text("Well I hope you didn't think my beauty was just surface level. From my skin. Uhhh ;)")
 					break;
 					
 					case "sd2-1-1-1-2": //the forest?
+					SABINA2
 					scr_text("OBVI!! NOTHING feeds the soul like sleeping under the stars and screaming into the night!!! You haven't lived until you've had a good star scream!!")
 					scr_option("Something is wrong with you", "sd2-1-1-1-2-1")
 					scr_option("I love camping!", "sd2-1-1-1-2-1")
@@ -2858,33 +3115,42 @@ function scr_dialogue(_text_id){
 					break;
 					
 						case "sd2-1-1-1-2-1":
+						SABINA2_A
+						SAFF(-1)
 						scr_text("And all of a sudden it's a crime for a girl to enjoy the natural world of the living! If you opened your mind to star screaming maybe you'd understand...")
 						scr_goto("sd2-2")
 						break;
 						
 						case "sd2-1-1-1-2-2":
-						scr_text("Ah a camper huh, that's like, my number one favorite treats- I mean type!")
+						SABINA2
+						scr_text("Ah a camper huh, that's like, my number one favorite treats- I mean types!")
 						scr_goto("sd2-2")
 						break;
 						
 						case "sd2-1-1-1-2-3":
+						SABINA2_H
+						SAFF(1)
 						scr_text("Uhm, duh. Do you even know who I am?? That's like my thing. Star screaming feels so much better when you have someone to do it with. I can make you scream loud ;)")
 						scr_goto("sd2-2")
 						break;
 				
 				case "sd2-1-1-2": //keep you warm
+				SABINA2
+				SAFF(1)
 				scr_text("Aww you sweetie ;) but that's okay, it was like a millenium ago!! Now the stage is my home. And the forest.")
 				scr_option("That's... beautiful.", "sd2-1-1-1-1")
 				scr_option("The forest?", "sd2-1-1-1-2")
 				break;
 			
 			case "sd2-1-2": //if you weren't a pop star
+			SABINA2
 			scr_text("Hmmm... I donno... Maybe a butcher or something cool like that.")
 			scr_option("A butcher?", "sd2-1-2-1")
 			scr_option("I thought you would say something more girly...", "sd2-1-2-2")
 			break;
 			
 				case "sd2-1-2-1":
+				SABINA2_C
 				scr_text("Did I say butcher, I meant dermatologist! I love getting into the nitty gritty of someone's skin...it's so interesting...")
 				scr_text("some people have such perfect skin...like you! I've been trying a new fertilizing routine, but I don't know if it's been working yet...")
 				scr_option("Oh I love those pimple popping videos", "sd2-1-2-1-1")
@@ -2893,147 +3159,181 @@ function scr_dialogue(_text_id){
 				break;
 				
 					case "sd2-1-2-1-1":
+					SABINA2
+					SAFF(1)
 					scr_text("Watching is one thing, but popping someone yourself is just the greatest feeling, you should try it sometime!! Maybe I can show you sometime!!")
 					scr_goto("sd2-2")
 					break;
 					
 					case "sd2-1-2-1-2":
+					SABINA2
 					scr_text("Well maybe you just haven't found the right skin! I mean person... haha!!!!!")
 					scr_goto("sd2-2")
 					break;
 					
 					case "sd2-1-2-1-3":
-					scr_text("The same way you are mistaking this for a good date... besides, they're like... totally the same. Ever heard of a skin peel!? So uncultured...and besides, I'm just ready for this food!")
+					SABINA2_U
+					SAFF(-1)
+					scr_text("The same way you are mistaking this for a good date... besides, they're like... totally the same. Ever heard of a skin peel!? So uncultured... Can the food come already?!")
 					scr_goto("sd2-2")
 					break;
 				
 				case "sd2-1-2-2": //more girly
+				SABINA2_A
+				SAFF(-1)
 				scr_text("Ugh. Keep trying to tell me how to live my life and I'll keep ignoring you. You're such a B*livia. They hate to see a girl with dreams...")
 				scr_option("Uhh I mean don't let me step on your apron! #GoButcherGirl!!!", "sd2-1-2-2-1")
 				scr_option("Dreams are one thing, butchering is another...", "sd2-1-2-2-2")
 				break;
 				
 					case "sd2-1-2-2-1":
+					SABINA2
+					SAFF(1)
 					scr_text("I knew you'd come around to it :)")
 					scr_goto("sd2-2")
 					break;
 					
 					case "sd2-1-2-2-2":
+					SABINA2_A
+					SAFF(-1)
 					scr_text("Well you must know a thing or two about butchering with how well you're butchering this date...")
 					scr_goto("sd2-2")
 					break;
 					
 		case "sd2-2":
+		K_TXTBX SD2, SD2_K FR
 		scr_text("Ayooo ya main course just arrived in dis bish.")
 		scr_goto("sd2-2a")
 		break;
 		
 		case "sd2-2a":
+		S_TXTBX SD2_C, SD2_K FR
 		scr_text("Oh it's... Kyle... I don't remember you being on the menu.")
 		scr_goto("sd2-2b")
 		break;
 		
 		case "sd2-2b":
+		K_TXTBX SD2_C, SD2_K_S FR
 		scr_text("Sometimes an executive decision needs to be made. Ole' Hosty told me I gotta add some flava to this snooze-fest.")
-		scr_option("Hi Kyle, great for you to join us!", "std2-2c")
-		scr_option("Waiter, Water please, i have a bad flavor in my mouth.", "std2-2c")
+		scr_option("Hi Kyle, great for you to join us!", "sd2-2c")
+		scr_option("Waiter, Water please, i have a bad flavor in my mouth.", "sd2-2c")
 		break;
 		
 		case "sd2-2c":
+		S_TXTBX SD2, SD2_K_S FR
 		scr_text("Oh well, two is greater than one, right?")
 		scr_goto("sd2-2d")
 		break;
 		
 		case "sd2-2d":
-		scr_text("Glad to know someone's preshes' my vibe, unlike Milty over there. Bro was totes crampin' my style. He'sdef lackin' in a certain department, if ya catch my drift.")
+		K_TXTBX SD2, SD2_K FR
+		scr_text("Glad to know someone's preshes' my vibe, unlike Milty over there. Bro was totes crampin' my style. He's def lackin' in a certain department, if ya catch my drift.")
 		scr_goto("sd2-2e")
 		break;
 		
 		case "sd2-2e":
+		S_TXTBX SD2_C, SD2_K FR
 		scr_text("Oh yeah, I thought a big, girthy worm would be right up my alley... I was wrong.")
 		scr_goto("sd2-2f")
 		break;
 		
 		case "sd2-2f":
+		K_TXTBX SD2_C, SD2_K_S FR
 		scr_text("Trust Sabina, There's more than one giant worm in this jawn.")
-		scr_option("Uh isn't this my date?", "std2-2g")
+		scr_option("Uh isn't this my date?", "sd2-2g")
 		break;
 		
 		case "sd2-2g":
+		S_TXTBX SD2_H, SD2_K_S FR
 		scr_text("Oh Kyle, you have such a way with words...")
-		scr_option("Uh, hello?", "std2-2h")
+		scr_option("Uh, hello?", "sd2-2h")
 		break;
 		
 		case "sd2-2h":
+		K_TXTBX SD2_H, SD2_K FR
 		scr_text("I got my pickup out back, I say we make a little detour ;)")
-		scr_option("Fine then. Sabina, did you know kyle isn't over his ex?", "std2-2h-1")
-		scr_option("Kyle look, ground beef!", "std2-2h-2")
+		scr_option("Fine then. Sabina, did you know kyle isn't over his ex?", "sd2-2h-1")
+		scr_option("Kyle look, ground beef!", "sd2-2h-2")
 		break;
 		
-			case "std2-2h-1":
+			case "sd2-2h-1":
+			K_TXTBX SD2, SD2_K_U FR
+			KAFF(-1)
 			scr_text("Listen to this square Sabina. Tryin' to harsh our vibe. Only someone with a low PSL would resort to lyin' on my name.")
 			scr_text("I'm so done with that ole broad, trust. I stay livin in the momento, ain't got no time for that last bop.")
-			scr_goto("std2-2h-1b")
+			scr_goto("sd2-2h-1b")
 			break;
 			
-				case "std2-2h-1b":
-				scr_text("Listen to this square Sabina. Tryin' to harsh our vibe. Only someone with a low PSL would resort to lyin' on my name.")
-				scr_text("I'm so done with that ole broad, trust. I stay livin in the momento, ain't got no time for that last bop.")
-				scr_goto("std2-2i")
+				case "sd2-2h-1b":
+				S_TXTBX SD2_C, SD2_K_U FR
+				scr_text("Yeah I'm totally over all of mine too... haha.")
+				scr_goto("sd2-2i")
 				break;
 			
-			case "std2-2h-2":
+			case "sd2-2h-2":
+			K_TXTBX SD2_C, SD2_K FR
 			scr_text("Where??? Sabina move this is an emergency.")
-			scr_goto("std2-2h-2b")
+			scr_goto("sd2-2h-2b")
 			break;
 			
-				case "std2-2h-2b":
+				case "sd2-2h-2b":
+				S_TXTBX SD2_U, SD2_K FR
 				scr_text("Yuck, my gross ex used to eat that boy kibble all the time... and he thought MY taste in blue rare was weird!.")
-				scr_goto("std2-2i")
+				scr_goto("sd2-2i")
 				break;
 		
 		case "sd2-2i":
+		K_TXTBX SD2_U, SD2_K_S FR
 		scr_text("I ain't jumpin' to any conclusions here, but it seemz like we got more in common than I thought.")
 		scr_goto("sd2-2j")
 		break;
 		
 		case "sd2-2j":
+		S_TXTBX SD2_C, SD2_K_S FR
 		scr_text("Did your ex cheat on you with some blue bimbo too?!")
 		scr_goto("sd2-2k")
 		break;
 		
 		case "sd2-2k":
+		K_TXTBX SD2_C, SD2_K FR
 		scr_text("Hold up, quit capin'. That broad straight played me, cheated on me with this blue brotha from another zip.")
 		scr_option("Wait, that sounds like my friend Goob...", "sd2-2k-1")
 		scr_option("Well, blue is so out of style... and gray is in season ;)", "sd2-2l")
 		break;
 		
 			case "sd2-2k-1":
+			S_TXTBX SD2_A, SD2_K FR
+			SAFF(-1)
 			scr_text("Ugh don't even speak that name, I could write a whole album about that homewrecker")
-			scr_goto("std2-2l")
+			scr_goto("sd2-2l")
 			break;
 		
 		case "sd2-2l":
+		K_TXTBX SD2, SD2_K FR
 		scr_text("So Shorty, Shawty, let's get deep for a momento.")
 		scr_goto("sd2-2m")
 		break;
 		
 		case "sd2-2m":
+		S_TXTBX SD2_H, SD2_K FR
 		scr_text("I loooove getting deep...it sounds like you have a lot of experience with that too huh hot stuff ;)")
-		scr_option("Am I even here...", "std2-2n")
+		scr_option("Am I even here...", "sd2-2n")
 		break;
 		
 		case "sd2-2n":
+		K_TXTBX SD2_H, SD2_K_S FR
 		scr_text("Same Twin', but hold that thought.")
 		scr_goto("sd2-2o")
 		break;
 		
 		case "sd2-2o":
+		S_TXTBX SD2_C, SD2_K_S FR
 		scr_text("You can't hold thoughts?? They're invisible??")
 		scr_goto("sd2-2p")
 		break;
 		
 		case "sd2-2p":
+		K_TXTBX SD2_C, SD2_K FR
 		scr_text("..so anyways, it appears we got some common ground but we gotta get fr -")
 		scr_goto("sd2-3")
 		break;
@@ -3041,11 +3341,13 @@ function scr_dialogue(_text_id){
 		
 		
 		case "sd2-3":
+		K_TXTBX SD2_C, SD2_K FR
 		scr_text("*Explosion Sounds*")
 		scr_goto("sd2-3b")
 		break;
 		
 		case "sd2-3b":
+		H_TXTBX SD2_C, SD2_K, SD2_HO FR
 		scr_text("Greetings contestants! I just HATE to interrupt a good date, but it appears we've had a bit of a mishap in the kitchen. Unfortunately the only thing we have left to eat is some delectable... Drum roll please")
 		scr_text("Venison!!")
 		scr_text("This delectable little friend here was a doe harvested from a field in the north eastern united states. Dig in, she's mighty juicy!")
@@ -3053,68 +3355,85 @@ function scr_dialogue(_text_id){
 		break;
 		
 		case "sd2-3c":
+		S_TXTBX SD2_M, SD2_K FR
 		scr_text("Oh that's just my fave!! Just look at all those...juices, oozing like it's a fresh kill. How.... sensual.")
 		scr_text("Here Kyle you take the first bite. I don't know if I can contain myself...")
 		scr_goto("sd2-3d")
 		break;
 		
 		case "sd2-3d":
+		K_TXTBX SD2_M, SD2_K_S FR
 		scr_text("Ayoo, chill. This coulda been my cousin. Show some respect here. Not tryin' to harsh your vibe but you gettin a little tangy for my pref...")
 		scr_goto("sd2-3e")
 		break;
 		
 		case "sd2-3e":
+		S_TXTBX SD2_C, SD2_K_S FR
 		scr_text("\"Harshin' your vibe\"? What's wrong with having a taste of your own kind every once in a while? Loosen up! Live a little!")
 		scr_goto("sd2-3f")
 		break;
 		
 		case "sd2-3f":
+		K_TXTBX SD2_C, SD2_K_U FR
 		scr_text("I'm down wit livin' large n' all, but this is straight up sketch. Feels wrong chowin' down on one my own, n' no cap seein that blood run down your face is kinda trippin me up RN.")
 		scr_option("Oh yeah Kyle, didn't you know she LOVES venison?","sd2-3g")
 		break;
 		
 		case "sd2-3g":
+		K_TXTBX SD2, SD2_K_U FR
 		scr_text("Listen I love a shawty who loves my meat, but when it's my own cuhz served out on a platter it feels a little wrong. How would you feel if we were chowin' on a human right now. ")
 		scr_goto("sd2-3h")
 		break;
 		
 		case "sd2-3h":
+		S_TXTBX SD2_U, SD2_K_U FR
 		scr_text("Honestly, Kyle, I'm feeling like, super judged right now. You seemed cool at first but I guess my judgement has failed me once again. You should probably not get with me if you have a weak stomach...")
 		scr_goto("sd2-3i")
 		break;
 		
 		case "sd2-3i":
+		K_TXTBX SD2_M, SD2_K_U FR
 		scr_text("I feel like i'm being a chill dude about this, you're the one eating my flesh and blood in front of me. Not my fault you don't think it's weird to eat DEER in front of a DEER")
 		scr_option("Kyle are you even a deer...", "sd2-3i-1")
 		scr_option("Yeah maybe not in the best taste...", "sd2-3i-2")
 		break;
 		
 			case "sd2-3i-1":
+			K_TXTBX SD2_M, SD2_K_D FR
+			KAFF(-2)
+			SAFF(1)
 			scr_text("Uh, yeah? That's straight disrespectful dawg. I can't with y'all, this is straight up not chill.")
 			scr_goto("sd2-3i-1b")
 			break;
 				
 				case "sd2-3i-1b":
+				S_TXTBX SD2_A, SD2_K_D FR
 				scr_text("Ugh, are we still hung up on this?? I don't think it matters what you are, good meat is good meat!!")
 				scr_goto("sd2-3i-1c")
 				break;
 				
 				case "sd2-3i-1c":
+				K_TXTBX SD2_A, SD2_K_U FR
 				scr_text("So I'm the crazy one for not getting down and chowin' on one of my own? You're wilin' dawg...")
 				scr_goto("sd2-3i-1d")
 				break;
 				
 				case "sd2-3i-1d":
+				S_TXTBX SD2, SD2_K_U FR
 				scr_text("You have to separate the alive from the kill!! It's just like with music when you have to separate the art from the artist!! Except for Bolivia...her songs are as bad as she is.")
 				scr_goto("sd2-3j")
 				break;
 			
 			case "sd2-3i-2":
+			K_TXTBX SD2_U, SD2_K_S FR
+			KAFF(1)
+			SAFF(-2)
 			scr_text("What I'm sayin...shawty actin crazy out here for a bite...")
 			scr_goto("sd2-3i-2b")
 			break;
 				
 				case "sd2-3i-2b":
+				S_TXTBX SD2_A, SD2_K_S FR
 				scr_text("Ugh, you're both being so baby!!! It's not even that bad!! You make the mental choice to eat certain kinds of meat every day!")
 				scr_text("I just hate when people have so much cognitive dissonance over MEAT!! Like just eat it!!")
 				scr_goto("sd2-3j")
@@ -3122,16 +3441,19 @@ function scr_dialogue(_text_id){
 			
 		
 		case "sd2-3j":
+		K_TXTBX SD2_A, SD2_K_U FR
 		scr_text("You're actually crazy. Literally Buggin'...you got me so scare-roused rn shawty, no cap")
 		scr_goto("sd2-3k")
 		break;
 		
 		case "sd2-3k":
+		S_TXTBX SD2_A, SD2_K_U FR
 		scr_text("I'm the crazy one!? There's NO difference between me eating your cousin and you eating a human!!")
 		scr_goto("sd2-3l")
 		break;
 		
 		case "sd2-3l":
+		K_TXTBX SD2_A, SD2_K FR
 		scr_text("Nah but I wouldn't eat a human in front of you...that's straight trifflin'.. Besides, you ain't rea-...whatever. I'm outta here bruh, you cray.")
 		scr_goto("sd2-4")
 		break;
@@ -3139,116 +3461,149 @@ function scr_dialogue(_text_id){
 		
 		
 		case "sd2-4":
+		SABINA2_A
 		scr_text("I-I don't-UGH! I'M JUST A GIRL!! And YOU! What are YOU looking at? Scared? Are you gonna leave too???")
 		scr_option("No, are you ok?", "sd2-4-1")
 		scr_option("Finally remembering I'm here, are we?", "sd2-4-2")
 		break;
 		
 			case "sd2-4-1":
+			SABINA2_A
 			scr_text("No. He LITERALLY eats people!! HOW is he getting BUTTHURT over me eating a delicious lump of venison that MAY OR MAY NOT be related to him!!!")
 			scr_text("That's like, SO Bolivia coded. I thought we were vibing.")
 			scr_option("Yeah, it's a bit of a double standard...", "sd2-4-1-1")
 			break;
 			
 				case "sd2-4-1-1":
+				SABINA2_A
 				scr_text("Especially when eating a human is SUCH a nothing burger. I don't CARE if you eat one in front of me!!! Like get over yourself!! He pretends to be so macho, but honestly.")
 				scr_option("Go off queen, he doesn't know what he's missing out on.", "sd2-4-1-1-1")
 				scr_option("Eating a human is a nothing burger??", "sd2-4-1-1-2")
 				break;
 				
 					case "sd2-4-1-1-1": 
+					SABINA2
+					SAFF(1)
 					scr_text("At least you weren't too weirded out. You were my end goal all along anyways...you're way hotter than that Wendigidiot.")
 					scr_option("Wengididiot...no wonder your songs have such good lyrics...", "sd2-4-1-1-1-1")
 					scr_option("I was a little weirded out, but lowkey it just makes you hotter...", "sd2-4-1-1-1-2")
 					break;
 					
 						case "sd2-4-1-1-1-1":
+						SABINA2
 						scr_text("It takes a genius to know a genius silly!!")
 						scr_goto("sd2-xn")
+						break;
 						
 						case "sd2-4-1-1-1-2":
+						SABINA2_H
+						SAFF(1)
 						scr_text("As if this perfect skin didn't make me hot enough?!? Haha just kidding " + global.name + ", I love it when someone can match my freak...")
 						scr_goto("sd2-xn")
+						break;
 					
 					case "sd2-4-1-1-2": //nothing burger??
+					SABINA2_C
 					scr_text("Actually it's a normal burger!!")
 					scr_option("That's not-oh whatever...", "sd2-4-1-1-2-1")
 					scr_option("So you'd eat a human?", "sd2-4-1-1-2-2")
 					break;
 					
 						case "sd2-4-1-1-2-1":
+						SABINA2
 						scr_text("Perfect!! I've been looking for someone who's so willing to look past little things like that!!")
 						scr_goto("sd2-xa")
+						break;
 						
 						case "sd2-4-1-1-2-2":
+						SABINA2_U
+						SAFF(-2)
 						scr_text("Have you really not picked up on that by now? Ugh, you're supposed to support my rights AND wrongs!!")
 						scr_goto("sd2-xa")
+						break;
 					
 			
 			case "sd2-4-2": //remembering im here
+			SABINA2_U
+			SAFF(-2)
 			scr_text("Way to make it ALLLLL about you!! Did you see how he was talking to me?? UGH!! You're both the same!! No one understands me...no one EVER understands me...")
 			scr_option("My bad, you and Kyle were just ignoring me a bit...", "sd2-4-2-1")
 			scr_option("It's ok Sabina, I understand you!!", "sd2-4-2-2")
 			break;
 			
 				case "sd2-4-2-1":
+				SABINA2_A
 				scr_text("Ugh. You would get hung up on a little thing like that, wouldn't you.")
 				scr_text("It was his scent!! I could just TELL he'd recently gorged himself on some delicious fresh meat. You can't blame a girl for wanting a little bite!!")
 				scr_option("That's fair I guess, are you ok?", "sd2-4-2-1-1")
 				break;
 				
 					case "sd2-4-2-1-1":
+					SABINA2_U
+					SAFF(2)
 					scr_text("I'm just...alone...")
 					scr_goto("sd2-4-2-1-1b")
 					break;
 					
 					case "sd2-4-2-1-1b":
+					SABINA2
 					scr_text("It's ok though!!!! I have so many beautiful and adoring fans now!! Isn't that just amazing!! Nothing is wrong!!")
 					scr_option("Uhhh ok?", "sd2-4-2-1-1-1")
 					scr_option("That isn't very convincing...", "sd2-4-2-1-2")
 					break;
 					
 						case "sd2-4-2-1-1-1":
+						SABINA2
 						scr_text("Nothing at all..!")
 						scr_option("What is really going on?", "sd2-4-2-1-1-1-1")
 						scr_option("Ok!", "sd2-xn")
 						break;
 						
 							case "sd2-4-2-1-1-1-1":
+							SABINA2_A
 							scr_text("Nothing!! And if there was something, you wouldn't understand!!!")
 							scr_option("Then help me to!", "sd2-x1")
 							scr_option("Why? Do I look stupid or something?", "sd2-x2")
 							break;
 						
 						case "sd2-4-2-1-1-2": //very convincing
+						SABINA2_C
 						scr_text("You should be convinced! I am telling the truth!!")
 						scr_option("I don't believe you...", "sd2-4-2-1-1-2-1")
 						scr_option("Ok!", "sd2-xn")
+						break;
 						
 							case "sd2-4-2-1-1-2-1":
+							SABINA2_A
+							SAFF(-1)
 							scr_text("You wouldn't understand anyway!!!")
 							scr_option("Then help me to!", "sd2-x1")
 							scr_option("Why? Do I look stupid or something?", "sd2-x2")
 							break;
 				
 				case "sd2-4-2-2": // i understand you
+				SABINA2_A
+				SAFF(-1)
 				scr_text("SHUT UP. YOU'RE MORE PERFORMATIVE THAN MILTON! I'M NOT LETTING YOU PRETEND TO UNDERSTAND!")
 				scr_option("Whoa, I wasn't trying to pretend. I just wanted to let you know you're not alone...", "sd2-4-2-2b")
 				break;
 				
 					case "sd2-4-2-2b":
+					SABINA2_U
 					scr_text("But I am alone. You can't understand...I've been alone for so long...")
 					scr_option("You've only been missing for a couple months!!", "sd2-4-2-2-1")
 					scr_option("You're not alone anymore!! I'm here!", "sd2-4-2-2-2")
 					break;
 					
 						case "sd2-4-2-2-1":
+						SABINA2_C
 						scr_text("Maybe to you. I told you, you wouldn't understand...")
 						scr_option("Then help me to!", "sd2-x1")
 						scr_option("Why? Do I look stupid or something?", "sd2-x2")
 						break;
 						
 						case "sd2-4-2-2-2":
+						SABINA2_U
 						scr_text("You're here, yes, but not... *here*. I told you, you wouldn't understand...")
 						scr_option("Then help me to!", "sd2-x1")
 						scr_option("Why? Do I look stupid or something?", "sd2-x2")
@@ -3257,73 +3612,91 @@ function scr_dialogue(_text_id){
 				
 			//pre ending
 			case "sd2-x1":
+			SABINA2_U
 			scr_text("I...I don't know if I'm ready yet.")
 			scr_option("We're in this together Sabina!!", "sd2-x1-1")
 			scr_option("Tell me!!", "sd2-x1-2")
 			break;
 								
 				case "sd2-x1-1":
+				SABINA2_C
+				SAFF(2)
 				scr_option("Thank you...I'm sorry...")
 				scr_goto("sd2-xs")
 				break;
 									
 				case "sd2-x1-2":
+				SABINA2_U
+				SAFF(-1)
 				scr_option("I told you I wasn't ready yet.")
 				scr_goto("sd2-xa")
 				break;
 									
 			case "sd2-x2": //do i look stupid
+			SABINA2_U
 			scr_text("No. It's just complicated, and you can't understand.")
 			scr_option("Ok then...", "sd2-xn")
 			scr_option("Can you try to help me understand?", "sd2-x2-1")
 			break;
 								
 				case "sd2-x2-1":
+				SABINA2_U
 				scr_text("I'm not ready yet, but thank you. I'm sorry.")
 				scr_option("It's ok! Whenever you're ready! I'll be here!", "sd2-x2-1-1")
 				scr_option("Tell me!!", "sd2-x2-1-2")
 				break;
 									
 					case "sd2-x2-1-1":
+					SABINA2
+					SAFF(1)
 					scr_text("Thank you...")
 					scr_goto("sd2-xs")
 					break;
 										
 					case "sd2-x2-1-2":
+					SABINA2_A
+					SAFF(-1)
 					scr_text("I told you I wasn't ready.")
 					scr_goto("sd2-xa")
 					break;
 					
 		case "sd2-xn":
+		SABINA2
 		scr_text("So anyways, I'm like sorry for ignoring you earlier. And thanks for calming me down a bit...I didn't mean to get so riled up.")
 		scr_goto("sd2-x")
 		break;
 		
 		case "sd2-xs":
+		SABINA2_C
 		scr_text("I didn't mean to ignore you earlier. I was just...distracted. Sometimes I don't think with my head. You're way better than that gross goat thing anyways.")
 		scr_goto("sd2-x")
 		break;
 		
 		case "sd2-xa":
+		SABINA2_U
 		scr_text("Ugh. I guess I'm a little sorry for ignoring you earlier, but you're not the only one that matters.")
 		scr_goto("sd2-x")
 		break;
 		
 		case "sd2-x":
+		SABINA2
 		if SABINA_LOVES {
-			scr_text("Looks like we're out of time, but thank you for dinner! It was soooo yummyyyy... but I don't think I'm quite satisfied...")
+			scr_text("Well, Looks like we're out of time, but thank you for dinner! It was soooo yummyyyy... but I don't think I'm quite satisfied...")
 			scr_text("Maybe after this is all done you can help satiate my needs ;). Cya back at the studio!!")
 		} else if SABINA_HATES {
 			scr_text("Looks like we're out of time, I guess I'll see you back at the studio then.")
 		} else {
 			scr_text("Looks like we're out of time but thanks for dinner and everything. I was quiteeee hungy! I guess I'll see you back at the studio!!")
 		}
+		scr_goto("d2-leave")
+		break;
 		
 	
 	//----------------------------------------------- [KYLE] ------------------------------------------------------------
 	
 	
 		case "kd2-0":
+		KYLE2
 		if KYLE_LOVES{
 			scr_text("Ayo wass good shorty, back for seconds I see. Y'know what they say gotta leave em' wanting more.")
 		} else if KYLE_HATES {
@@ -3338,124 +3711,153 @@ function scr_dialogue(_text_id){
 		break;
 	
 			case "kd2-0-1":
+			KYLE2_S
 			scr_text("Ayo we got a leaf muncher in this Jawn. I respect it. There are some sickos out there who'd eat venison.")
 			scr_option("Leaf muncher is crazyyyy....", "kd2-0-1-1")
 			scr_option("Why thank you!", "kd2-0-1-2")
 			break;
 			
 				case "kd2-0-1-1":
+				KYLE2
 				scr_text("No shade brotha, just spittin facts here.")
 				scr_goto("kd2-1")
 				break;
 				
 				case "kd2-0-1-2":
+				KYLE2
 				scr_text("I gotchu fo sho, whatever toots your own boat.")
 				scr_goto("kd2-1")
 				break;
 			
 			case "kd2-0-2": //ribeye
+			KYLE2_S
 			scr_text("Gotta love a good protein kick. Hopin' to get mine to-nite if you catch my drift")
 			scr_option("Don't talk to me like that", "kd2-0-2-1")
 			scr_option("We could make that happen ;)", "kd2-0-2-2")
 			break;
 			
 				case "kd2-0-2-1":
+				KYLE2_U
+				KAFF(-1)
 				scr_text("Fiety one here, sorry you to much of a normie to understand my lingo.")
 				scr_goto("kd2-1")
 				break;
 				
 				case "kd2-0-2-2":
+				KYLE2
+				KAFF(1)
 				scr_text("I see you peepin' my flow, let's make TS quick. wild ride.")
 				scr_goto("kd2-1")
 				break;
 			
 			
 			case "kd2-0-3": //burger
+			KYLE2_S
 			scr_text("Yo thats bringin' me back, me and my crew used to eat those all the time back n' Pre-K")
 			scr_goto("kd2-1")
 			break;
 			
 		case "kd2-1":
-		scr_text("So tell me, what exactly was it that led you right back to the ol' kyle ride?")
+		KYLE2
+		scr_text("So tell me, what exactly was it that led you right back to the ol' Kyle ride?")
 		scr_option("I just think you're, well, interesting", "kd2-1-1")
 		break;
 		
 			case "kd2-1-1":
+			KYLE2_S
 			scr_text("Intrusting huh? That's mad gnarly, Idk if I ever been called that before but thanks for real.")
 			scr_option("It just means you're cool!", "kd2-1-1-1")
 			scr_option("Np brah", "kd2-1-1-2")
 			break;
 			
 				case "kd2-1-1-1":
+				KYLE2
 				scr_text("Thanks dawg, means a lot. I been up in this joint getting my money up for a couple months now, you know what they say get yo money up not yo funny up.")
 				scr_option("They do say that...", "kd2-1-1-1-1")
 				scr_option("We love a self bettering king", "kd2-1-1-1-2")
 				break;
 				
 					case "kd2-1-1-1-1":
+					KYLE2_S
+					KAFF(1)
 					scr_text("Fr bruh, and no one on that grind harder than me. I'm out here 9 days a week pumpin' steel, you know how it is. Weekends I'm down in AC getting my game on. #REPRESENT")
 					scr_goto("kd2-2")
 					break;
 					
 					case "kd2-1-1-1-2":
-					scr_text("Nah I'm already on top bruh I just live the lovestyle. Or is it love the lifestyle. Whatev', I'm on that tho.")
+					KYLE2_S
+					KAFF(-1)
+					scr_text("Nahhhh I'm already on top bruh... I just live the lovestyle. Or is it love the lifestyle. Whatev', I'm on that tho.")
 					scr_text("I keep a tight balance between grind and play, so I make sure to hit AC every weekend. You'd totes dig it trust, I be missin' it on the reg...")
 					scr_goto("kd2-2")
 					break;
 					
 				
 				case "kd2-1-1-2": //np brah
+				KYLE2
+				KAFF(1)
 				scr_text("Oh shoot, I didn't know you were up with it. That's mad chill, I could def see us vibing at the shore.")
 				scr_option("I would love to!", "kd2-1-1-2-1")
 				scr_option("I don't like the beach that much...", "kd2-1-1-2-2")
 				break;
 				
 					case "kd2-1-1-2-1":
+					KYLE2
+					KAFF(1)
 					scr_text("Fireeee. We should totes hit the shore after this. You'd totes dig it trust, I be missin' it on the reg...")
 					scr_goto("kd2-2")
 					break;
 					
 					case "kd2-1-1-2-2":
+					KYLE2
 					scr_text("Nahhh bruh. You'd love AC tho, trust. Best place on earth...I miss it every day...")
 					scr_goto("kd2-2")
 					break;
 					
 		case "kd2-2":
-		scr_text("Ah, I peep some footsteps, better be our grub im starved fr fr.")
+		KYLE2
+		scr_text("Ah, I peep some footsteps. Better be our grub, im starved fr fr.")
 		scr_goto("kd2-2b")
 		break;
 		
 		case "kd2-2b":
+		M_TXTBX KD2, KD2_M FR
 		scr_text("Hello all.")
 		scr_goto("kd2-2c")
 		break;
 		
 		case "kd2-2c":
+		K_TXTBX KD2_U, KD2_M FR
 		scr_text("Ayo who invited the wizard.")
 		scr_goto("kd2-2d")
 		break;
 		
 		case "kd2-2d":
+		M_TXTBX KD2_U, KD2_M_B FR
 		scr_text("Erm, wizard? I don't quite understand the resemblance. Is that intended to be a compliment?")
 		scr_goto("kd2-2e")
 		break;
 		
 		case "kd2-2e":
-		scr_text("This Minger thinks just cause he's never felt the touch of, anyone, hes better than us. Wake up, fam, bein' a lonely Incel is played out.")
+		K_TXTBX KD2_S, KD2_M_B FR
+		scr_text("This Minger thinks just cause he's never felt the touch of, anyone, hes better than us. Wake up, fam, bein' a lonely incel is played out.")
 		scr_goto("kd2-2f")
 		break;
 		
 		case "kd2-2f":
+		M_TXTBX KD2_S, KD2_M_A FR
 		scr_text("\"Minger?\" Your linguistic choices would be interesting if they weren't so...incomprehensible. I am better than you, simpleton. I eagerly await the coming of deer hunting season.")
 		scr_goto("kd2-2g")
 		break;
 				
 		case "kd2-2g":
+		K_TXTBX KD2, KD2_M_A FR
 		scr_text("Nah thats cap. Quit faffin, I gotta get back to my date with shorty.")
 		scr_goto("kd2-2h")
 		break;
 		
 		case "kd2-2h":
+		M_TXTBX KD2, KD2_M FR
 		scr_text("I do believe you mean our date with \"shorty.\" Trust me, I would not have chosen to spend a second within your disgusting vicinity, but I am here now.")
 		scr_text("You seem to have quite the proclivity to the sound of your own voice. Do you want to keep bungling our minds with the sound of your incessant chatter, or might it be a better use of time to allow the \"shorty\" to speak?")
 		scr_option("...You guys really seem to like eachother...", "kd2-2h-1")
@@ -3463,127 +3865,161 @@ function scr_dialogue(_text_id){
 		break;
 		
 			case "kd2-2h-1":
+			K_TXTBX KD2_U, KD2_M FR
 			scr_text("He started it, this Truecel here has been after me since day one. Bros supes jealous of me FYI. Milty here doesn't seem to understand how the human species operates.")
 			scr_goto("kd2-2h-1b")
 			break;
 			
 				case "kd2-2h-1b":
+				M_TXTBX KD2_U, KD2_M_B FR
 				scr_text("Do NOT call me Milty. The only thing I am jealous of is your complete and utter ignorance of the world, and I am more than aware of how humans operate.")
 				scr_text("Your made-up nonsense words are a clear indicator of your pseudointelligence.")
-				scr_goto("kd2-2")
+				scr_goto("kd2-2i")
 				break;
 			
 			case "kd2-2h-2":
+			K_TXTBX KD2_U, KD2_M FR
+			KAFF(-1)
 			scr_text("Don't get your hopes up, while normally I would never say no to a good pump n' munch, Milton here has the sexual prowess of a Shaman. Milty's jealous so he be followin me 'round like a pound puppy.")
 			scr_goto("kd2-2h-2b")
 			break;
 			
 				case "kd2-2h-2b":
+				M_TXTBX KD2_U, KD2_M_B FR
 				scr_text("Do NOT call me Milty. The only thing I am jealous of is your complete and utter ignorance of the world, and I do NOT follow you around!")
 				scr_text("The Host mandated I be here. If you had the wherewithal to look past your own nose, you  might have realized as much.")
 				scr_goto("kd2-2i")
 				break;
 		
 		case "kd2-2i":
+		K_TXTBX KD2_S, KD2_M_B FR
 		scr_text("I don't listen to TrueCels with a PSL of 0. Do you see his Canthal tilt?? Diabolically low.")
 		scr_goto("kd2-2j")
 		break;
 		
 		case "kd2-2j":
+		M_TXTBX KD2_S, KD2_M_A FR
 		scr_text("Sigh. A single (yet beautifully) eye'd specimen such as I does not have a Canthal Tilt.")
 		scr_text("You on the other hand...what are you wearing that skull mask for? Are hiding the monstrosity beneath? Is your Canthal Tilt negative??")
 		scr_goto("kd2-2k")
 		break;
 		
 		case "kd2-2k":
-		scr_text("Thought you were supposed to be MR. Smarty Sweater. \"Ohh i'm Milton, I love Feminism, please let's bump uglies!\"")
+		K_TXTBX KD2_U, KD2_M_A FR
+		scr_text("Thought you were supposed to be MR. Smarty Sweater. \"Ohh i'm Milton, I love Feminism, please lets bump uglies!\"")
 		scr_text("If you used even .5% of your pea sized brain you would realize that's my face, and I have an exceptionally high Canthal tilt.")
 		scr_goto("kd2-2l")
 		break;	
 		
 		case "kd2-2l":
+		M_TXTBX KD2_U, KD2_M_B FR
 		scr_text("Even 0.5% of my brain is intellectually superior to the hollow cave that exists within your head. That thing being your face is truly disturbing.")
 		scr_text("The source of your insecurity is laid bare, and the contempt you hold for feminism truly belies your intelligence. Unfortunately, the world you live in does not solely revolve around you.")
 		scr_goto("kd2-2m")
 		break;
 		
 		case "kd2-2m":
+		K_TXTBX KD2_S, KD2_M_B FR
 		scr_text("Duh. Ain't gotta be a rocket scientist to see that one. My crew be keepin' me mad grounded, they got my back through and thru.")
 		scr_text("You should try that \"friends\" thing some time. Oh wait, you can't! 'Cause who wants to be dawgs with a nark who never shuts his trap?")
 		scr_goto("kd2-2n")
 		break;
 		
 		case "kd2-2n":
+		M_TXTBX KD2_S, KD2_M FR
 		scr_text("I will have you know I have a respectable group of Tomodachi's. Oh sorry, if you couldn't understand that, it was my Japanese slipping out.")
 		scr_text("You wouldn't understand what it's like to be multilingual. Your cronies clearly do not keep you humble enough.")
 		scr_goto("kd2-2o")
 		break;
 		
 		case "kd2-2o":
+		K_TXTBX KD2, KD2_M FR
 		scr_text("Milty, pal, compadre, my Truecel amico. There's something italiano for you. You're just a smartArse with no huzz, but your to caught up on yo-self to see it.")
 		scr_goto("kd2-2p")
 		break;
 		
 		case "kd2-2p":
+		M_TXTBX KD2, KD2_M_HM FR
 		scr_text("Knowing a couple Italian greetings does not make you multilingual. I, on the other hand, am practically fluent.")
 		scr_text("My Nihon Sensei told me in length about it during our last session. Though intelligence is eldritch to an ant, so I suppose I cannot blame you.")
 		scr_goto("kd2-2q")
 		break;		
 		
 		case "kd2-2q":
+		K_TXTBX KD2_S, KD2_M_HM FR
 		scr_text("Didn't know we was at Krispy Kreme with all this glaze. Shorty lets bounce back to my pad, I promise i'm more bite than bark.")
 		scr_goto("kd2-2r")
 		break;
 		
 		case "kd2-2r":
+		M_TXTBX KD2_S, KD2_M_B FR
 		scr_text("Glaze fest? My latent superiority over you is not glaze, merely fact.")
 		scr_text("And I do believe neither of us will be leaving this place, so I don't understand what you mean by your \"pad.\" Are you referring to the surmounting pile of trash in the corner in which you reside?")
 		scr_option("Guys let's relax a little...", "kd2-2s")
 		break;
 		
 		case "kd2-2s":
+		M_TXTBX KD2_S, KD2_M_A FR
 		scr_text("It's not my fault this dimwitted bumbling softskull oaf is trying to drag me down to his level")
 		scr_text("and all because he's not over his ugly ex yet, and has created an entire personality around compensating for the fact that she left him.")
 		scr_goto("kd2-2t")
 		break;
 		
 		case "kd2-2t":
+		K_TXTBX KD2_U, KD2_M_A FR
 		scr_text("Nahhh you trippin, that bops old news. I told ya Milty, I'm on a whole nother level now, while you been stuck right where u wuz before. I'm strait alpha now, no need to be jelly.")
 		scr_goto("kd2-2u")
 		break;
 		
 		case "kd2-2u":
+		M_TXTBX KD2_U, KD2_M FR
 		scr_text("Ah, the \"alpha era\"...the thing guys like you delude themselves into believing they are to cope with the fact that they aren't loved. And you aren't.")
 		scr_option("He's right Kyle you are kind of overcompensating", "kd2-2u-1")
-		scr_option("That's a little far Milton, you don't know what it's like", "kd2-2u-1")
+		scr_option("That's a little far Milton, you don't know what it's like", "kd2-2u-2")
 		break;
 		
 			case "kd2-2u-1":
+			K_TXTBX KD2_U, KD2_M FR
+			KAFF(-2)
+			MAFF(1)
+			scr_text("You are trip-pin, “Overcompensating”, Nahhhhh, you strait tweakin’. Do I look like someone whose overcompensating?? You ain’t never been on the grind. Haters always roll deep.")
+			scr_goto("kd2-2u-1b")
+			break;
+		
+			case "kd2-2u-2":
+			K_TXTBX KD2, KD2_M FR
+			KAFF(1)
+			MAFF(-1)
 			scr_text("Yeah Milty, stop hating on gang. That ain't tuff.")
 			scr_goto("kd2-2u-1b")
 			break;
 			
 			case "kd2-2u-1b":
+			M_TXTBX KD2, KD2_M_HM FR
 			scr_text("Your inability to self reflect is so typical I can't say I'm disappointed. I see why your raggedy, malodorous ex left you after all.")
 			scr_goto("kd2-2u-1c")
 			break;
 			
 			case "kd2-2u-1c":
+			K_TXTBX KD2_S, KD2_M_HM FR
 			scr_text("Ayo, don't be callin' her mal-odour-ous, bro. She smelled mad good, not as good as me of course, but she smelled mad good. Like a cold pbr on the shore.")
 			scr_goto("kd2-2u-1d")
 			break;
 			
 			case "kd2-2u-1d":
+			M_TXTBX KD2_S, KD2_M_B FR
 			scr_text("Still feeling protective of her are we? Can't bear to hear her insulted, even after what she did to you? Yet you claim you're not over her. Pathetic.")
 			scr_goto("kd2-2u-1e")
 			break;
 			
 			case "kd2-2u-1e":
+			K_TXTBX KD2_U, KD2_M_B FR
 			scr_text("I gettin gang banged up in this piece. First Milty wants beef, now shorty comin' for seconds. I can't catch a break brah,  needta crack a cold one.")
 			scr_goto("kd2-2u-1f")
 			break;
 			
 			case "kd2-2u-1f":
+			M_TXTBX KD2_U, KD2_M_A FR
 			scr_text("You disgusting alcoholic. I'm simply calling out your lies and falsehoods where they stand, and clearly " + global.name + " is too.")
 			scr_text("Don't you think " + global.name + " here deserves someone who isn't hung up on their ex. Someone like me. I'm not attacking you, I just want the best for our friend here.")
 			scr_option("Milton stop fighting my battle.", "kd2-2u-1g")
@@ -3591,6 +4027,7 @@ function scr_dialogue(_text_id){
 			break;
 			
 			case "kd2-2u-1g":
+			M_TXTBX KD2_U, KD2_M_B FR
 			scr_text("I simply just cannot stand watching this disgusting, anti-feminist, alpha-maxxing, gym 'brah', alcoholic loser, with no real friends, whose girlfriend left him lie to you about what makes him tick.")
 			scr_text("Yet I am the one who is being mean? He is lying to you. Manipulating you with his tricks. Why do you think his ex left him? Why do you think he's not over her yet? Disgusting.")
 			scr_option("I mean breakups are always hard, no matter who is at fault...", "kd2-2u-1h")
@@ -3598,6 +4035,7 @@ function scr_dialogue(_text_id){
 			break;
 			
 			case "kd2-2u-1h":
+			M_TXTBX KD2_U, KD2_M_A FR
 			scr_text("Of course HE'S the one at fault! Have you even spent a second with the insufferability of his personality? It's completely unbearable.")
 			scr_text("I don't know how anyone can stand to be around such a MUPPET. He's a DISGRACE to Wendigo's. He's a disgrace to all non-human kind, and it's no wonder his girlfriend left him.")
 			scr_text("EVERYONE leaves him. He's pathetic and boring and stupid and NO ONE LOVES HIM.")
@@ -3606,6 +4044,7 @@ function scr_dialogue(_text_id){
 			break;
 			
 			case "kd2-2u-1i":
+			M_TXTBX KD2_U, KD2_M_B FR
 			scr_text("I don't need to know the specifics, because it's obvious if you waste even a moment of time on him. It's BAFFLING to me that you don't see that.")
 			scr_text("You too are CLEARLY a waste of time. GOODBYE.")
 			scr_goto("kd2-3")
@@ -3613,30 +4052,35 @@ function scr_dialogue(_text_id){
 			
 	
 		case "kd2-3":
+		KYLE2
 		scr_text("Milty is strait trippin here. My ex and me ended it super mutual. She didn't harsh my blow at alls, we chillin'")
 		scr_option("Kyle, denial doesn't help you heal", "kd2-3b")
 		scr_option("You don't seem to be \"chillin'\" at all", "kd2-3b")
 		break;
 		
 		case "kd2-3b":
+		KYLE2_S
 		scr_text("Nahh trust. I got it all locked. Got my mornin' routine, my crew, Agnes, and a membership to Time to Wine. Emotions? Nahhh, we ice-cold up in this piece. Froze n' focused.")
 		scr_option("All ice thaws eventually", "kd2-3c")
 		scr_option("I'll listen if you want to talk about it", "kd2-3c")
 		break;
 		
 		case "kd2-3c":
+		KYLE2_U
 		scr_text("Nope froze n' focused.")
 		scr_option("Stop listening to the Alphamaxxers in your head. They aren't here", "kd2-3d")
 		scr_option("I think it'll make you feel better, plus it's super manly", "kd2-3d")
 		break;
 		
 		case "kd2-3d":
+		KYLE2
 		scr_text(".. maybe just a little. Her name was Roxie Diamond. I met her on the Strip back in AC.")
 		scr_text("Finest Shawty in all AC. From the first moment we were vibin' heavy, in the streets and in the sheets. She was like no other, wild thing to make my heart sing")
 		scr_option("So what happened?", "kd2-3e")
 		break;
 		
 		case "kd2-3e":
+		KYLE2
 		scr_text("She broke my heart. Found out she was getting a train run on her by 6 Wendidudes on the DL while I was outta the crib.")
 		scr_text("She was my everything dude. My everything. I just- ever since that night, when I saw what shawty had been up to, it's been replayin' in my mind like a bad porno.")
 		scr_text("How could she do that to me? I musta did sum to deserve it...I'm pretty sure my SMV was just to low.")
@@ -3645,11 +4089,13 @@ function scr_dialogue(_text_id){
 		break;
 		
 		case "kd2-3f":
+		KYLE2_U
 		scr_text("Maybe...I just don't understand why she'd do something like that. Me and shawty was as tight as she was. She wasn't like that.")
 		scr_option("When someone shows you who they are, believe them.", "kd2-3g")
 		break;
 		
 		case "kd2-3g":
+		KYLE2_D
 		scr_text("I just- i just don't know why i had to go through that...it's just not fair bruh...")
 		scr_text("that girl- that girl was my WORLD man...i treated her like my QUEEN and all I got in return was a broken heart...")
 		scr_text("i just...i just don't know how i can ever love again after that. I gave shawty EVERYTHING i had...EVERYTHING")
@@ -3658,11 +4104,13 @@ function scr_dialogue(_text_id){
 		break;
 		
 		case "kd2-3h":
+		KYLE2_D
 		scr_text("*sniffles* th-thanks ig...she was for the streets fr...all women are...all I got is my grind and I'll have shawties up the wazoo fallin all over me again...")
 		scr_option("This whole alpha-tok thing...you can't keep using it as a shield", "kd2-3i")
 		break;
 		
 		case "kd2-3i":
+		KYLE2_U
 		scr_text("Man that's all I got left after her...she left me with nothin'. I don't know what I'm supposed to act like without her. All I know is that it hurts less when I am the reason because I can change that.")
 		scr_text("It's like I can't accept the fact that she's gone and I'm alone, or that she's the one who's messed up. Because then, if it wasn't my fault, I couldn't have done anything different.")
 		scr_text("I was doomed from the start, and all that time and effort and money I poured into us meant nothing. I poured MY SOUL into us man. MY SOUL. It's not fair!")
@@ -3670,16 +4118,19 @@ function scr_dialogue(_text_id){
 		break;
 		
 		case "kd2-3j":
+		KYLE2_U
 		scr_text("But leaving the wall...it hurts bruh. If I try to get to the other side, I don't know if I'll make it...")
-		scr_option("I'm here for you Kyle.", "kd2-3k")
+		scr_option("I'm here for you Kyle...", "kd2-3k")
 		break;
 		
 		case "kd2-3k":
+		KYLE2_D
 		scr_text("*Kyle sobs into your shoulder*")
-		scr_option("You'll make it.", "kd2-3l")
+		scr_option("...You'll make it.", "kd2-3l")
 		break;
 		
 		case "kd2-3l":
+		KYLE2
 		scr_text("You a real one...thank you... fr fr.")
 		scr_goto("d3-leave")
 		break;

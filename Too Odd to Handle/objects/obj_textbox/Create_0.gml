@@ -17,14 +17,16 @@ portrait_B_y = 160
 
 //-----[Box Parameters]-----
 
-margin = 50
-padding = 25
+textbox_spr = spr_box
 
-tb_height = 200
+margin = 50
+padding = 50
+
+tb_height = 300
 tb_width = gui_w - margin*2
 tb_spr = spr_box
 
-line_sep = 35 //vertical line spacing
+line_sep = 40 //vertical line spacing
 line_width = tb_width - padding*2 
 
 tb_x = margin
@@ -39,6 +41,7 @@ text[0] = ""
 text_length[0] = string_length(text[0])
 curr_char = 0
 text_speed = 1
+text_color = c_white
 
 setup = false
 
