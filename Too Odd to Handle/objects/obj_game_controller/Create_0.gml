@@ -17,7 +17,7 @@ enum GP {
 
 display_set_gui_size(room_width, room_height)
 
-global.gamephase = GP.INTERMISSION1
+global.gamephase = GP.TUTORIAL
 global.name = "Player"
 
 global.milton_affection = 0
@@ -39,3 +39,4 @@ d2_taken = []
 i4_spoken_to = [] //asked about thier dates
 d3_chosen = noone
 
+create_textbox("t1")

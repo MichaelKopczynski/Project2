@@ -1,12 +1,14 @@
 {
   "$GMObject":"",
-  "%Name":"obj_car",
+  "%Name":"obj_player_car",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_road_obsticle","path":"objects/obj_road_obsticle/obj_road_obsticle.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_car",
+  "name":"obj_player_car",
   "overriddenProperties":[],
   "parent":{
     "name":"Driving",
@@ -36,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_car_temp",
-    "path":"sprites/spr_car_temp/spr_car_temp.yy",
+    "name":"spr_kylestrucktopdown",
+    "path":"sprites/spr_kylestrucktopdown/spr_kylestrucktopdown.yy",
   },
   "spriteMaskId":null,
   "visible":true,

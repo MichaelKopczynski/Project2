@@ -1,8 +1,8 @@
 //###########[ POSITION VARIBALES ]########################
 //----MILTON DATES----
-#macro M_X 704
-#macro M_Y 160
-#macro M_S 0.5
+#macro M_X 896
+#macro M_Y 224
+#macro M_S 0.6
 
 #macro M2_X 928
 #macro M2_Y 384
@@ -12,9 +12,9 @@
 #macro M2_S_S 0.6
 
 //-----SABINA DATES----
-#macro S_X 704
-#macro S_Y 160
-#macro S_S 0.5
+#macro S_X 960
+#macro S_Y 224
+#macro S_S 0.6
 
 #macro S2_X 928
 #macro S2_Y 384
@@ -27,9 +27,9 @@
 #macro S2_H_S 0.6
 
 //-----KYLE DATES----
-#macro K_X 704
-#macro K_Y 160
-#macro K_S 0.5
+#macro K_X 896
+#macro K_Y 288
+#macro K_S 0.7
 
 #macro K2_X 896
 #macro K2_Y 320
@@ -163,6 +163,94 @@ global.md1_1_options = [[1, "I love a good book! What are you currently reading?
 function scr_dialogue(_text_id){
 	
 	switch(_text_id) {
+		
+	//------------------------TUTORIAL---------------------------
+	
+	case "t1":
+	scr_text("Well hello there, " + global.name + ". You seem to be a bit lost. I'll help you learn the ropes. First of all, Press Enter to continue a dialogue such as this.")
+	scr_text("Great! Get used to it, I expect you'll be doing that alot.")
+	scr_text("You'll also get a chance to respond to dialogue! When you see options appear above a dialogue box, use the arrow keys to move up and down to select an option.")
+	scr_option("Option 1", "t2")
+	scr_option("Option 2", "t2")
+	break;
+	
+	case "t2":
+	scr_text("Great! Choosing dialogue options is important for your affection levels.")
+	scr_text("Affection levels are a (mostly) unseen status you have with different characters. If an option makes them happy, odds are their affection status will increase")
+	scr_option("I hate you.", "t2-1")
+	scr_option("That's awesome!", "t2-2")
+	break;
+	
+		case "t2-1":
+		scr_text("My affection for you just went down. However, others will not be so explicit about such changes.")
+		scr_goto("t3")
+		break;
+		
+		case "t2-2":
+		scr_text("My affection for you just went up. However, others will not be as explicit about such changes.")
+		scr_goto("t3")
+		break;
+		
+	case "t3":
+	scr_text("Thats when you must read social cues. Important decisions may depend on knowing your affection status.")
+	scr_option("Got it.", "t4")
+	break;
+	
+	case "t4":
+	scr_text("You mostly interact with the people and objects by pressing 'E' after walking up to them. Try it now, walk up to me and press 'E'")
+	scr_text("Move with WASD or Arrow keys.")
+	break;
+	
+	case "t5":
+	scr_text("Great! A person had something to say, they would say it once you interact with them!")
+	scr_option("Ok...", "t6")
+	break;
+	
+	//case "t6a":
+	//scr_text("Let me take the opportunity to ask you your name...")
+	//global.name = get_string_async("What is your name?", "Player")
+	//scr_goto("t6")
+	//break;
+	
+	case "t6":
+	//scr_text("Nice to meet you, " + global.name)
+	scr_text("If someone is talking really slow, try pressing the space bar to speed them up. Try it now! AAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA")
+	scr_text("You can also press Enter as they are speaking to skip to the end! Try it! AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+	scr_text("Well that's about as much as I have to teach you. Seem's like you're about to be summoned")
+	scr_option("Summoned???", "t7")
+	break;
+	
+	case "t7":
+	scr_text("I don't make the rules... toodles! Remember your movement controls and to interact with the 'E' key!")
+	global.gamephase = GP.INTRO
+	room_goto(rm_studio)
+	break;
+		
+	//-----------------------------[INTRO]---------------------
+		
+	case "hintro":
+	HOST
+	scr_text("Greetings, everyone! Let's all welcome our newest contestant, joining the cast FRESH for season 273 of Too Odd to Handle!!!")
+	scr_option("w-what?", "hintro2")
+	break;
+	
+	case "hintro2":
+	HOST
+	scr_text("I'm your host, The Host, and I'm joining you live from the same location as always, THE STUDIO!! This season, our cast is going to consist of 3 carefully curated abominations that JUST CAN'T WAIT TO PLAY!!!")
+	scr_text("First on the list...introducing MILTON! He's just wriggling to get to know you! Next, we have Kyle! He's...well, you'll see soon enough. And finally, Sabina Carpeter! You all know and love her music, so we obtained her through completely legal means!")
+	scr_text("This season, we're mixing it up a bit. You will be going through THREE salacious rendezvous with our contestants to find love! After stage three, they have to decide who they're going to leave with!")
+	scr_text("This is going to be the first season in all 2304 years of running that we're offering a chance to escape! The stakes are up, the cast is in, so make sure you vote online for who you think will make it out for a chance to win a cash prize!")
+	scr_option("w-what?", "hintro3")
+	break;
+	
+	case "hintro3":
+	HOST
+	scr_text("You heard me right! If you could introduce yourself to the cast, we can get on with the first date!")
+	global.gamephase = GP.INTERMISSION1
+	break;
+		
+		
+		
 	// ------- INTERMISSION 1 --------------------------
 	// ************ MILTON *****************
 		case "mi1":
@@ -4237,13 +4325,10 @@ function scr_dialogue(_text_id){
 		
 		case "ki4-golden-rose":
 		scr_text("Give Kyle the golden rose? You wont be able to go any further dates.")
-		scr_option("Yes", "k-date3")
+		scr_option("Yes", "k3-0")
 		scr_option("No", "destroy")
 		break;
 		
-			case "k-date3":
-			room_goto(rm_driving)
-			break;
 		
 		case "destroy":
 		instance_destroy()
@@ -4295,11 +4380,11 @@ function scr_dialogue(_text_id){
 		case "md3":
 		MILTON
 		if MILTON_HATES {
-			scr_text("Why even bother choosing me? I told you it would not be what you hoped. I’ve invited my friends over, maybe they will keep me occupied in this little time I get to be in my home again.")
-			scr_text("We’ll be playing a game of Dungeons and Dragons, and as it is likely a little too intellectual for you, you can clean up around the house. At least you’ll be of some use. You can start with sweeping.")
+			scr_text("Why even bother choosing me? I told you it would not be what you hoped. I've invited my friends over, maybe they will keep me occupied in this little time I get to be in my home again.")
+			scr_text("We'll be playing a game of Dungeons and Dragons, and as it is likely a little too intellectual for you, you can clean up around the house. At least you'll be of some use. You can start with sweeping.")
 		} else {
 			scr_text("You made the right decision choosing me. There has been one complication, however. My friends heard I was going to be making it out of The Studio tonight, and they wanted to engage in some intellectual Dungeons and Dragons gameplay.")
-			scr_text("I understand it is likely a little high brow for you, so I thought you would enjoy...helping around the hovel. I’ll be in the living room playing, so try not to make too much noise and disturb us.")
+			scr_text("I understand it is likely a little high brow for you, so I thought you would enjoy...helping around the hovel. I'll be in the living room playing, so try not to make too much noise and disturb us.")
 			scr_option("Bro what", "md3-1")
 			scr_option("I would love to help, Milton!", "md3-2")
 		}
@@ -4307,7 +4392,7 @@ function scr_dialogue(_text_id){
 		
 			case "md3-1":
 			MILTON
-			scr_text("I know it’s not exactly what you were expecting, so I offer my apologies and your first task, which is to sweep the floor please! If you can get that cockroach as well, I would be most appreciative.")
+			scr_text("I know it's not exactly what you were expecting, so I offer my apologies and your first task, which is to sweep the floor please! If you can get that cockroach as well, I would be most appreciative.")
 			scr_goto("Sweeping")
 			break;
 			
@@ -4329,7 +4414,7 @@ function scr_dialogue(_text_id){
 		
 		case "md3-swept":
 		MILTON_HMM
-		scr_text("Hmm. I suppose it is passable. Next, I hope it won’t trouble you too much to make a sandwich for little old me? I’m just starved.")
+		scr_text("Hmm. I suppose it is passable. Next, I hope it won't trouble you too much to make a sandwich for little old me? I'm just starved.")
 		scr_goto("Cooking")
 		break;
 		
@@ -4341,7 +4426,7 @@ function scr_dialogue(_text_id){
 		obj_chore_controller.cooked = true
 		scr_text("Delicious!")
 		obj_chore_controller.sandwich_arr = []
-		scr_text("One last thing, I’ve been having some issues with the viruses on my computer recently, so I would appreciate it if you could fix that.")
+		scr_text("One last thing, I've been having some issues with the viruses on my computer recently, so I would appreciate it if you could fix that.")
 		scr_goto("Computer")
 		break;
 		
@@ -4351,7 +4436,7 @@ function scr_dialogue(_text_id){
 		
 		case "m3-done":
 		MILTON
-		scr_text("Wonderful. My hovel feels more like home now. I hope this date wasn’t too disappointing. Most everything was done alright, but even then, I still appreciate it.")
+		scr_text("Wonderful. My hovel feels more like home now. I hope this date wasn't too disappointing. Most everything was done alright, but even then, I still appreciate it.")
 		scr_option("Of course Milty!! I love doing chores for you!!", "m3-done-1")
 		scr_option(" I literally just did chores for you while you played with your friends...", "m3-done-2")
 		break;
@@ -4372,7 +4457,7 @@ function scr_dialogue(_text_id){
 			
 		case "m3-end":
 		if MILTON_HATES {
-			scr_text("Was that as exciting as you had hoped? No? Me neither. Let’s just go back to the studio.")
+			scr_text("Was that as exciting as you had hoped? No? Me neither. Let's just go back to the studio.")
 		} else {
 			scr_text("There is one more thing I need to show you before we make this official. I have...been slightly untruthful about my single eye.")	
 			scr_text("The bandage on my lower half...it covers another one. I choose to keep it hidden, as it tends to startle people. It also secretes liquid, so it is not as pleasing or beautiful as my other eye.")
@@ -4382,7 +4467,7 @@ function scr_dialogue(_text_id){
 		
 			case "m3-end-1":
 			MILTON
-			scr_text("Oh. I don’t typically enjoy showing people, but if I must.")
+			scr_text("Oh. I don't typically enjoy showing people, but if I must.")
 			scr_goto("m3-reveal")
 			break;
 			
@@ -4391,35 +4476,35 @@ function scr_dialogue(_text_id){
 				scr_text("...")
 				scr_goto("Well?")
 				scr_option("Oh...that is disgusting...", "m3-reveal-1")
-				scr_option("It’s not so bad!! Don’t worry!", "m3-reveal-2")
+				scr_option("It's not so bad!! Don't worry!", "m3-reveal-2")
 				break;
 				
 					case "m3-reveal-1":
 					MILTON_ANGRY
 					MAFF(-3)
 					scr_text("Disgusting??? I thought we had bonded past physical desire...I promise it does not hinder me in any way!! I will keep it covered for you if you wish...")
-					scr_option("It was just a visceral reaction!! It isn’t gross! You don’t have to cover it!! I’m sorry!", "m3-reveal-1-1")
-					scr_option("If you keep it covered I guess it’s ok...", "m3-reveal-1-2")
+					scr_option("It was just a visceral reaction!! It isn't gross! You don't have to cover it!! I'm sorry!", "m3-reveal-1-1")
+					scr_option("If you keep it covered I guess it's ok...", "m3-reveal-1-2")
 					break;
 					
 						case "m3-reveal-1-1":
 						MILTON_BRUH
 						MAFF(1)
-						scr_text("It is ok. The damage has been dealt. I suppose you will never look upon me with desire henceforth...let’s just go back to the studio...")
+						scr_text("It is ok. The damage has been dealt. I suppose you will never look upon me with desire henceforth...let's just go back to the studio...")
 						scr_goto("d3-leave")
 						break;
 						
 						case "m3-reveal-1-2":
 						MILTON_ANGRY
 						MAFF(-1)
-						scr_text("I will! I will keep it covered! You will never have to lay your eyes on my hideous form ever again...I’ll see you back at the Studio I guess...")
+						scr_text("I will! I will keep it covered! You will never have to lay your eyes on my hideous form ever again...I'll see you back at the Studio I guess...")
 						scr_goto("d3-leave")
 						break;
 					
 					case "m3-reveal-2": // not too bad
 					MILTON_HMM
 					MAFF(1)
-					scr_text("Really? You aren’t disgusted by it?")
+					scr_text("Really? You aren't disgusted by it?")
 					scr_option("Of course not!", "m3-reveal-2-1")
 					scr_option("I mean, it is a little...odd", "m3-reveal-2-2")
 					break;
@@ -4448,9 +4533,142 @@ function scr_dialogue(_text_id){
 		scr_text("Put the broom away by approaching the utility closet and pressing E.")
 		break;
 		
+		//---------------------------------------kyle--------------------------------
+		
+		case "k3-0":
+		KYLE_SMUG
+		scr_text("Yoooo, AC is basically right around the corner. Lez mix it up a lul. I Drink, you drive. Once Agatha hits the roads she basically doin all the steerin anyways.")
+		scr_goto("k3-01")
+		break;
+		
+			case "k3-01":
+			scr_text("Do not crash the car. Beware of rambling Wendigos, respond appropriately to keep rambling down. Use arrow keys to drive... when not distracted.")
+			room_goto(rm_driving)
+			break;
+		
+		case "k3-1":
+		scr_text("Bt Dubs thanks for helpin' me get over that old stank.")
+		scr_option("Sorry!", "k3-1b")
+		scr_option("No problemo!", "destroy")
+		break;
+			
+			case "k3-1b":
+			scr_text("What you apologizin' for. Not yo fault she was for the streets.")
+			break;
+
+		case "k3-2":
+		scr_text("Can't believe I was playinn' defense, reallyy thought I was more of an offense guy. Guesss even a playaa' can be caught lackin'.")
+		scr_option("Dang!", "destroy")
+		scr_option("No...", "k3-2b")
+		break;
+		
+			case "k3-2b":
+			scr_text("...It's truuue, hate to be preachin facts here...")
+			break;
+			
+		case "k3-3":
+		scr_text("...I guess izzz just natural huh... glad I got you now tho.")
+		scr_option("Same.", "destroy")
+		scr_option("Np!", "k3-3b")
+		break;
+		
+			case "k3-3b":
+			scr_text("We are def on the same page.. Don't fret shorty..")
+			break;
+			
+		case "k3-4":
+		scr_text("That Milton guy though...jeez... What a weenie ... he lookin like one too...")
+		scr_option("Fr.", "k3-4b")
+		scr_option("Nah.", "destroy")
+		break;
+		
+			case "k3-4b":
+			scr_text("Jusst spittin fact's here, he lookinnn a lul flaccid...")
+			break;
+			
+		case "k3-5":
+		scr_text("Ion even know why bro was up in my grill like that, disrespectin' me on my own block. He actin like he want trouble, he ain't never met trouble.")
+		scr_option("Great!", "k3-5b")
+		scr_option("For sure", "destroy")
+		break;
+		
+			case "k3-5b":
+			scr_text("Ayo You lookin for trouble too? Don't make me start causin' some.")
+			break;
+			
+		case "k3-6":
+		scr_text("Brooo I'm tellin yous right now, all y'all normies only want sum 10 PSL giga chad wit hunter eyes, hollow cheeks, allat blackpill shi fr.")
+		scr_option("Uh huh...", "destroy")
+		scr_option("Where?", "destroy")
+		break;
+			
+		case "k3-7":
+		scr_text("News flash shorrttyyy, even dat ain enuff for yous. Nothin' ever enough, swear to God. I be out in AC moggin dudes on the boardwalk, n' y'all still actin mistreatin a playa'. Like damn give a brotha a braek..")
+		scr_option("maybe stop drinking", "destroy")
+		scr_option("..uhhh...", "k3-7b")
+		break;
+		
+			case "k3-7b":
+			scr_text("Like nah I presh you lettin' me talk about Roxie, only a real G would do that.")
+			break;
+			
+		case "k3-8":
+		scr_text("..feels like there's a whole plate off my shoulders rn...")
+		scr_option("That's good!", "k3-8b")
+		scr_option("Are you ok?", "destroy")
+		break;
+		
+			case "k3-8b":
+			scr_text("Didn't even realize how much it was botherin me fr")
+			break;
+			
+		case "k3-9":
+		scr_text("Pull into dis gas station coming up.")
+		scr_option("kk", "destroy")
+		scr_option("WOW!", "k3-9")
+		break;
+		
+			case "k3-9b":
+			scr_text("Kyle thurstyyyyyy, your really harshin' my vibe rn... don't apprech that at allzzz")
+			break;
+			
+		case "k3-10":
+		//room_goto(rm_black)
+		break;
+
+		case "k3-11":
+		scr_text("Yooo thanks for the ride, I owe you FR. See you back at the studio or whatever")
+		global.gamephase = GP.EPILOGUE
+		//room_goto(rm_epilogue)
+		break;
 		
 		
+	// my version 
+	
+	case "kd3-0":
+	scr_text("Yoooo, AC is basically right around the corner. Lez mix it up a lul. I Drink, you drive. Once Agatha hits the roads she basically doin all the steerin anyways.")
+		scr_goto("kd3-01")
+		break;
 		
+			case "kd3-01":
+			scr_text("Get to Atlantic City, avoid crashing. Use arrow keys to speed up, slow down, and switch lanes.")
+			room_goto(rm_driving)
+			break;
+			
+	case "kd3-win":
+	KYLE
+	KAFF(3)
+	scr_text("Ah hell yeah, we're here. Now the fun really begins... I've got some things to show you before ol' hosty takes us back...")
+	scr_goto("d3-leave")
+	break;
+	
+	case "kd3-lose":
+	KYLE_NOOO
+	KAFF(-3)
+	scr_text("AGATHA!! MY BABY!!! YOU WRECKED MY BABY!!! GET OUT OF HERE")
+	scr_goto("d3-leave")
+	break;
+	
 	
 	}
 }

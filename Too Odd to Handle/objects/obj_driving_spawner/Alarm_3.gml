@@ -1,3 +1,4 @@
+if !driving exit
 // spawner for cars in your lane (going slower than you)
 this_x = 2048 
 this_y = random_range(864, 1024)

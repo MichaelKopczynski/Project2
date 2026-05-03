@@ -1,10 +1,12 @@
+if !driving exit
 // spawner for cars in your lane (going slower than you)
 this_x = 2048 
 this_y = random_range(384, 448)
 
 
 with(instance_create_depth(this_x, this_y, 0, obj_road_obsticle)){
-	sprite_index = spr_car_temp
+	sprite_index = spr_car_other
+	image_index = random(2)
 	image_xscale = -1
 	max_speed = -16
 	min_speed = -24

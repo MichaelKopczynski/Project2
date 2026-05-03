@@ -5,3 +5,8 @@ alarm[1] =random_range (min_left_car_rate, min_left_car_rate + variability)
 //upper and lower rocks
 alarm[2] = random_range(min_rock_rate, min_rock_rate + variability)
 alarm[3] = random_range(min_rock_rate, min_rock_rate + variability)
+
+
+driving = true
+distance_to_AC = 0
+car_health = 100
