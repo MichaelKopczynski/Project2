@@ -5,7 +5,7 @@ y = obj_player_chores.y + 16
 
 
 if cleaning{
-	audio_play_sound("sweep",1,true)
+	if !audio_is_playing(snd_sweep) then audio_play_sound(snd_sweep,1,true)
 	if sweep_left {
 		if image_angle < 30 then image_angle += 1
 		else sweep_left = false
@@ -16,5 +16,5 @@ if cleaning{
 		
 }
 if !cleaning{
-	audio_stop_sound("sweep")	
+	audio_stop_sound(snd_sweep)	
 }

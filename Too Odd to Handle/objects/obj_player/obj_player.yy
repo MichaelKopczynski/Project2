@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mainchar",
-    "path":"sprites/spr_mainchar/spr_mainchar.yy",
+    "name":"spr_walkfwd",
+    "path":"sprites/spr_walkfwd/spr_walkfwd.yy",
   },
   "spriteMaskId":null,
   "visible":true,

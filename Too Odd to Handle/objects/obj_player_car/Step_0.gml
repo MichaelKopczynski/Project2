@@ -18,3 +18,6 @@ x = clamp(x,128,1760)
 if flash_alpha > 0 {
 	flash_alpha -= 0.01
 }
+
+part_system_position(particles, x-20,y+38)
+part_system_position(particles2, x-20,y-38)

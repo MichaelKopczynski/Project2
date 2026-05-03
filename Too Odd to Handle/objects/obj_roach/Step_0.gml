@@ -6,7 +6,6 @@ if distance_to_object(obj_player_chores) < safe_distance {
 }
 
 if fleeing {
-	show_debug_message(y)
 	if distance_to_object(obj_player_chores) > safe_distance * 2 {
 		var px = path_get_x(Path1, 0);
 	    var py = path_get_y(Path1, 0);

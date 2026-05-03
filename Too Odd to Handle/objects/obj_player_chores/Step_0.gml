@@ -18,7 +18,26 @@ if move_x != 0 and move_y != 0 {
 	move_y *= 0.7071
 }
 
-colliders = [collision_tiles_chores, obj_counter, obj_computer_desk, obj_table, obj_milton_friend1]
+if move_x == 0 and move_y == 0 {
+	image_speed = 0
+	if image_index % 2 == 1 then image_index -= 1 // land on feet
+} else if !instance_exists(obj_textbox){
+	image_speed = 4
+	if key_down {
+		sprite_index = spr_walkfwd
+	} else if key_up {
+		sprite_index = spr_walkbwd
+	} else if key_right {
+		sprite_index = spr_walksid
+		image_xscale = abs(image_xscale)
+	} else {
+		show_debug_message(move_x)
+		sprite_index = spr_walksid
+		image_xscale = -abs(image_xscale)
+	}	
+}
+
+colliders = [collision_tiles_chores, obj_counter, obj_computer_desk, obj_table]
 
 if !instance_exists(obj_textbox) and !obj_mop.cleaning then move_and_collide(move_x, move_y, colliders)
 

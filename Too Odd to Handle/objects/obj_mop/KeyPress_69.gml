@@ -1,8 +1,9 @@
 if !obj_chore_controller.intro then exit
-audio_play_sound("pick_up",1,false)
+
 if !picked_up{
 	if place_meeting(x,y,obj_player_chores){
 		picked_up = true
+		audio_play_sound(snd_pick_up,1,false)
 	}
 } else {
 	with obj_player_chores{

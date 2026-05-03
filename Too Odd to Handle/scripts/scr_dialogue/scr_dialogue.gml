@@ -1,8 +1,8 @@
 //###########[ POSITION VARIBALES ]########################
 //----MILTON DATES----
-#macro M_X 896
-#macro M_Y 224
-#macro M_S 0.6
+#macro M_X 800
+#macro M_Y 288
+#macro M_S 0.7
 
 #macro M2_X 928
 #macro M2_Y 384
@@ -127,7 +127,7 @@
 
 //############ OTHER
 
-#macro MILTON_EYE //TODO
+#macro MILTON_EYE M_TXTBX [spr_milton_second_eye, M2_X, M2_Y, M2_S, 1]])
 
 
 //AFFECTION MACROS
@@ -202,7 +202,7 @@ function scr_dialogue(_text_id){
 	break;
 	
 	case "t5":
-	scr_text("Great! A person had something to say, they would say it once you interact with them!")
+	scr_text("Great! If a person has something to say, they'll say it once you interact with them!")
 	scr_option("Ok...", "t6")
 	break;
 	
@@ -512,7 +512,7 @@ function scr_dialogue(_text_id){
 									
 								case "md1-1-1-1-1-2-2-2":
 								MILTON_HMM
-								MAFF(+1)
+								MAFF(1)
 								scr_text("Your apologies are...well, I will think about it.")
 								scr_goto("md1-1-r")
 								break;
@@ -520,7 +520,7 @@ function scr_dialogue(_text_id){
 						
 					case "md1-1-1-1-2": //ok fair i guess slayyy
 					MILTON
-					MAFF(+1)
+					MAFF(1)
 					scr_text("Thank you. I will keep \"slaying.\"")
 					scr_goto("md1-1-r")
 					break;
@@ -2863,7 +2863,7 @@ function scr_dialogue(_text_id){
 		case "md2-5z":
 		M_TXTBX MD2, MD2_S FR
 		scr_text("Er, very impressive, I too am a multilingualist. My Nihonjin is kurimasu very good desu.")
-		scr_text("I intend to learn the beautiful and elegant language of La Français soon, and given my natural proclivity and ease in which I picked up Nihonjin, it should be a breeze.")
+		scr_text("I intend to learn the beautiful and elegant language of La Francais soon, and given my natural proclivity and ease in which I picked up Nihonjin, it should be a breeze.")
 		scr_goto("md2-5aa")
 		break;
 		
@@ -3712,14 +3712,14 @@ function scr_dialogue(_text_id){
 				case "sd2-x1-1":
 				SABINA2_C
 				SAFF(2)
-				scr_option("Thank you...I'm sorry...")
+				scr_text("Thank you...I'm sorry...")
 				scr_goto("sd2-xs")
 				break;
 									
 				case "sd2-x1-2":
 				SABINA2_U
 				SAFF(-1)
-				scr_option("I told you I wasn't ready yet.")
+				scr_text("I told you I wasn't ready yet.")
 				scr_goto("sd2-xa")
 				break;
 									
@@ -4074,7 +4074,7 @@ function scr_dialogue(_text_id){
 			K_TXTBX KD2_U, KD2_M FR
 			KAFF(-2)
 			MAFF(1)
-			scr_text("You are trip-pin, “Overcompensating”, Nahhhhh, you strait tweakin'. Do I look like someone whose overcompensating?? You ain't never been on the grind. Haters always roll deep.")
+			scr_text("You are trip-pin, \"Overcompensating\", Nahhhhh, you strait tweakin'. Do I look like someone whose overcompensating?? You ain't never been on the grind. Haters always roll deep.")
 			scr_goto("kd2-2u-1b")
 			break;
 		
@@ -4271,7 +4271,7 @@ function scr_dialogue(_text_id){
 			HOST
 			global.gamephase = GP.INTERMISSION4
 			if array_length(obj_game_controller.i4_spoken_to) < 3 {
-				scr_text("Eager are we? Make sure to ask each contestant what their plan for your date is first!")
+				scr_text("Eager are we? Before I can give you the coveted Golden Rose, first you must ask each contestant what their plan for your date! Go on now!")
 			} else {
 				obj_player.holding_golden_rose = true
 				scr_text("Here you are, choose wisely!")
@@ -4423,9 +4423,10 @@ function scr_dialogue(_text_id){
 			break;
 		
 		case "md3-cooked":
+		MILTON
 		obj_chore_controller.cooked = true
 		scr_text("Delicious!")
-		obj_chore_controller.sandwich_arr = []
+		obj_kitchen_controller.on_plate = []
 		scr_text("One last thing, I've been having some issues with the viruses on my computer recently, so I would appreciate it if you could fix that.")
 		scr_goto("Computer")
 		break;
@@ -4457,8 +4458,10 @@ function scr_dialogue(_text_id){
 			
 		case "m3-end":
 		if MILTON_HATES {
+			MILTON_HMM
 			scr_text("Was that as exciting as you had hoped? No? Me neither. Let's just go back to the studio.")
 		} else {
+			MILTON
 			scr_text("There is one more thing I need to show you before we make this official. I have...been slightly untruthful about my single eye.")	
 			scr_text("The bandage on my lower half...it covers another one. I choose to keep it hidden, as it tends to startle people. It also secretes liquid, so it is not as pleasing or beautiful as my other eye.")
 			scr_option("Can I see it?", "m3-end-1")
