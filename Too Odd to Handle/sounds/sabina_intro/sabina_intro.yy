@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sabina_intro",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":16.94118,
+  "exportDir":"",
+  "name":"sabina_intro",
+  "parent":{
+    "name":"music",
+    "path":"folders/Sounds/music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sabina_intro.wav",
+  "volume":1.0,
+}

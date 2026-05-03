@@ -2,22 +2,27 @@ if room != rm_chores_kitchen then exit
 
 if position_meeting(mouse_x, mouse_y, obj_spread_bread){
 	add_to_plate(obj_bread)
+	audio_play_sound("bread",1,false)
 }
 
 if position_meeting(mouse_x, mouse_y, obj_spread_lettuce){
 	add_to_plate(obj_lettuce)
+	audio_play_sound("tomato",1,false)
 }
 
 if position_meeting(mouse_x, mouse_y, obj_spread_tomato){
 	add_to_plate(obj_tomato)
+	audio_play_sound("tomato",1,false)
 }
 
 if position_meeting(mouse_x, mouse_y, obj_spread_cheese){
 	add_to_plate(obj_cheese)
+	audio_play_sound("cheese",1,false)
 }
 
 if position_meeting(mouse_x, mouse_y, obj_spread_meat){
 	add_to_plate(obj_meat)
+	audio_play_sound("meat",1,false)
 }
 
 if position_meeting(mouse_x, mouse_y, obj_trash){
