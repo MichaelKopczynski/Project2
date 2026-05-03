@@ -154,6 +154,7 @@
     {"id":{"name":"spr_golden_rose","path":"sprites/spr_golden_rose/spr_golden_rose.yy",},},
     {"id":{"name":"spr_goob","path":"sprites/spr_goob/spr_goob.yy",},},
     {"id":{"name":"spr_guitarplaying","path":"sprites/spr_guitarplaying/spr_guitarplaying.yy",},},
+    {"id":{"name":"spr_hands","path":"sprites/spr_hands/spr_hands.yy",},},
     {"id":{"name":"spr_held_plate","path":"sprites/spr_held_plate/spr_held_plate.yy",},},
     {"id":{"name":"spr_host_neutral","path":"sprites/spr_host_neutral/spr_host_neutral.yy",},},
     {"id":{"name":"spr_host_sprite","path":"sprites/spr_host_sprite/spr_host_sprite.yy",},},

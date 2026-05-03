@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_arrow_shell",
-    "path":"sprites/spr_arrow_shell/spr_arrow_shell.yy",
+    "name":"spr_hands",
+    "path":"sprites/spr_hands/spr_hands.yy",
   },
   "spriteMaskId":null,
   "visible":true,

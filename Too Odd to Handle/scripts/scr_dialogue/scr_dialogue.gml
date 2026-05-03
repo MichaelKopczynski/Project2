@@ -3201,8 +3201,8 @@ function scr_dialogue(_text_id){
 					SABINA2
 					scr_text("OBVI!! NOTHING feeds the soul like sleeping under the stars and screaming into the night!!! You haven't lived until you've had a good star scream!!")
 					scr_option("Something is wrong with you", "sd2-1-1-1-2-1")
-					scr_option("I love camping!", "sd2-1-1-1-2-1")
-					scr_option("That's so hot.", "sd2-1-1-1-2-1")
+					scr_option("I love camping!", "sd2-1-1-1-2-2")
+					scr_option("That's so hot.", "sd2-1-1-1-2-3")
 					break;
 					
 						case "sd2-1-1-1-2-1":
