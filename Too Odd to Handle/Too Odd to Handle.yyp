@@ -127,6 +127,7 @@
     {"id":{"name":"snd_meat","path":"sounds/snd_meat/snd_meat.yy",},},
     {"id":{"name":"snd_mouse_click","path":"sounds/snd_mouse_click/snd_mouse_click.yy",},},
     {"id":{"name":"snd_pick_up","path":"sounds/snd_pick_up/snd_pick_up.yy",},},
+    {"id":{"name":"snd_rhythm","path":"sounds/snd_rhythm/snd_rhythm.yy",},},
     {"id":{"name":"snd_sweep","path":"sounds/snd_sweep/snd_sweep.yy",},},
     {"id":{"name":"snd_tomato","path":"sounds/snd_tomato/snd_tomato.yy",},},
     {"id":{"name":"Sabina_skinwalker","path":"sprites/Sabina_skinwalker/Sabina_skinwalker.yy",},},

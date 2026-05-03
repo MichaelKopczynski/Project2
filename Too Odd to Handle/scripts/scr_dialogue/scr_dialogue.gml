@@ -863,7 +863,7 @@ function scr_dialogue(_text_id){
 		case "sd1-0-1":
 		SABINA
 		scr_text("I told you those rumours were total salami you silly...sometimes a girl just needs to escape the city!!! Anywayyyys, what brought you to this neck of the woods? Did you hear I'd be here? Oh that rhymed! I should write that down...")
-		scr_option("My friends bullied me into breaking in and now im trapped here :(", "sd1-0-1-1")
+		scr_option("My friends bullied me into a haunted house and I woke up here :(", "sd1-0-1-1")
 		scr_option("Wait but they found your home broken into? It's been 2 months since anyone has seen you?", "sd1-0-1-2")
 		break;
 		
@@ -4315,13 +4315,10 @@ function scr_dialogue(_text_id){
 		
 		case "si4-golden-rose":
 		scr_text("Give Sabina the golden rose? You wont be able to go any further dates.")
-		scr_option("Yes", "s-date3")
+		scr_option("Yes", "sd3-0")
 		scr_option("No", "destroy")
 		break;
 		
-			case "s-date3":
-			room_goto(rm_rhythm)
-			break;
 		
 		case "ki4-golden-rose":
 		scr_text("Give Kyle the golden rose? You wont be able to go any further dates.")
@@ -4672,6 +4669,60 @@ function scr_dialogue(_text_id){
 	scr_goto("d3-leave")
 	break;
 	
+	
+	///----------------------sabina -----------------------------------------------
+	
+	case "sd3-0":
+	SABINA
+	if SABINA_HATES {
+		SABINA
+		scr_text("Yayyyyyyy! Have you ever done karaoke before? Don’t get sad if I do wayyy better than you...I sing for a living after all!! Soooo what song were you thinking of doing?")
+		scr_option("I have done it before! I was thinking...Brutal! By you!", "sd3-0-1")
+		scr_option("How about Peas Peas Peas?", "sd3-0-2")
+	} else {
+		SABINA_HMM
+		scr_text("Ughhhhh... at least I get to sing. I hope you cry and beg for mercy when I DOMINATE you in karaoke. Let’s dooooo....one of my songs! Peas Peas Peas!")
+	}
+	break;
+	
+		case "sd3-0-1":
+		SABINA_HMM
+		scr_text("Oh that song! Uuhmmmmm I don’t like that one very much....how about we do Peas Peas Peas?? It might be easier for you!")
+		scr_option("Sure I guess...", "sd3-0-1-1")
+		scr_option("But Brutal is my favorite of your songs!!!", "sd3-0-1-2")
+		break;
+		
+			case "sd3-0-1-1":
+			SABINA
+			scr_text("Aw thank you so much!!! Let’s get this show on the road!")
+			scr_goto("sc3-karaoke")
+			break;
+			
+			case "sd3-0-1-2":
+			SABINA_UPSET
+			SAFF(-1)
+			scr_text("I don’t know...I really think we should do Peas Peas Peas. Don’t be selfish!!")
+			scr_option("Fine...", "sd3-0-1-2-1")
+			break;
+			
+				case "sd3-0-1-2-1":
+				SABINA_HAPPY
+				scr_text("Yay!! Thank you so much!!")
+				scr_goto("sc3-karaoke")
+		
+		case "sd3-0-2":
+		SAFF(1)
+		SABINA_HAPPY
+		scr_text("Yay!! Thank you so much!!")
+		scr_goto("sc3-karaoke")
+		break;
+		
+		case "sc3-karaoke":
+		scr_text("Stay in Sabina's good graces by performing well in the rhythm game. Press arrow keys as the indicators approach the shells at the top.")
+		room_goto(rm_rhythm)
+		break;
+		
+		
 	
 	}
 }

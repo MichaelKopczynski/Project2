@@ -34,13 +34,25 @@ function press_shell(_shell, _idx){
 	
 		//judgement popup
 		if dist < perf_dist{
-			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){ image_index = 0 }
+			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){ 
+				image_index = 0
+				//placement and size
+				obj_rhythm_controller.good_graces += 3
+				}
 		} else if dist < great_dist{
-			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){ image_index = 1 }
+			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){ 
+				image_index = 1
+				obj_rhythm_controller.good_graces += 1
+				}
 		} else if dist < good_dist{
-			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){ image_index = 2 }
+			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){ 
+				image_index = 2 
+				}
 		} else {
-			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){ image_index = 3 }
+			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){
+				image_index = 3
+				obj_rhythm_controller.good_graces -= 5
+				}
 		}
 			
 		//-----[Tail code]-----//

@@ -1,5 +1,5 @@
 //Variables for score
-rhythm_score = 0
+good_graces = 50
 
 shell1x = 480
 shell2x = 800
@@ -21,7 +21,20 @@ arrow_down = instance_nearest(shell3x, shelly, obj_arrow_shell);
 arrow_right = instance_nearest(shell4x, shelly, obj_arrow_shell);
 
 //Arrow spawning
-alarm[0] = random_range(60, 300)
-alarm[1] = random_range(60, 300)
-alarm[2] = random_range(60, 300)
-alarm[3] = random_range(60, 300)
+//alarm[0] = random_range(60, 300)
+//alarm[1] = random_range(60, 300)
+//alarm[2] = random_range(60, 300)
+//alarm[3] = random_range(60, 300)
+
+grace_period = 50
+
+music = audio_play_sound(snd_rhythm, 1, false)
+bpm = 107
+beat_interval = 60/107
+last_beat_1 = 0
+last_beat_2 = 0
+last_beat_3 = 0
+last_beat_4 = 0
+
+last_spawned = -1
+choice = -1

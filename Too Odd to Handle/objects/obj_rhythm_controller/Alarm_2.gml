@@ -11,7 +11,7 @@
 		image_yscale = 4
 	}
 
-	alarm[2] = random_range(60, 300)
+	//alarm[2] = random_range(60, 300)
 //} else {
 //	with instance_create_depth(554, 832, 0, obj_arrow_tail){
 //		length = random(16)
