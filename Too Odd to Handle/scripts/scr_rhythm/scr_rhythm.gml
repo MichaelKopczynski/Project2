@@ -51,7 +51,7 @@ function press_shell(_shell, _idx){
 		} else {
 			with instance_create_depth(temp_loc, temp_loc, 0, obj_judgement){
 				image_index = 3
-				obj_rhythm_controller.good_graces -= 5
+				obj_rhythm_controller.good_graces -= 8
 				}
 		}
 			

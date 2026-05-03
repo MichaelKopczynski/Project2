@@ -26,6 +26,8 @@ global.kyle_affection = 0
 
 global.affection_margin = 2
 
+global.final_choice = noone
+
 showing_affection = false
 
 i1_spoken_to = []

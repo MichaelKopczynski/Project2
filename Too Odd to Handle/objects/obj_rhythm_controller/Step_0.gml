@@ -1,21 +1,29 @@
+if !audio_is_playing(music) and !text{
+	text = true
+	instance_destroy(obj_arrow)
+	create_textbox("sd3-end")
+}
+
+
+
 //logic inside scr_rhythm!
 
-if keyboard_check_pressed(vk_left) then press_shell(arrow_left, 0)
+if keyboard_check_pressed(vk_left)and !text then press_shell(arrow_left, 0)
 //if keyboard_check_released(vk_left) then release_shell(arrow_left, 0)
 
-if keyboard_check_pressed(vk_up) then press_shell(arrow_up, 1)
+if keyboard_check_pressed(vk_up)and !text then press_shell(arrow_up, 1)
 //if keyboard_check_released(vk_up) then release_shell(arrow_up, 1)
 
-if keyboard_check_pressed(vk_down) then press_shell(arrow_down, 2)
+if keyboard_check_pressed(vk_down) and !text then press_shell(arrow_down, 2)
 //if keyboard_check_released(vk_down) then release_shell(arrow_down, 2)
 
-if keyboard_check_pressed(vk_right) then press_shell(arrow_right, 3)
+if keyboard_check_pressed(vk_right) and !text then press_shell(arrow_right, 3)
 //if keyboard_check_released(vk_right) then release_shell(arrow_right, 3)
 
 good_graces = clamp(good_graces, 0, 100)
 
 grace_period -=1
-if grace_period > 0 then exit
+if grace_period > 0 or !playing then exit
 
 var music_pos = audio_sound_get_track_position(music)
 curr_beat = floor(music_pos / beat_interval)

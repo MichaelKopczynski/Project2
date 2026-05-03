@@ -39,3 +39,5 @@ if global.gamephase == GP.INTERMISSION3 {
 if global.gamephase == GP.INTERMISSION4 {
 	if obj_player.holding_golden_rose then create_textbox("ki4-golden-rose") else create_textbox("ki4")
 }
+
+if global.gamephase == GP.EPILOGUE { create_textbox("k-epilogue") }

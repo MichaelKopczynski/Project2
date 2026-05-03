@@ -128,7 +128,7 @@
 //############ OTHER
 
 #macro MILTON_EYE M_TXTBX [spr_milton_second_eye, M2_X, M2_Y, M2_S, 1]])
-
+#macro SABINA_REVEAL S_TXTBX[spr_sabina_skinwalker, S_X, S_Y, S_S, 1]])
 
 //AFFECTION MACROS
  
@@ -4222,7 +4222,7 @@ function scr_dialogue(_text_id){
 		break;
 		
 		case "kd2-3l":
-		KYLE2
+		KYLE2_D
 		scr_text("You a real one...thank you... fr fr.")
 		array_push(obj_game_controller.d2_taken, 3)
 		scr_goto("d2-leave")
@@ -4643,86 +4643,277 @@ function scr_dialogue(_text_id){
 		break;
 		
 		
-	// my version 
+		// my version 
 	
-	case "kd3-0":
-	scr_text("Yoooo, AC is basically right around the corner. Lez mix it up a lul. I Drink, you drive. Once Agatha hits the roads she basically doin all the steerin anyways.")
-		scr_goto("kd3-01")
-		break;
-		
-			case "kd3-01":
-			scr_text("Get to Atlantic City, avoid crashing. Use arrow keys to speed up, slow down, and switch lanes.")
-			room_goto(rm_driving)
+		case "kd3-0":
+		scr_text("Yoooo, AC is basically right around the corner. Lez mix it up a lul. I Drink, you drive. Once Agatha hits the roads she basically doin all the steerin anyways.")
+			scr_goto("kd3-01")
 			break;
+		
+				case "kd3-01":
+				scr_text("Get to Atlantic City, avoid crashing. Use arrow keys to speed up, slow down, and switch lanes.")
+				room_goto(rm_driving)
+				break;
 			
-	case "kd3-win":
-	KYLE
-	KAFF(3)
-	scr_text("Ah hell yeah, we're here. Now the fun really begins... I've got some things to show you before ol' hosty takes us back...")
-	scr_goto("d3-leave")
-	break;
+		case "kd3-win":
+		KYLE
+		KAFF(3)
+		scr_text("Ah hell yeah, we're here. Now the fun really begins... I've got some things to show you before ol' hosty takes us back...")
+		scr_goto("d3-leave")
+		break;
 	
-	case "kd3-lose":
-	KYLE_NOOO
-	KAFF(-3)
-	scr_text("AGATHA!! MY BABY!!! YOU WRECKED MY BABY!!! GET OUT OF HERE")
-	scr_goto("d3-leave")
-	break;
+		case "kd3-lose":
+		KYLE_NOOO
+		KAFF(-3)
+		scr_text("AGATHA!! MY BABY!!! YOU WRECKED MY BABY!!! GET OUT OF HERE")
+		scr_goto("d3-leave")
+		break;
 	
 	
-	///----------------------sabina -----------------------------------------------
+		///----------------------sabina -----------------------------------------------
 	
-	case "sd3-0":
-	SABINA
-	if SABINA_HATES {
+		case "sd3-0":
 		SABINA
-		scr_text("Yayyyyyyy! Have you ever done karaoke before? Don’t get sad if I do wayyy better than you...I sing for a living after all!! Soooo what song were you thinking of doing?")
-		scr_option("I have done it before! I was thinking...Brutal! By you!", "sd3-0-1")
-		scr_option("How about Peas Peas Peas?", "sd3-0-2")
-	} else {
-		SABINA_HMM
-		scr_text("Ughhhhh... at least I get to sing. I hope you cry and beg for mercy when I DOMINATE you in karaoke. Let’s dooooo....one of my songs! Peas Peas Peas!")
-	}
-	break;
-	
-		case "sd3-0-1":
-		SABINA_HMM
-		scr_text("Oh that song! Uuhmmmmm I don’t like that one very much....how about we do Peas Peas Peas?? It might be easier for you!")
-		scr_option("Sure I guess...", "sd3-0-1-1")
-		scr_option("But Brutal is my favorite of your songs!!!", "sd3-0-1-2")
-		break;
-		
-			case "sd3-0-1-1":
+		if SABINA_HATES {
 			SABINA
-			scr_text("Aw thank you so much!!! Let’s get this show on the road!")
-			scr_goto("sc3-karaoke")
-			break;
-			
-			case "sd3-0-1-2":
-			SABINA_UPSET
-			SAFF(-1)
-			scr_text("I don’t know...I really think we should do Peas Peas Peas. Don’t be selfish!!")
-			scr_option("Fine...", "sd3-0-1-2-1")
-			break;
-			
-				case "sd3-0-1-2-1":
-				SABINA_HAPPY
-				scr_text("Yay!! Thank you so much!!")
-				scr_goto("sc3-karaoke")
-		
-		case "sd3-0-2":
-		SAFF(1)
-		SABINA_HAPPY
-		scr_text("Yay!! Thank you so much!!")
-		scr_goto("sc3-karaoke")
+			scr_text("Yayyyyyyy! Have you ever done karaoke before? Don’t get sad if I do wayyy better than you...I sing for a living after all!! Soooo what song were you thinking of doing?")
+			scr_option("I have done it before! I was thinking...Brutal! By you!", "sd3-0-1")
+			scr_option("How about Peas Peas Peas?", "sd3-0-2")
+		} else {
+			SABINA_HMM
+			scr_text("Ughhhhh... at least I get to sing. I hope you cry and beg for mercy when I DOMINATE you in karaoke. Let’s dooooo....one of my songs! Peas Peas Peas!")
+		}
 		break;
+	
+			case "sd3-0-1":
+			SABINA_HMM
+			scr_text("Oh that song! Uuhmmmmm I don’t like that one very much....how about we do Peas Peas Peas?? It might be easier for you!")
+			scr_option("Sure I guess...", "sd3-0-1-1")
+			scr_option("But Brutal is my favorite of your songs!!!", "sd3-0-1-2")
+			break;
 		
-		case "sc3-karaoke":
+				case "sd3-0-1-1":
+				SABINA
+				scr_text("Aw thank you so much!!! Let’s get this show on the road!")
+				scr_goto("sd3-karaoke")
+				break;
+			
+				case "sd3-0-1-2":
+				SABINA_UPSET
+				SAFF(-1)
+				scr_text("I don’t know...I really think we should do Peas Peas Peas. Don’t be selfish!!")
+				scr_option("Fine...", "sd3-0-1-2-1")
+				break;
+			
+					case "sd3-0-1-2-1":
+					SABINA_HAPPY
+					scr_text("Yay!! Thank you so much!!")
+					scr_goto("sd3-karaoke")
+					break;
+		
+			case "sd3-0-2":
+			SAFF(1)
+			SABINA_HAPPY
+			scr_text("Yay!! Thank you so much!!")
+			scr_goto("sd3-karaoke")
+			break;
+		
+		case "sd3-karaoke":
 		scr_text("Stay in Sabina's good graces by performing well in the rhythm game. Press arrow keys as the indicators approach the shells at the top.")
 		room_goto(rm_rhythm)
 		break;
 		
+		case "sd3-end":
+		if obj_rhythm_controller.good_graces >= 65 {
+			SAFF(2)
+			if SABINA_HATES {
+				SABINA_HMM
+				scr_text("Why did you do well? I thought you would suck at singing just as much as you do conversating...")
+				scr_goto("sd3-end-n")
+			} else {
+				SABINA
+				scr_text("Hey!!! You’re not supposed to do better than me!! Just kidding haha, I’m happy for you! Maybe we can start doing duets...we could be the next big thing! Not that I’m not already the next big thing...but.")
+				scr_goto("sd3-end-p")
+			}
+		} else {
+			SAFF(-2)
+			if SABINA_HATES {
+				SABINA_ANGRY
+				scr_text("I figured you wouldn’t do very well. Singing and talking are pretty similar, and you’re just such a bore to talk to...")
+				scr_goto("sd3-end-n")
+			} else {
+				SABINA_HMM
+				scr_text("That was...something! I knew I might be way better than you at it, so don’t worry! I still had a lot of fun!")
+				scr_goto("sd3-end-p")
+			}
+		}
+		break;
+		
+		
+			case "sd3-end-n":
+			SABINA
+			scr_text("Anyways... guess I'll see you back at the studo. Toodles!")
+			scr_goto("d3-leave")
+			break;
+		
+			case "sd3-end-p":
+			SABINA
+			scr_text("So....now that we’ve become this close...there is something I feel like you should know about me...")
+			scr_option("What is it?","sd3-end-p-1" )
+			break;
+		
+				case "sd3-end-p-1":
+				SABINA_UPSET
+				scr_text("You might judge me for it, but I have to show you...")
+				scr_option("Don’t worry!! I won’t judge you!", "sd3-end-p-1-1")
+				break;
+			
+					case "sd3-end-p-1-1":
+					SABINA_HMM
+					scr_text("Maybe I’ll start with telling you. I’m...I’m not actually Sabina Carpeter.")
+					scr_option("I know!!", "sd3-end-p-1-1-1")
+					scr_option("WHAT????!?!??!?!?", "sd3-end-p-1-1-2")
+					break;
+				
+						case "sd3-end-p-1-1-1":
+						SABINA
+						scr_text("You...know? How did you find out?")
+						scr_option("Just a hunch...", "sd3-end-p-1-1-1-1")
+						scr_option("It was kinda obvious...", "sd3-end-p-1-1-1-2")
+						break;
+					
+							case "sd3-end-p-1-1-1-1":
+							SABINA
+							scr_text("Oh...I guess there’s nothing left but to show you what I really am then...")
+							scr_goto("sabina-reveal")
+							break;
+						
+							case "sd3-end-p-1-1-1-2":
+							SABINA_UPSET
+							scr_text("Oh ok then, I thought I was doing well, but...I guess I’ll just show you what I really am then...")
+							scr_goto("sabina-reveal")
+							break;
+						
+								case "sabina-reveal":
+								SABINA_REVEAL
+								scr_text("Am I... beautiful?")
+								scr_goto("d3-leave")
+								break;
+							
+						case "sd3-end-p-1-1-2":
+						SABINA_UPSET
+						scr_text("I’m sorry I lied to you...do you hate me?")
+						scr_option("It’s ok!! I don’t hate you! So what are you?", "sd3-end-p-1-1-2-1")
+						scr_option("I can’t believe you would lie to me about that...", "sd3-end-p-1-1-2-2")
+						break;
+					
+							case "sd3-end-p-1-1-2-1":
+							SABINA_HMM
+							scr_text("I think the best way would be to show you...")
+							scr_goto("sabina-reveal")
+							break;
+						
+							case "sd3-end-p-1-1-2-2":
+							SABINA_ANGRY
+							scr_text("I had to!! You don’t understand...")
+							scr_option("You didn’t give me the chance!", "sd3-end-p-1-1-2-2-1")
+							break;
+						
+								case "sd3-end-p-1-1-2-2-1":
+								SABINA_UPSET
+								scr_text("I know...I’ve just been hurt so many times...I’m sorry...I guess I’ll show you what I really am...")
+								scr_goto("sabina-reveal")
+								break;
+		
+		
+			//----------------epilogue------------------------
+		
+		case "h-epilogue":
+		HOST
+		scr_text("Finally, all the events we have lined up have been completed! Who do you think our contestant is going to choose? Will any hearts be broken tonight? Did you vote correctly? The floor is yours, " + global.name + "!")
+		scr_text("Choose wisely... Your freedom depends on it.")	
+		break;
+
+	
+		case "m-epilogue":
+		scr_text("Choose Milton?")
+		scr_option("Yes","m-epilogue-chosen")
+		scr_option("No", "destroy")
+		break;
+		
+		case "s-epilogue":
+		scr_text("Choose Sabina?")
+		scr_option("Yes","s-epilogue-chosen")
+		scr_option("No", "destroy")
+		break;
+		
+		case "k-epilogue":
+		scr_text("Choose Kyle?")
+		scr_option("Yes","k-epilogue-chosen")
+		scr_option("No", "destroy")
+		break;
+	
+	
+		case "m-epilogue-chosen":
+		if global.milton_affection < 0 {
+			MILTON_BRUH
+			scr_text("I think I would rather stay here than leave with the likes of you... I would apologize. But I wont.")
+			scr_goto("game-loss")
+		} else {
+			MILTON_HAPPY
+			scr_text("Choosing me? You would choose me? I assure you, you have not made the wrong decision.")
+			scr_goto("m-epilogue-chosen-1")
+		}
+		break;
+		
+			case "m-epilogue-chosen-1":
+			MILTON
+			scr_text("Once we leave here...I will make the world ours. It has wronged me too many times.") 
+			scr_text("And you, you will be beside me all the while. I will finally be able to release my true ideals upon the world. Thank you for choosing me...")
+			scr_goto("game-win-milton")
+			break;
+			
+		case "s-epilogue-chosen":
+		if global.sabina_affection < 0 {
+			SABINA_HMM
+			scr_text("Idkkkkkk I kinda would rather stay here than escape with you....sorry...")
+			scr_goto("game-loss")
+		} else {
+			SABINA_HAPPY
+			scr_text("You still choose me even after seeing my real form??? NO one has ever loved me for what I really am!! Let’s get out of here " + global.name + "!!!")
+			scr_goto("game-win-sabina")
+		}
+		break;
+		
+		case "k-epilogue-chosen":
+		if global.kyle_affection < 0 {
+			KYLE_UPSET
+			scr_text("Oh, uh, nahhh....TBH, I kinda freakin wit dis place now, it aint no AC but its better than whatever shaman hole you probs live in.")
+			scr_goto("game-loss")
+		} else {
+			KYLE_SMUG
+			scr_text("Yoooo lez go. Imma show you AC ASAP. Trusttt you will def dig it. Plus they sell PBR by the pallet so we can recreate our date anytime we want.")
+			scr_goto("game-win-kyle")
+		}
+		break;
+			
+
+		case "game-loss":
+		
+		
+		case "game-win-milton":
+		
+		
+		case "game-win-sabina":
+		
+		
+		
+		
 		
 	
 	}
+	
+	
+	
+	
 }

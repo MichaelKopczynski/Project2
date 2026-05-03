@@ -62,3 +62,5 @@ if global.gamephase == GP.DATE3_MILTON {
 		create_textbox("m3-done")
 	}
 }
+
+if global.gamephase == GP.EPILOGUE { create_textbox("m-epilogue") }

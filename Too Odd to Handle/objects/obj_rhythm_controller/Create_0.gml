@@ -38,3 +38,6 @@ last_beat_4 = 0
 
 last_spawned = -1
 choice = -1
+
+playing = true
+text = false
