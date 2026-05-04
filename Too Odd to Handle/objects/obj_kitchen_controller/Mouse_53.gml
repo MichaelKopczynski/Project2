@@ -27,11 +27,12 @@ if position_meeting(mouse_x, mouse_y, obj_spread_meat){
 
 if position_meeting(mouse_x, mouse_y, obj_trash){
 	on_plate = []
-	plate_depth = 0
+	plate_depth = -2
 	instance_destroy(obj_bread)
 	instance_destroy(obj_tomato)
 	instance_destroy(obj_cheese)
 	instance_destroy(obj_meat)
+	instance_destroy(obj_lettuce)
 }
 
 if position_meeting(mouse_x, mouse_y, obj_X_button){

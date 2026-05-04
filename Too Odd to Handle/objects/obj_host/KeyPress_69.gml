@@ -46,3 +46,5 @@ if global.gamephase == GP.INTERMISSION3 or global.gamephase == GP.INTERMISSION4 
 	create_textbox("hi3-change")
 	
 }
+
+if global.gamephase == GP.EPILOGUE { create_textbox("h-epilogue2") }

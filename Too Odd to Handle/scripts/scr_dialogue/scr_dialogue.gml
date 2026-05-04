@@ -101,7 +101,9 @@
 #macro SD2_K_S [spr_kyle_smug, S2_K_X, S2_K_Y, S2_K_S, 1]
 #macro SD2_K_U [spr_kyle_upset, S2_K_X, S2_K_Y, S2_K_S, 1]
 #macro SD2_K_D [spr_kyle_devestated, S2_K_X, S2_K_Y, S2_K_S, 1]
-#macro SD2_HO [spr_host_neutral, S2_H_X, S2_H_Y, S2_H_S, 1]
+#macro SD2_HO [spr_host_d2, S2_H_X, S2_H_Y, S2_H_S, 1]
+#macro SD2_HO2 [spr_host_d2_open_smile, S2_H_X, S2_H_Y, S2_H_S, 1]
+#macro SD2_HO3 [spr_host_d2_open, S2_H_X, S2_H_Y, S2_H_S, 1]
 
 #macro SABINA2 S_TXTBX SD2 FR
 #macro SABINA2_H S_TXTBX SD2_H FR
@@ -129,6 +131,9 @@
 
 #macro MILTON_EYE M_TXTBX [spr_milton_second_eye, M2_X, M2_Y, M2_S, 1]])
 #macro SABINA_REVEAL S_TXTBX[spr_sabina_skinwalker, S_X, S_Y, S_S, 1]])
+#macro HOST_PLATTER [spr_host_d2, K_X, K_Y, K_S, 1]])
+#macro HOST_REVEAL_SMILE [spr_host_d2_open_smile, K_X, K_Y, K_S, 1]])
+#macro HOST_REVEAL [spr_host_d2_open, K_X, K_Y, K_S, 1]])
 
 //AFFECTION MACROS
  
@@ -214,7 +219,7 @@ function scr_dialogue(_text_id){
 	
 	case "t6":
 	//scr_text("Nice to meet you, " + global.name)
-	scr_text("If someone is talking really slow, try pressing the space bar to speed them up. Try it now! AAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA")
+	scr_text("If someone is talking really slow, try holding the space bar to speed them up. Try it now! AAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA")
 	scr_text("You can also press Enter as they are speaking to skip to the end! Try it! AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 	scr_text("Well that's about as much as I have to teach you. Seem's like you're about to be summoned")
 	scr_option("Summoned???", "t7")
@@ -472,14 +477,14 @@ function scr_dialogue(_text_id){
 						MILTON_ANGRY
 						MAFF(-1)
 						scr_text("It seems you have a bit of a closed mind. I find it unfortunate that you simply cannot imagine that a worm like me might take such an interest in the rights of women.")
-						scr_option("It's the attitude. \"Unenjoyable to you\" like okkkkk we get it you're \"intellectual.\"", "md1-1-1-1-1-2-1")
-						scr_option("I can imagine it, but I just find the way you go about it to be rude...", "md1-1-1-1-1-2-2")
+						scr_option("It's the attitude. Like okkkkk we get it you're \"intellectual.\"", "md1-1-1-1-1-2-1")
+						scr_option("I can imagine it, you don't have to be rude...", "md1-1-1-1-1-2-2")
 						break;
 							
 							case "md1-1-1-1-1-2-1":
 							MILTON_HMM
 							scr_text("Was it wrong to assume it was unenjoyable to you? You did say that it's an unenjoyable topic...")
-							scr_option("You can show interest in something without downplaying the intelligence of others...", "md1-1-1-1-1-2-1-1")
+							scr_option("You can show interest without bringing others down...", "md1-1-1-1-1-2-1-1")
 							scr_option("I guess you're right, but you didn't have to be mean about it...", "md1-1-1-1-1-2-1-1")
 							break;
 								
@@ -3442,7 +3447,17 @@ function scr_dialogue(_text_id){
 		case "sd2-3b":
 		H_TXTBX SD2_C, SD2_K, SD2_HO FR
 		scr_text("Greetings contestants! I just HATE to interrupt a good date, but it appears we've had a bit of a mishap in the kitchen. Unfortunately the only thing we have left to eat is some delectable... Drum roll please")
+		scr_goto("sd2-3ba")
+		break;
+		
+		case "sd2-3ba":
+		H_TXTBX SD2_H, SD2_K_U, SD2_HO2 FR
 		scr_text("Venison!!")
+		scr_goto("sd2-3bb")
+		break;
+		
+		case "sd2-3bb":
+		H_TXTBX SD2_C, SD2_K_U, SD2_HO3 FR
 		scr_text("This delectable little friend here was a doe harvested from a field in the north eastern united states. Dig in, she's mighty juicy!")
 		scr_goto("sd2-3c")
 		break;
@@ -4424,7 +4439,13 @@ function scr_dialogue(_text_id){
 		case "md3-cooked":
 		MILTON
 		obj_chore_controller.cooked = true
-		scr_text("Delicious!")
+		if array_equals( obj_kitchen_controller.on_plate, obj_chore_controller.goal_sandwich_arr) {
+			scr_text("Mmmm extra lettuce, just how I like it! My dearest thanks.")
+			MAFF(2)
+		} else {
+			scr_text("A simple recipe was too much for you to decipher? A shame.")
+			MAFF(-2)
+		}
 		obj_kitchen_controller.on_plate = []
 		scr_text("One last thing, I've been having some issues with the viruses on my computer recently, so I would appreciate it if you could fix that.")
 		scr_goto("Computer")
@@ -4834,6 +4855,11 @@ function scr_dialogue(_text_id){
 		case "h-epilogue":
 		HOST
 		scr_text("Finally, all the events we have lined up have been completed! Who do you think our contestant is going to choose? Will any hearts be broken tonight? Did you vote correctly? The floor is yours, " + global.name + "!")
+		scr_goto("h-epilogue2")
+		break;
+		
+		case "h-epilogue2":
+		HOST
 		scr_text("Choose wisely... Your freedom depends on it.")	
 		break;
 
@@ -4861,7 +4887,7 @@ function scr_dialogue(_text_id){
 		if global.milton_affection < 0 {
 			MILTON_BRUH
 			scr_text("I think I would rather stay here than leave with the likes of you... I would apologize. But I wont.")
-			scr_goto("game-loss")
+			scr_goto("game-loss-pre")
 		} else {
 			MILTON_HAPPY
 			scr_text("Choosing me? You would choose me? I assure you, you have not made the wrong decision.")
@@ -4880,7 +4906,7 @@ function scr_dialogue(_text_id){
 		if global.sabina_affection < 0 {
 			SABINA_HMM
 			scr_text("Idkkkkkk I kinda would rather stay here than escape with you....sorry...")
-			scr_goto("game-loss")
+			scr_goto("game-loss-pre")
 		} else {
 			SABINA_HAPPY
 			scr_text("You still choose me even after seeing my real form??? NO one has ever loved me for what I really am!! Let's get out of here " + global.name + "!!!")
@@ -4892,7 +4918,7 @@ function scr_dialogue(_text_id){
 		if global.kyle_affection < 0 {
 			KYLE_UPSET
 			scr_text("Oh, uh, nahhh....TBH, I kinda freakin wit dis place now, it aint no AC but its better than whatever shaman hole you probs live in.")
-			scr_goto("game-loss")
+			scr_goto("game-loss-pre")
 		} else {
 			KYLE_SMUG
 			scr_text("Yoooo lez go. Imma show you AC ASAP. Trusttt you will def dig it. Plus they sell PBR by the pallet so we can recreate our date anytime we want.")
@@ -4902,10 +4928,14 @@ function scr_dialogue(_text_id){
 			
 
 		case "game-loss":
-		global.final_choice = noone
 		scr_text("Denial is tough huh...")
 		scr_text("As if being unlovable wasn't hard enough, you were left hostage to the host and continued starring in his dating show. The End.")
 		scr_goto("game-restart")
+		break;
+		
+		case "game-loss-pre":
+		global.final_choice = noone
+		room_goto(rm_win)
 		break;
 		
 		case "game-win-milton-pre":

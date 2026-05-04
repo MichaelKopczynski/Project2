@@ -38,7 +38,7 @@ draw_healthbar(bar_x1, bar3_y1, bar_x2, bar3_y2, kyl_aff, c_ltgray, c_red, c_gre
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 draw_set_colour(c_black)
-draw_text_ext_transformed(text_x, text1_y, "Milton's Affeection", 0, 1000, text_scale, text_scale, 0)
+draw_text_ext_transformed(text_x, text1_y, "Milton's Affection", 0, 1000, text_scale, text_scale, 0)
 draw_text_ext_transformed(text_x, text2_y, "Sabina's Affection", 0, 1000, text_scale, text_scale, 0)
 draw_text_ext_transformed(text_x, text3_y, "Kyles's Affection", 0, 1000, text_scale, text_scale, 0)
 draw_set_halign(fa_left)
