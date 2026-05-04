@@ -45,6 +45,9 @@ text_color = c_white
 
 setup = false
 
+sound_idx = snd_host_dialogue
+typing_sound = noone
+
 //-----[Name Tag]-----
 nametag = ""
 tb_padding = 10

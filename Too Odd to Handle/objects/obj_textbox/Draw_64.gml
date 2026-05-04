@@ -33,8 +33,17 @@ if !setup{
 
 //-----[Typing effect]-----
 if curr_char < text_length[page] {
+	
+	if !audio_is_playing(sound_idx){
+		typing_sound = audio_play_sound(sound_idx, 1, 1)
+	}
+	
 	curr_char += text_speed * (1 + keyboard_check(faster_key))
 	curr_char = clamp(curr_char, 0, text_length[page])
+} else {
+	if audio_is_playing(sound_idx){
+		audio_stop_sound(sound_idx)
+	}
 }
 
 //-----[Skipping controls]-----

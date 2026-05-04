@@ -33,10 +33,11 @@ function scr_goto(_link_id) {
 /// @param _textbox textbox sprite
 /// @param _color text color
 /// @param _portrait array with sprite, location, and scale of each speaker portrait
-function scr_speaker(_nametag, _textbox, _color, _portrait = noone) {
+function scr_speaker(_nametag, _textbox, _color, _sound = snd_host_dialogue, _portrait = noone) {
 	nametag = _nametag
 	textbox_spr = _textbox
 	text_color = _color
+	sound_idx = _sound
 	portrait = _portrait
 	
 }

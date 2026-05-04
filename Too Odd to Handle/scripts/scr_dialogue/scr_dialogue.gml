@@ -40,10 +40,10 @@
 
 //###############[ DATE 1 SPRITE MACROS ########################
 
-#macro M_TXTBX scr_speaker(spr_nametag_milton, spr_milton_textbox, c_white, [
-#macro S_TXTBX scr_speaker(spr_nametag_sabina, spr_sabina_textbox, c_black, [
-#macro K_TXTBX scr_speaker(spr_nametag_kyle, spr_kyle_textbox, c_white, [
-#macro H_TXTBX scr_speaker(spr_nametag_host, spr_host_textbox, c_black, [
+#macro M_TXTBX scr_speaker(spr_nametag_milton, spr_milton_textbox, c_white, snd_milton_dialogue, [
+#macro S_TXTBX scr_speaker(spr_nametag_sabina, spr_sabina_textbox, c_black, snd_sabina_dialogue, [
+#macro K_TXTBX scr_speaker(spr_nametag_kyle, spr_kyle_textbox, c_white, snd_kyle_dialogue,[
+#macro H_TXTBX scr_speaker(spr_nametag_host, spr_host_textbox, c_black, snd_host_dialogue, [
 
 #macro MILTON M_TXTBX [spr_milton_neutral, M_X, M_Y, M_S, 1]])
 #macro MILTON_HAPPY M_TXTBX [spr_milton_happy, M_X, M_Y, M_S, 1]])

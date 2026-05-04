@@ -1,2 +1,3 @@
 part_system_destroy(particles)
 part_system_destroy(particles2)
+audio_stop_sound(engine)
