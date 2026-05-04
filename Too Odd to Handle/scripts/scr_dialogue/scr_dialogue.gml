@@ -3432,7 +3432,7 @@ function scr_dialogue(_text_id){
 		
 		
 		case "sd2-3":
-		K_TXTBX SD2_C, SD2_K FR
+		H_TXTBX SD2_C, SD2_K FR
 		scr_text("*Explosion Sounds*")
 		scr_goto("sd2-3b")
 		break;
@@ -3640,7 +3640,7 @@ function scr_dialogue(_text_id){
 					SABINA2
 					scr_text("It's ok though!!!! I have so many beautiful and adoring fans now!! Isn't that just amazing!! Nothing is wrong!!")
 					scr_option("Uhhh ok?", "sd2-4-2-1-1-1")
-					scr_option("That isn't very convincing...", "sd2-4-2-1-2")
+					scr_option("That isn't very convincing...", "sd2-4-2-1-1-2")
 					break;
 					
 						case "sd2-4-2-1-1-1":
