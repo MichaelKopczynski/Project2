@@ -387,7 +387,8 @@ function scr_dialogue(_text_id){
 					scr_goto("sd1-0")
 				} else if global.milton_affection < - AFFECTION_MARGIN {
 					scr_text("I do not appreciate the treatment I have received on what I thought would make for a pleasant date. You have insulted me. You have insulted me with your closed mind, and I must say, you were much as I knew you would be in my heart. Humans. You're all the same.")
-					scr_text("I truly tried to be a nice guy, but you just don't appreciate me. You're not my type anyways. Far too unappealing to mine singular yet beautiful eye. Maybe next time they'll pair me up with someone with a little more intellectual capacity. Someone who can appreciate the finer things in life, like Big Boom Theory, which I will enjoy watching without you.")
+					scr_text("I truly tried to be a nice guy, but you just don't appreciate me. You're not my type anyways. Far too unappealing to mine singular yet beautiful eye.")
+					scr_text("Maybe next time they'll pair me up with someone with a little more intellectual capacity. Someone who can appreciate the finer things in life, like Big Boom Theory, which I will enjoy watching without you.")
 					scr_goto("sd1-0")
 				} else {
 					scr_text("This night was maybe not the best of my life, but it was not the worst either. A seed has been planted in my heart, and whether or not it will fruit I do not know. Farewell.")
@@ -553,7 +554,7 @@ function scr_dialogue(_text_id){
 		MILTON_WIGGLE
 		scr_text("...")
 		scr_text("...")
-		scr_option("That's just amzing Milton!", "md1-1-2-1")
+		scr_option("That's just amazing Milton!", "md1-1-2-1")
 		scr_option("How does that help with cooking?", "md1-1-2-2")
 		break;
 		
@@ -653,7 +654,7 @@ function scr_dialogue(_text_id){
 					case "md1-1-2-1-3-2":
 					MILTON_BRUH
 					MAFF(-1)
-					scr_text("It would do you well. Lets talk about something in a less passive agressive manner.")
+					scr_text("It would do you well. Lets talk about something in a less passive aggressive manner.")
 					scr_goto("md1-1-r")
 					break;
 					
@@ -857,14 +858,14 @@ function scr_dialogue(_text_id){
 		obj_date1_controller.talking_to = 2
 			SABINA
 			scr_text("Omg heyyyyy cutie! I'm sooo glad we get some alone time...I just don't know why they felt the need to call it a speed date. I mean, I allllways finish things quick ;)")
-			scr_option("Sabina Carpeter? Didn't you go missing? What are you doing in St. Louiville?", "sd1-0-1")
+			scr_option("Sabina Carpeter? Didn't you go missing? What are you doing here?", "sd1-0-1")
 			break;
 			
 		case "sd1-0-1":
 		SABINA
 		scr_text("I told you those rumours were total salami you silly...sometimes a girl just needs to escape the city!!! Anywayyyys, what brought you to this neck of the woods? Did you hear I'd be here? Oh that rhymed! I should write that down...")
 		scr_option("My friends bullied me into a haunted house and I woke up here :(", "sd1-0-1-1")
-		scr_option("Wait but they found your home broken into? It's been 2 months since anyone has seen you?", "sd1-0-1-2")
+		scr_option("Wait but they found your home broken into? It's been 2 months!", "sd1-0-1-2")
 		break;
 		
 			case "sd1-0-1-1":
@@ -889,7 +890,7 @@ function scr_dialogue(_text_id){
 					SABINA_HMM
 					scr_text("Tell me you have no Taste without telling me you have no Taste??")
 					scr_option("I actually have great taste, pop music is just boring.", "sd1-0-1-1-1-1-1")
-					scr_option("I still love pop music! I just have been in a classical mood lately...", "sd1-0-1-1-1-1-2")
+					scr_option("I still love pop! I just have been in a classical mood...", "sd1-0-1-1-1-1-2")
 					break;
 					
 						case "sd1-0-1-1-1-1-1":
@@ -972,7 +973,7 @@ function scr_dialogue(_text_id){
 						case "sd1-context":
 						SABINA_ANGRY
 						scr_text("Well obviously Driver's License!! Do you live under a rock?")
-						scr_option("Omg I remember that drama!! I thought it was squashed at this point though?", "sd1-context-1")
+						scr_option("Omg I remember that drama!! I thought it was squashed though?", "sd1-context-1")
 						scr_option("Driver's License? The song?", "sd1-context-2")
 						break;
 						
@@ -980,7 +981,7 @@ function scr_dialogue(_text_id){
 							SABINA_UPSET
 							scr_text("No way José! She was totally singing about my Joshie!!")
 							scr_option("Oh totally. You're definitely right about her.", "sd1-context-1-1")
-							scr_option("I don't know...she said pretty recently that she thought you guys were chill...", "sd1-context-1-2")
+							scr_option("I don't know...she said recently that you guys were chill...", "sd1-context-1-2")
 							break;
 							
 								case "sd1-context-1-1":
@@ -1268,8 +1269,8 @@ function scr_dialogue(_text_id){
 							case "sd1-0-1-1-4-2-1-1-1":
 							SABINA_HMM
 							scr_text("Of course I do! I just meant what was in it that made you think I didn't care about girl power??")
-							scr_option("Your hair is getting held like it's a leash and you're on all fours...", "sd1-0-1-1-4-2-1-1-1-1")
-							scr_option("Welllll I guess it could technically be girl power if it's a commentary thing", "sd1-0-1-1-4-2-1-1-1-2")
+							scr_option("Your hair is held like a leash and you're on all fours...", "sd1-0-1-1-4-2-1-1-1-1")
+							scr_option("Welllll I guess it's girl power if it's a commentary thing", "sd1-0-1-1-4-2-1-1-1-2")
 							break;
 						
 								case "sd1-0-1-1-4-2-1-1-1-1":
@@ -1395,7 +1396,7 @@ function scr_dialogue(_text_id){
 						scr_text("Totally not fair at all! How was I supposed to know you can't call someone slow anymore! I think that stupid Bolivia Rodriguez was behind it")
 						scr_text("The tabloids just love to talk about us. According to the tabloids she wants to make amends, but she just makes me want to take a musket out back!")
 						scr_option("Don't forgive her! That was your award to win!" , "sd1-0-1-2-2-2-1")
-						scr_option("You shouldn't focus so much on her! She'll just bring you down!" , "sd1-0-1-2-2-2-2")
+						scr_option("Stop focusing so much on her! She'll just bring you down!" , "sd1-0-1-2-2-2-2")
 						break;
 						
 							case "sd1-0-1-2-2-2-1":
@@ -1445,24 +1446,24 @@ function scr_dialogue(_text_id){
 		case "sd1-1-p":
 		SABINA
 		scr_text("Your skin is GLOWING by the way. Like I wish I could steal it, you're gorgeous! If you could take me out on a dream date, what would it be?")
-		scr_option("Sunset on a lake as I strum my guitar along with the birds chirping.", "sd1-1-sunset")
-		scr_option("There's nothing as romantic as hunting! I'd take you to the woods to hunt some wild game.", "sd1-1-hunt")
+		scr_option("Sunset on a lake as I strum my guitar along", "sd1-1-sunset")
+		scr_option("There's nothing as romantic as hunting! We'd hunt some wild game.", "sd1-1-hunt")
 		scr_option("Bowling.", "sd1-1-bowling")
 		break;
 		
 		case "sd1-1-u":
 		SABINA
 		scr_text("Sooo if we could get out of here right nowwww where would you want to take me?")
-		scr_option("Sunset on a lake as I strum my guitar along with the birds chirping.", "sd1-1-sunset")
-		scr_option("There's nothing as romantic as hunting! I'd take you to the woods to hunt some wild game.", "sd1-1-hunt")
+		scr_option("Sunset on a lake as I strum my guitar along", "sd1-1-sunset")
+		scr_option("There's nothing as romantic as hunting! We'd hunt some wild game", "sd1-1-hunt")
 		scr_option("Bowling.", "sd1-1-bowling")
 		break;
 		
 		case "sd1-1-n":
 		SABINA
 		scr_text("I hope you're better in bed than in conversation (eyeroll). I guess not everyone is a sonneteer, but if you could take me out anywhere right now where would you take me?")
-		scr_option("Sunset on a lake as I strum my guitar along with the birds chirping.", "sd1-1-sunset")
-		scr_option("There's nothing as romantic as hunting! I'd take you to the woods to hunt some wild game.", "sd1-1-hunt")
+		scr_option("Sunset on a lake as I strum my guitar along", "sd1-1-sunset")
+		scr_option("There's nothing as romantic as hunting! We'd hunt some wild game", "sd1-1-hunt")
 		scr_option("Bowling.", "sd1-1-bowling")
 		break;
 			
@@ -1506,21 +1507,21 @@ function scr_dialogue(_text_id){
 		case "sd1-2-p":
 		SABINA
 		scr_text("You obviously know how to have a good time, is there anything else you like doing??")
-		scr_option("You're talking to the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
+		scr_option("I'm the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
 		scr_option("The party scene is soo dead. Do you even get invited to many?", "sd1-2-2")
 		break;
 		
 		case "sd1-2-u":
 		SABINA
 		scr_text("Soooo do you like doing anything else?")
-		scr_option("You're talking to the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
+		scr_option("I'm the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
 		scr_option("The party scene is soo dead. Do you even get invited to many?", "sd1-2-2")
 		break;
 		
 		case "sd1-2-n":
 		SABINA
 		scr_text("Boring much...do you ever go to events or anything?")
-		scr_option("You're talking to the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
+		scr_option("I'm the 2024 IPA Keg stand regional champion actually", "sd1-2-1")
 		scr_option("The party scene is soo dead. Do you even get invited to many?", "sd1-2-2")
 		break;
 		
@@ -1687,7 +1688,7 @@ function scr_dialogue(_text_id){
 			
 				case "kd1-0-1-1":
 				KYLE_SMUG
-				scr_text("Bone Law's probably too complex for your mid-teir normie mind, but i'm feeling nice today so I can totes fill you in.")
+				scr_text("Bone Law's probably too complex for your mid-tier normie mind, but i'm feeling nice today so I can totes fill you in.")
 				scr_option("Is this that alphamaxxing BS...", "kd1-0-1-1-1")
 				scr_option("Sure I would love to hear more!", "kd1-0-1-1-2")
 				break;
@@ -1799,6 +1800,7 @@ function scr_dialogue(_text_id){
 							break;
 							
 							case "kd1-0-1-1-2-1-2":
+							KYLE
 							KAFF(1)
 							scr_text("Algitht' I gotchu cuhz. This finna be a long ride but trust it'll be worth. Now you might need a little hardmaxxing just a warn. But i'm thinkin' if we revamp errthang 'bout you' you'll level up fo sho'.")
 							scr_goto("kd1-1-p")
@@ -1962,7 +1964,7 @@ function scr_dialogue(_text_id){
 					KAFF(-1)
 					scr_text("Nah nah nah, you've clearly never been to AC. Real AC natives know we don't get in the water. It's more for deco than anythin, like a fancy smancy Christian Riese Lassen-esque scene.")
 					scr_text("We straight livin' on that sand, but at night we take a little detour. Below the boardwalk has some of my best mems of AC.")
-					scr_option("You don't go swimming?? But you're at the beach?", "kd1-0-2-1-2-1")
+					scr_option("You don't go swimming?? But it's the beach?", "kd1-0-2-1-2-1")
 					break;
 					
 						case "kd1-0-2-1-2-1":
@@ -2550,7 +2552,7 @@ function scr_dialogue(_text_id){
 		
 		case "md2-5b":
 		M_TXTBX MD2, MD2_S FR
-		scr_text("Greetings m'lady. What brings you to this establishment on this fine eve? " + global.name + "and I were just waiting in anticipation of our meal.")
+		scr_text("Greetings m'lady. What brings you to this establishment on this fine eve? " + global.name + " and I were just waiting in anticipation of our meal.")
 		scr_goto("md2-5c")
 		break;
 		
@@ -2570,7 +2572,7 @@ function scr_dialogue(_text_id){
 		S_TXTBX MD2_HM, MD2_S_C FR
 		scr_text("That's not what The Host told me... Well, what is it then, " + global.name + "?")
 		scr_option("Yeah... I asked Milton out...", "md2-5e-1")
-		scr_option("Uhm, I was kinda regretting my choice, so you showing up is my saving grace!", "md2-5e-2")
+		scr_option("Uhm, I was kinda regretting my choice, you're my saving grace!", "md2-5e-2")
 		scr_option("Maybe we can all have a hot date!", "md2-5e-3")
 		break;
 		
@@ -2932,7 +2934,7 @@ function scr_dialogue(_text_id){
 			scr_text("I suppose it's just us now.")
 			scr_option("You seemed pretty down bad, you sure you wanted her to leave?", "md2-5ai-1")
 			scr_option("Finally that skank is gone...", "md2-5ai-2")
-			scr_option("She was the only thing keeping this conversation interesting...", "md2-5ai-3")
+			scr_option("She was the only thing keeping this interesting...", "md2-5ai-3")
 		}
 		break;
 		
@@ -3172,7 +3174,7 @@ function scr_dialogue(_text_id){
 		SABINA2
 		scr_text("The food here always takes for-EVER....mmmmmaybe we could get to know each other some mmmore while we wait.")
 		scr_option("So, where are you from originally?", "sd2-1-1")
-		scr_option("So what do you think you would do if you weren't a pop star?", "sd2-1-2")
+		scr_option("So what would you do if you weren't a pop star?", "sd2-1-2")
 		break;
 		
 			case "sd2-1-1":
@@ -3273,7 +3275,7 @@ function scr_dialogue(_text_id){
 				SABINA2_A
 				SAFF(-1)
 				scr_text("Ugh. Keep trying to tell me how to live my life and I'll keep ignoring you. You're such a B*livia. They hate to see a girl with dreams...")
-				scr_option("Uhh I mean don't let me step on your apron! #GoButcherGirl!!!", "sd2-1-2-2-1")
+				scr_option("Uhh I mean don't let me step on your apron! #GoButcherGirl!", "sd2-1-2-2-1")
 				scr_option("Dreams are one thing, butchering is another...", "sd2-1-2-2-2")
 				break;
 				
@@ -3577,7 +3579,7 @@ function scr_dialogue(_text_id){
 					SAFF(1)
 					scr_text("At least you weren't too weirded out. You were my end goal all along anyways...you're way hotter than that Wendigidiot.")
 					scr_option("Wengididiot...no wonder your songs have such good lyrics...", "sd2-4-1-1-1-1")
-					scr_option("I was a little weirded out, but lowkey it just makes you hotter...", "sd2-4-1-1-1-2")
+					scr_option("I was a little weirded out, but it lowkey makes you hotter...", "sd2-4-1-1-1-2")
 					break;
 					
 						case "sd2-4-1-1-1-1":
@@ -3676,7 +3678,7 @@ function scr_dialogue(_text_id){
 				SABINA2_A
 				SAFF(-1)
 				scr_text("SHUT UP. YOU'RE MORE PERFORMATIVE THAN MILTON! I'M NOT LETTING YOU PRETEND TO UNDERSTAND!")
-				scr_option("Whoa, I wasn't trying to pretend. I just wanted to let you know you're not alone...", "sd2-4-2-2b")
+				scr_option("I wasn't trying to pretend, just trying to help out!", "sd2-4-2-2b")
 				break;
 				
 					case "sd2-4-2-2b":
@@ -4122,7 +4124,7 @@ function scr_dialogue(_text_id){
 			M_TXTBX KD2_U, KD2_M_B FR
 			scr_text("I simply just cannot stand watching this disgusting, anti-feminist, alpha-maxxing, gym 'brah', alcoholic loser, with no real friends, whose girlfriend left him lie to you about what makes him tick.")
 			scr_text("Yet I am the one who is being mean? He is lying to you. Manipulating you with his tricks. Why do you think his ex left him? Why do you think he's not over her yet? Disgusting.")
-			scr_option("I mean breakups are always hard, no matter who is at fault...", "kd2-2u-1h")
+			scr_option("I mean breakups are always hard, no matter the fault...", "kd2-2u-1h")
 			scr_option("Why do you assume he's the one at fault?", "kd2-2u-1h")
 			break;
 			
@@ -4132,7 +4134,7 @@ function scr_dialogue(_text_id){
 			scr_text("I don't know how anyone can stand to be around such a MUPPET. He's a DISGRACE to Wendigo's. He's a disgrace to all non-human kind, and it's no wonder his girlfriend left him.")
 			scr_text("EVERYONE leaves him. He's pathetic and boring and stupid and NO ONE LOVES HIM.")
 			scr_option("uh, have you ever asked him what happened?", "kd2-2u-1i")
-			scr_option("Maybe if you gained some empathy you would ask what actually happened.", "kd2-2u-1i")
+			scr_option("Maybe if you gained some empathy you'd ask about it.", "kd2-2u-1i")
 			break;
 			
 			case "kd2-2u-1i":
@@ -4160,7 +4162,7 @@ function scr_dialogue(_text_id){
 		case "kd2-3c":
 		KYLE2_U
 		scr_text("Nope froze n' focused.")
-		scr_option("Stop listening to the Alphamaxxers in your head. They aren't here", "kd2-3d")
+		scr_option("Stop listening to the Alphamaxxers. They aren't here", "kd2-3d")
 		scr_option("I think it'll make you feel better, plus it's super manly", "kd2-3d")
 		break;
 		
@@ -4177,7 +4179,7 @@ function scr_dialogue(_text_id){
 		scr_text("She was my everything dude. My everything. I just- ever since that night, when I saw what shawty had been up to, it's been replayin' in my mind like a bad porno.")
 		scr_text("How could she do that to me? I musta did sum to deserve it...I'm pretty sure my SMV was just to low.")
 		scr_text("I been tryna crawl out, maybe see if shawty would bang my line again after I went alpha...but it's cool. I probably don't deserve that anyways.")
-		scr_option("Kyle, stop. You didn't do anything. Her choices are a reflection of her, not of you.", "kd2-3f")
+		scr_option("Kyle, stop. Her choices are a reflection of her, not of you.", "kd2-3f")
 		break;
 		
 		case "kd2-3f":
@@ -4191,8 +4193,8 @@ function scr_dialogue(_text_id){
 		scr_text("I just- i just don't know why i had to go through that...it's just not fair bruh...")
 		scr_text("that girl- that girl was my WORLD man...i treated her like my QUEEN and all I got in return was a broken heart...")
 		scr_text("i just...i just don't know how i can ever love again after that. I gave shawty EVERYTHING i had...EVERYTHING")
-		scr_option("I get it, Kyle. It's not your fault. Some people are just for the streets.", "kd2-3h")
-		scr_option("You have so much more love to give, don't let her hold you back forever!", "kd2-3h")
+		scr_option("I get it. It's not your fault. Some are just for the streets.", "kd2-3h")
+		scr_option("You have so much more love to give, don't let her hold you back!", "kd2-3h")
 		break;
 		
 		case "kd2-3h":
@@ -4394,7 +4396,7 @@ function scr_dialogue(_text_id){
 			break;
 			
 				case "Sweeping":
-				scr_text("Sweep the debris on the floor with the broom in the utility closet. Press E to use.")
+				scr_text("Sweep the debris and cockroach on the floor with the broom in the utility closet. Press E to use. The cockroach will run away into the walls when approached.")
 				break;
 			
 			case "md3-2":
@@ -4436,7 +4438,7 @@ function scr_dialogue(_text_id){
 		MILTON
 		scr_text("Wonderful. My hovel feels more like home now. I hope this date wasn't too disappointing. Most everything was done alright, but even then, I still appreciate it.")
 		scr_option("Of course Milty!! I love doing chores for you!!", "m3-done-1")
-		scr_option(" I literally just did chores for you while you played with your friends...", "m3-done-2")
+		scr_option("I literally just did chores for you while you played DnD...", "m3-done-2")
 		break;
 		
 			case "m3-done-1":
@@ -4483,7 +4485,7 @@ function scr_dialogue(_text_id){
 					MILTON_ANGRY
 					MAFF(-3)
 					scr_text("Disgusting??? I thought we had bonded past physical desire...I promise it does not hinder me in any way!! I will keep it covered for you if you wish...")
-					scr_option("It was just a visceral reaction!! It isn't gross! You don't have to cover it!! I'm sorry!", "m3-reveal-1-1")
+					scr_option("It was just a visceral reaction!! I'm sorry!", "m3-reveal-1-1")
 					scr_option("If you keep it covered I guess it's ok...", "m3-reveal-1-2")
 					break;
 					
