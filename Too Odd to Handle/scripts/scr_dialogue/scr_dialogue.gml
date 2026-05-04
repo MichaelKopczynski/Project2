@@ -4676,32 +4676,32 @@ function scr_dialogue(_text_id){
 		SABINA
 		if SABINA_HATES {
 			SABINA
-			scr_text("Yayyyyyyy! Have you ever done karaoke before? Don’t get sad if I do wayyy better than you...I sing for a living after all!! Soooo what song were you thinking of doing?")
+			scr_text("Yayyyyyyy! Have you ever done karaoke before? Don't get sad if I do wayyy better than you...I sing for a living after all!! Soooo what song were you thinking of doing?")
 			scr_option("I have done it before! I was thinking...Brutal! By you!", "sd3-0-1")
 			scr_option("How about Peas Peas Peas?", "sd3-0-2")
 		} else {
 			SABINA_HMM
-			scr_text("Ughhhhh... at least I get to sing. I hope you cry and beg for mercy when I DOMINATE you in karaoke. Let’s dooooo....one of my songs! Peas Peas Peas!")
+			scr_text("Ughhhhh... at least I get to sing. I hope you cry and beg for mercy when I DOMINATE you in karaoke. Let's dooooo....one of my songs! Peas Peas Peas!")
 		}
 		break;
 	
 			case "sd3-0-1":
 			SABINA_HMM
-			scr_text("Oh that song! Uuhmmmmm I don’t like that one very much....how about we do Peas Peas Peas?? It might be easier for you!")
+			scr_text("Oh that song! Uuhmmmmm I don't like that one very much....how about we do Peas Peas Peas?? It might be easier for you!")
 			scr_option("Sure I guess...", "sd3-0-1-1")
 			scr_option("But Brutal is my favorite of your songs!!!", "sd3-0-1-2")
 			break;
 		
 				case "sd3-0-1-1":
 				SABINA
-				scr_text("Aw thank you so much!!! Let’s get this show on the road!")
+				scr_text("Aw thank you so much!!! Let's get this show on the road!")
 				scr_goto("sd3-karaoke")
 				break;
 			
 				case "sd3-0-1-2":
 				SABINA_UPSET
 				SAFF(-1)
-				scr_text("I don’t know...I really think we should do Peas Peas Peas. Don’t be selfish!!")
+				scr_text("I don't know...I really think we should do Peas Peas Peas. Don't be selfish!!")
 				scr_option("Fine...", "sd3-0-1-2-1")
 				break;
 			
@@ -4732,18 +4732,18 @@ function scr_dialogue(_text_id){
 				scr_goto("sd3-end-n")
 			} else {
 				SABINA
-				scr_text("Hey!!! You’re not supposed to do better than me!! Just kidding haha, I’m happy for you! Maybe we can start doing duets...we could be the next big thing! Not that I’m not already the next big thing...but.")
+				scr_text("Hey!!! You're not supposed to do better than me!! Just kidding haha, I'm happy for you! Maybe we can start doing duets...we could be the next big thing! Not that I'm not already the next big thing...but.")
 				scr_goto("sd3-end-p")
 			}
 		} else {
 			SAFF(-2)
 			if SABINA_HATES {
 				SABINA_ANGRY
-				scr_text("I figured you wouldn’t do very well. Singing and talking are pretty similar, and you’re just such a bore to talk to...")
+				scr_text("I figured you wouldn't do very well. Singing and talking are pretty similar, and you're just such a bore to talk to...")
 				scr_goto("sd3-end-n")
 			} else {
 				SABINA_HMM
-				scr_text("That was...something! I knew I might be way better than you at it, so don’t worry! I still had a lot of fun!")
+				scr_text("That was...something! I knew I might be way better than you at it, so don't worry! I still had a lot of fun!")
 				scr_goto("sd3-end-p")
 			}
 		}
@@ -4758,19 +4758,19 @@ function scr_dialogue(_text_id){
 		
 			case "sd3-end-p":
 			SABINA
-			scr_text("So....now that we’ve become this close...there is something I feel like you should know about me...")
+			scr_text("So....now that we've become this close...there is something I feel like you should know about me...")
 			scr_option("What is it?","sd3-end-p-1" )
 			break;
 		
 				case "sd3-end-p-1":
 				SABINA_UPSET
 				scr_text("You might judge me for it, but I have to show you...")
-				scr_option("Don’t worry!! I won’t judge you!", "sd3-end-p-1-1")
+				scr_option("Don't worry!! I won't judge you!", "sd3-end-p-1-1")
 				break;
 			
 					case "sd3-end-p-1-1":
 					SABINA_HMM
-					scr_text("Maybe I’ll start with telling you. I’m...I’m not actually Sabina Carpeter.")
+					scr_text("Maybe I'll start with telling you. I'm...I'm not actually Sabina Carpeter.")
 					scr_option("I know!!", "sd3-end-p-1-1-1")
 					scr_option("WHAT????!?!??!?!?", "sd3-end-p-1-1-2")
 					break;
@@ -4784,13 +4784,13 @@ function scr_dialogue(_text_id){
 					
 							case "sd3-end-p-1-1-1-1":
 							SABINA
-							scr_text("Oh...I guess there’s nothing left but to show you what I really am then...")
+							scr_text("Oh...I guess there's nothing left but to show you what I really am then...")
 							scr_goto("sabina-reveal")
 							break;
 						
 							case "sd3-end-p-1-1-1-2":
 							SABINA_UPSET
-							scr_text("Oh ok then, I thought I was doing well, but...I guess I’ll just show you what I really am then...")
+							scr_text("Oh ok then, I thought I was doing well, but...I guess I'll just show you what I really am then...")
 							scr_goto("sabina-reveal")
 							break;
 						
@@ -4802,9 +4802,9 @@ function scr_dialogue(_text_id){
 							
 						case "sd3-end-p-1-1-2":
 						SABINA_UPSET
-						scr_text("I’m sorry I lied to you...do you hate me?")
-						scr_option("It’s ok!! I don’t hate you! So what are you?", "sd3-end-p-1-1-2-1")
-						scr_option("I can’t believe you would lie to me about that...", "sd3-end-p-1-1-2-2")
+						scr_text("I'm sorry I lied to you...do you hate me?")
+						scr_option("It's ok!! I don't hate you! So what are you?", "sd3-end-p-1-1-2-1")
+						scr_option("I can't believe you would lie to me about that...", "sd3-end-p-1-1-2-2")
 						break;
 					
 							case "sd3-end-p-1-1-2-1":
@@ -4815,13 +4815,13 @@ function scr_dialogue(_text_id){
 						
 							case "sd3-end-p-1-1-2-2":
 							SABINA_ANGRY
-							scr_text("I had to!! You don’t understand...")
-							scr_option("You didn’t give me the chance!", "sd3-end-p-1-1-2-2-1")
+							scr_text("I had to!! You don't understand...")
+							scr_option("You didn't give me the chance!", "sd3-end-p-1-1-2-2-1")
 							break;
 						
 								case "sd3-end-p-1-1-2-2-1":
 								SABINA_UPSET
-								scr_text("I know...I’ve just been hurt so many times...I’m sorry...I guess I’ll show you what I really am...")
+								scr_text("I know...I've just been hurt so many times...I'm sorry...I guess I'll show you what I really am...")
 								scr_goto("sabina-reveal")
 								break;
 		
@@ -4870,7 +4870,7 @@ function scr_dialogue(_text_id){
 			MILTON
 			scr_text("Once we leave here...I will make the world ours. It has wronged me too many times.") 
 			scr_text("And you, you will be beside me all the while. I will finally be able to release my true ideals upon the world. Thank you for choosing me...")
-			scr_goto("game-win-milton")
+			scr_goto("game-win-milton-pre")
 			break;
 			
 		case "s-epilogue-chosen":
@@ -4880,8 +4880,8 @@ function scr_dialogue(_text_id){
 			scr_goto("game-loss")
 		} else {
 			SABINA_HAPPY
-			scr_text("You still choose me even after seeing my real form??? NO one has ever loved me for what I really am!! Let’s get out of here " + global.name + "!!!")
-			scr_goto("game-win-sabina")
+			scr_text("You still choose me even after seeing my real form??? NO one has ever loved me for what I really am!! Let's get out of here " + global.name + "!!!")
+			scr_goto("game-win-sabina-pre")
 		}
 		break;
 		
@@ -4893,23 +4893,61 @@ function scr_dialogue(_text_id){
 		} else {
 			KYLE_SMUG
 			scr_text("Yoooo lez go. Imma show you AC ASAP. Trusttt you will def dig it. Plus they sell PBR by the pallet so we can recreate our date anytime we want.")
-			scr_goto("game-win-kyle")
+			scr_goto("game-win-kyle-pre")
 		}
 		break;
 			
 
 		case "game-loss":
+		global.final_choice = noone
+		scr_text("Denial is tough huh...")
+		scr_text("As if being unlovable wasn't hard enough, you were left hostage to the host and continued starring in his dating show. The End.")
+		scr_goto("game-restart")
+		break;
+		
+		case "game-win-milton-pre":
+		global.final_choice = 1
+		room_goto(rm_win)
+		break;
+		
+		case "game-win-sabina-pre":
+		global.final_choice = 2
+		room_goto(rm_win)
+		break;
+		
+		case "game-win-kyle-pre":
+		global.final_choice = 3
+		room_goto(rm_win)
+		break;
+		
 		
 		
 		case "game-win-milton":
+		scr_text("And so you and Milton escaped the studio and lived happily ever after...")
+		scr_text("After finally feeling the touch of another, Milton finally could reach his true potential of world domination.")
+		scr_text("Everything you once knew and loved has been destroyed. But hey, you've got Milton. The End!")
+		scr_goto("game-restart")
+		break;
 		
 		
 		case "game-win-sabina":
+		scr_text("And so you and Sabina escaped the studio... Not too long after escaping Sabina told you she wanted to get to know you better...")
+		scr_text("Inside AND out.")
+		scr_text("Besides, who could blame her, you had really great skin. The End!")
+		scr_goto("game-restart")
+		break;
 		
 		
+		case "game-win-kyle":
+		scr_text("And so you and Kyle escaped the studio... and went straight to Atlantic City of course.")
+		scr_text("A month or so into the relationship things got serious and you brought him to your parents.")
+		scr_text("Unfortunately, Kyle had gone too long without feeding and took \'Family Meal\' literally... The End!")
+		scr_goto("game-restart")
+		break;
 		
-		
-		
+		case "game-restart":
+		game_restart()
+		break;
 	
 	}
 	
