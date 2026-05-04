@@ -17,6 +17,11 @@ enum GP {
 
 display_set_gui_size(room_width, room_height)
 
+global.md1_1_options = [[1, "I love a good book! What are you currently reading?", "md1-1-1"],
+	[2, "Cooking? But...you don't have arms...", "md1-1-2"],
+	[3, "Big into feminism, huh?", "md1-1-3"],
+	[4, "The Big Bang Theory! Who's your favorite character?","md1-1-4"]]
+
 global.gamephase = GP.TUTORIAL
 global.name = "Player"
 

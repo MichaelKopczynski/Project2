@@ -4674,7 +4674,7 @@ function scr_dialogue(_text_id){
 	
 		case "sd3-0":
 		SABINA
-		if SABINA_HATES {
+		if SABINA_LOVES or !SABINA_HATES {
 			SABINA
 			scr_text("Yayyyyyyy! Have you ever done karaoke before? Don't get sad if I do wayyy better than you...I sing for a living after all!! Soooo what song were you thinking of doing?")
 			scr_option("I have done it before! I was thinking...Brutal! By you!", "sd3-0-1")
@@ -4682,6 +4682,7 @@ function scr_dialogue(_text_id){
 		} else {
 			SABINA_HMM
 			scr_text("Ughhhhh... at least I get to sing. I hope you cry and beg for mercy when I DOMINATE you in karaoke. Let's dooooo....one of my songs! Peas Peas Peas!")
+			scr_goto("sd3-karaoke")
 		}
 		break;
 	
