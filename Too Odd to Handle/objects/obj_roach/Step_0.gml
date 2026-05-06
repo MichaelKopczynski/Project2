@@ -21,6 +21,6 @@ if fleeing {
 	} else {
 		dir = point_direction(obj_player_chores.x, obj_player_chores.y, x, y)
 		direction = dir
-		speed = pathspeed * 3
+		speed = pathspeed * 2
 	}
 }

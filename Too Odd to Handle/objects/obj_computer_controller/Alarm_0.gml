@@ -1,12 +1,12 @@
 if spawning {
 
 	//randomally choose between the popup types
-	coin_flip = irandom(1)
+	coin_flip = choose(0,1)
 	popup_spr = noone
 	if coin_flip == 0 then popup_spr = spr_popup else popup_spr = spr_popup2
 	
 	//randomally choose which sprite index
-	d5_roll = irandom(4) + 1
+	d5_roll = choose(0,1,2,3,4) + 1
 	show_debug_message(d5_roll)
 	
 	popup_x = random_range(64, 1792-sprite_get_width(popup_spr) * scale)

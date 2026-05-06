@@ -1422,9 +1422,9 @@ function scr_dialogue(_text_id){
 					SABINA
 					SAFF(1)
 					scr_text("Mi-wow you're a feisty one! I've dealt with a few of your kind before though, don't take me as some untaught simpleton! Tell me why I should trust you to show me the works~")
-					scr_option("I'm competent!", "sd1-0-1-2-3-1")
-					scr_option("I can assemble any Ikea chair... blindfolded", "sd1-0-1-2-3-2")
-					scr_option("I can mountain dew it for ya", "sd1-0-1-2-3-3")
+					scr_option("I'm competent!", "sd1-0-1-2-1-3-1")
+					scr_option("I can assemble any Ikea chair... blindfolded", "sd1-0-1-2-1-3-2")
+					scr_option("I can mountain dew it for ya", "sd1-0-1-2-1-3-3")
 					break;
 					
 						case "sd1-0-1-2-1-3-1":
@@ -4480,6 +4480,7 @@ function scr_dialogue(_text_id){
 		if MILTON_HATES {
 			MILTON_HMM
 			scr_text("Was that as exciting as you had hoped? No? Me neither. Let's just go back to the studio.")
+			scr_goto("d3-leave")
 		} else {
 			MILTON
 			scr_text("There is one more thing I need to show you before we make this official. I have...been slightly untruthful about my single eye.")	
